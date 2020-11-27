@@ -4,19 +4,18 @@ body {
   font-family: Roboto;
 }
 
-.espaco{
+.espaco {
   background-color: #b5b4f8;
   border: 2px solid #020067;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 53px;
   width: 53px;
-  margin-top: 20px;
-  margin-left: 20px;
   display: flex;
+  z-index: 0;
 }
 
-.letra{
+.letra {
   background: #020067;
   border-radius: 8px;
   color: white;
@@ -26,17 +25,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*-webkit-touch-callout: none;  /* iPhone OS, Safari */
-  /*-webkit-user-select: none;    /* Chrome, Safari 3 */
-  /*-khtml-user-select: none;     /* Safari 2 */
-  /*-moz-user-select: -moz-none;       /* Firefox */
-  /*-ms-user-select: none;        /* IE10+ */
-  /*user-select: none;*/ 
-  margin-top: 20px;
-  margin-left: 20px;
+  z-index: 1;
 }
 
-.enunciado{
+.enunciado {
   background: #020067;
   border-radius: 16px;
   color: white;
@@ -46,37 +38,42 @@ body {
   letter-spacing: 0.005em;
 }
 
-.fases{
-  background: #2C73AF;
+.fases {
+  background: #2c73af;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
 }
 
-.bloco-branco{
-  background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 16px;
-
-}
-
-.bloco-lilas{
-  background: #7B79F1;
+.bloco-branco {
+  background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
 
-.botao-redondo{
+.bloco-lilas {
+  background: #7b79f1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.botao-redondo {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
 }
 
-.cronometro{
-  background: #FFFFFF;
+.cronometro {
+  background: #ffffff;
   border-radius: 8px;
   color: black;
 }
 
-.faseX{
+.faseX {
   border-radius: 4px;
-  color:black;
+  color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
 }

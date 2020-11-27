@@ -1,24 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useDrag } from 'react-dnd'
 
-export default function Letra({setMoved, id}){
+export default function Letra({id, row, column}) {
+
+    const [linha, setRow] = useState(row)
+    const [coluna, setColumn] = useState(column)
 
     const [{isDragging}, drag] = useDrag({
-        item: {name:id, type:'letra' },
+        item: {name:id, type:'letra', row:row, column:column},
         collect: monitor => ({
           isDragging: !!monitor.isDragging(),
         }),
-        end: (item, monitor) => { 
-            const dropResult = monitor.getDropResult()
-            if (dropResult && dropResult.name === {id}) {
-                setMoved(true)
-            } else {
-                setMoved(false)
+        end(item) {
+            if (item.row !== row || item.column !== column) {
+                setColumn(item.column)
+                setRow(item.row)
             }
-        }
-      })
+        }       
+    })
     
-    return (<span ref={drag} className="letra" style={{opacity: isDragging ? 0.3 : 1, cursor: 'move'}}>{id}</span>);
+    return (<span ref={drag} className="letra" style={{ opacity: isDragging ? 0 : 1, cursor: 'move' , gridRow:linha, gridColumn:coluna}}>{id}</span>);               
 }
-
-//a letra fica unmounted

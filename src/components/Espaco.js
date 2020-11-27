@@ -1,25 +1,30 @@
-import React, {useEffect} from 'react';
-import { useDrop } from 'react-dnd'
+import React, {useState} from 'react';
+import { useDrop } from 'react-dnd';
 
-export default function Espaco({ children }) {
+export default function Espaco({id, row, column, idAnterior, rowAnterior, columnAnterior}) {
+
+  const [linha, setRow] = useState(row)
+  const [coluna, setColumn] = useState(column)
   
-  var dropado = false
-  var dropped;
   const [, drop] = useDrop({
     accept: 'letra',
-    collect: monitor => {
-      dropped = monitor.didDrop()
+    drop: (item) => {
+      item.row = row;
+      item.column = column;
+
+      if (idAnterior == null) {
+        idAnterior = item.id 
+        rowAnterior = item.row
+        columnAnterior = item.column
+      }
+      else {
+        setRow(rowAnterior)
+        setColumn(columnAnterior)
+      }
     }
   })
-  
 
-  if (dropped) {
-    useEffect((dropado) => {
-        dropado = true;
-    })
-  }
-  
 
-  return (<span ref={drop} className="espaco">{ children && dropado }</span>)
+  return (<span ref={drop} className="espaco" style={{gridColumn:column, gridRow:row}}></span>)
     
 }
