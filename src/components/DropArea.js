@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-export default function Espaco({id, row, column}) {
+export default function DropArea({row, column}) {
   
   const [, drop] = useDrop({
     accept: 'letra',
@@ -11,7 +11,6 @@ export default function Espaco({id, row, column}) {
     }
   })
 
-
-  return (<span ref={drop} className="espaco" style={{gridColumn:column, gridRow:row}}></span>)
+  return (<span ref={drop} style={{height:"60px", width:"60px", backgroundColor:"white", zIndex:"0",gridColumn:column, gridRow:row}}></span>)
     
 }
