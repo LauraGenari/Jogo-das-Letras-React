@@ -46,6 +46,7 @@
 			<PalavraAssoc>ÁGUA</PalavraAssoc>
 		</Conteudo1>
 	</fase1>
+
 	<fase2>
 		<Conteudo2>
 			<Dica>Continente originário do Aedes.</Dica>
@@ -92,6 +93,7 @@
 			<PalavraAssoc>GARRAFA</PalavraAssoc>
 		</Conteudo2>
 	</fase2>
+
 	<fase3>
 		<Conteudo3>
 			<Dica>Produto usado na pele, que modifica o cheiro dela e confunde a fêmea, existem apresentações em creme, loção ou aerossol.</Dica>
@@ -134,6 +136,7 @@
 			<PalavraAssoc>TROPICAIS</PalavraAssoc>
 		</Conteudo3>
 	</fase3>
+
 	<fase4>
 		<Conteudo4>
 			<Dica>Grandes _________: marco histórico responsável pela chegada do mosquito Aedes aegypti.</Dica>
@@ -172,6 +175,7 @@
 			<PalavraAssoc>DESSECAÇÃO</PalavraAssoc>
 		</Conteudo4>
 	</fase4>
+	
 	<fase5>
 		<Conteudo5>
 			<Dica>Nome popular dado ao mosquito Aedes aegypti.</Dica>

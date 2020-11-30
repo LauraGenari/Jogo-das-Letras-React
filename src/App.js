@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {BrowserRouter} from "react-router-dom";
 import './App.css';
-import Game from './components/Game'
+import Main from './components/Main'
 
-export const App = () => {
-  return (
-      <div className="container">
-          <Game />
-      </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Main/>
+        </BrowserRouter>
+    );
+  }
 }
-
-export default App;

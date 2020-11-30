@@ -72,8 +72,24 @@ body {
   color: black;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr;
+.dark {
+  background-color: #020067;
+  color: white;
+  width: 136px;
+  height: 144px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border-style: none;
+  margin: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.droparea {
+  height: 60px;
+  width: 60px;
+  background-color: white;
+  z-index: 0;
 }
