@@ -8,6 +8,7 @@ export default function DropArea({row, column}) {
     drop: (item) => {
       item.row = row;
       item.column = column;
+      
     }
   })
 

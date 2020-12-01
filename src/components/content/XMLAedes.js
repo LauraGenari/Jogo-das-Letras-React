@@ -223,7 +223,7 @@ function palavraAedes() {
 	
 	var xml = new XMLParser().parseFromString(XMLAedes);    // Assume xmlText contains the example XML
 	
-	var palavra = xml.getElementsByTagName('Unscramble')[0].getElementsByTagName('fase1')[0].getElementsByTagName('Conteudo1')[9].getElementsByTagName('PalavraAssoc')[0].value;
+	var palavra = xml.getElementsByTagName('Unscramble')[0].getElementsByTagName('fase1')[0].getElementsByTagName('Conteudo1')[0].getElementsByTagName('PalavraAssoc')[0].value;
 	
 	return palavra;
 }

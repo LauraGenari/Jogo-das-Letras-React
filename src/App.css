@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/background.png");
+  background-image: url("/img/background.png");
   overflow: hidden;
   font-family: Roboto;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .letra {
-  background: #020067;
+  background: #2a279d;
   border-radius: 8px;
   color: white;
   text-transform: uppercase;
@@ -42,25 +42,78 @@ body {
   background: #2c73af;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
+  display: flex;
+  padding: 1em;
 }
 
-.bloco-branco {
+.scope {
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.scope.mobile {
+  width: 80vw;
+  height: 80vh;
+  top: 10vh;
+  left: 5vw;
+}
+
+.scope.desktop {
+  width: 60vw;
+  height: 70vh;
+  top: 15vh;
+  left: 20vw;
 }
 
 .bloco-lilas {
-  background: #7b79f1;
+  background-color: #7b79f1;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
+  width: 20%;
+  height: 90vh;
+  position: absolute;
+  left: 90%;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.bloco-lilas.mobile {
+  width: 40%;
+  left: 75%;
+}
+
+.conteudo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .botao-redondo {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.botao-redondo.escuro {
+  background-color: #2a279d;
+}
+.botao-redondo.lilas {
+  background-color: #7b79f1;
+}
+.botao-redondo.rosa {
+  background-color: #ff5b71;
+}
 .cronometro {
   background: #ffffff;
   border-radius: 8px;
@@ -92,4 +145,11 @@ body {
   width: 60px;
   background-color: white;
   z-index: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: unset;
+  grid-template-rows: "1fr 1fr";
+  grid-gap: 1em;
 }
