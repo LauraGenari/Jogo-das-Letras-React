@@ -12,6 +12,9 @@ import palavraZika from '../content/XMLZika';
 import palavraChikungunya from '../content/XMLChikungunya'; 
 import palavraFebre from '../content/XMLFebre'; 
 
+import TemplateEscuro from '../TemplateEscuro';
+import TemplateLilas from '../TemplateLilas';
+
 import Swal from 'sweetalert2'
 
 export default class Game extends Component {
@@ -73,7 +76,8 @@ export default class Game extends Component {
 
     render() {
         var tema = this.props.location.tema;
-        const mobile = window.innerWidth < 400;
+        const mobile = this.props.mobile
+        console.log(mobile)
         var palavra;
         
         if (tema === "Aedes")
@@ -90,6 +94,8 @@ export default class Game extends Component {
 
         return (
             <div>
+                <TemplateEscuro mobile={mobile} id="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
+                <TemplateLilas mobile={mobile} />
                 <div class="grid">
                     <DndProvider backend={mobile ? TouchBackend : HTML5Backend}>
                         {this.Word(palavra, mobile)}                                

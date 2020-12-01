@@ -1,58 +1,72 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-export default class Tema extends Component{ 
+import React from 'react'
+import { Link } from 'react-router-dom'
+import TemplateEscuro from './TemplateEscuro';
+import TemplateLilas from './TemplateLilas';
 
-    render() {
-        return (    
-            <div>
-                <div style={{display:"flex"}}>
-                    <Link to={{
-                        pathname:'game',
-                        tema: 'Chikungunya'
-                        }} >
-                        <button className="dark">
-                            Chikungunya
-                        </button>
-                    </Link>
-                    <Link to={{
-                        pathname:'game',
-                        tema: 'Dengue'
-                        }} >
-                        <button className="dark">
-                            Dengue
-                        </button>
-                    </Link>
-                </div>    
-                <div style={{display:"flex", justifyContent:"center"}}>
-                    <Link to={{
-                        pathname:'game',
-                        tema: 'FebreAmarela'
-                        }} >
-                        <button className="dark">
-                            Febre Amarela
-                        </button>
-                    </Link>
-                </div>
-                <div style={{display:"flex"}}>
-                    <Link to={{
-                        pathname:'game',
-                        tema: 'Zika'
-                        }} >
-                        <button className="dark">
-                            Zika
-                        </button>
-                    </Link>
-                    <Link to={{
-                    pathname:'game',
-                    tema: 'Aedes'
-                    }} >
-                    <button className="dark">
-                        Aedes Aegypti
-                    </button>
-                </Link>            
-                </div>
-            </div>
-        )    
+export default function Tema({mobile}) { 
+    console.log(mobile)
+    var size;
+    if (mobile) {
+        size = {
+            width: "30vw",
+            height: "30vw",
+            margin: "1.5vw"        }
+        
     }
-
-}
+    else {
+        size = {
+            width: "10vw",
+            height: "10vw",
+            margin: "1vw"
+        } 
+    }
+    
+    return (    
+        <div>
+            <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA"/>
+            <TemplateLilas mobile={mobile} />
+            <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
+                <Link to={{
+                    pathname:'game',
+                    tema: 'Chikungunya'
+                }}>
+                    <button className="dark" style={size}>
+                        Chikungunya
+                    </button>
+                </Link>
+                <Link to={{
+                    pathname:'game',
+                    tema: 'Dengue'
+                }}>
+                    <button className="dark" style={size}>
+                        Dengue
+                    </button>
+                </Link>
+                <Link to={{
+                    pathname:'game',
+                    tema: 'FebreAmarela'
+                }}>
+                    <button className="dark" style={size}>
+                        Febre Amarela
+                    </button>
+                </Link>
+                <Link to={{
+                    pathname:'game',
+                    tema: 'Zika'
+                }}>
+                    <button className="dark" style={size}>
+                        Zika
+                    </button>
+                </Link>
+                <Link to={{
+                pathname:'game',
+                tema: 'Aedes'
+                }}>
+                <button className="dark" style={size}>
+                    Aedes Aegypti
+                </button>
+            </Link>            
+            </div>
+        </div>
+    )    
+    }
