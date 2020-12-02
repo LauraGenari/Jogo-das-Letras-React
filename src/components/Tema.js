@@ -10,7 +10,8 @@ export default function Tema({mobile}) {
         size = {
             width: "30vw",
             height: "30vw",
-            margin: "1.5vw"        }
+            margin: "1.5vw"
+        }
         
     }
     else {
@@ -23,7 +24,7 @@ export default function Tema({mobile}) {
     
     return (    
         <div>
-            <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA"/>
+            <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA" font={"Luckiest Guy"} size ="3em"/>
             <TemplateLilas mobile={mobile} />
             <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                 <Link to={{

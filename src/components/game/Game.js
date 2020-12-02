@@ -6,16 +6,19 @@ import { DndProvider} from "react-dnd";
 import { TouchBackend } from "react-dnd-touch-backend";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
-import palavraAedes from '../content/XMLAedes'; 
-import palavraDengue from '../content/XMLDengue'; 
-import palavraZika from '../content/XMLZika'; 
-import palavraChikungunya from '../content/XMLChikungunya'; 
-import palavraFebre from '../content/XMLFebre'; 
+import {palavraAedes, questaoAedes} from '../content/XMLAedes'; 
+import {palavraDengue, questaoDengue} from '../content/XMLDengue'; 
+import {palavraZika, questaoZika} from '../content/XMLZika'; 
+import {palavraChikungunya, questaoChikungunya} from '../content/XMLChikungunya'; 
+import {palavraFebre, questaoFebre} from '../content/XMLFebre'; 
 
 import TemplateEscuro from '../TemplateEscuro';
 import TemplateLilas from '../TemplateLilas';
 
 import Swal from 'sweetalert2'
+
+/* (A C D F Z = 1 2 3 4 5) X (1 2 3 4 5)  */
+
 
 export default class Game extends Component {
 
@@ -74,27 +77,59 @@ export default class Game extends Component {
                     
     }
 
+    Sorteio(fase, doenca, questoes) {
+        const matriz =
+            [[11, 22, 20, 18, 20],
+            [18, 18, 18, 14, 20],
+            [22, 22, 22, 18, 22],
+            [16, 20, 20 ,18, 22],
+            [20, 20, 22, 20, 22]]
+        const max = matriz[doenca][fase]
+        for (let i = 0; i < fase; i++) {
+            let sorteio = Math.floor(Math.random() * (max - i));
+            if(questoes.includes(sorteio) === false)
+                questoes.push(sorteio)
+        }
+        console.log(questoes)
+        return questoes[0]
+    }
+
+
     render() {
         var tema = this.props.location.tema;
         const mobile = this.props.mobile
-        console.log(mobile)
-        var palavra;
+        var palavra, questao, i;
         
-        if (tema === "Aedes")
-            palavra = palavraAedes();
-        else if (tema === "Chikungunya")
+        if (tema === "Aedes") {
+            i = this.Sorteio(1, 1, [])
+            palavra = palavraAedes({i});
+            questao = questaoAedes({i});
+
+        }
+        else if (tema === "Chikungunya"){
             palavra = palavraChikungunya();
-        else if (tema === "Dengue")
+            questao = questaoChikungunya();
+
+        }
+        else if (tema === "Dengue"){
             palavra = palavraDengue();
-        else if (tema === "Zika")
+            questao = questaoDengue();
+
+        }
+        else if (tema === "Zika"){
             palavra = palavraZika();
-        else if (tema === "FebreAmarela")
+            questao = questaoZika();
+
+        }
+        else if (tema === "FebreAmarela"){
             palavra = palavraFebre();
-            
+            questao = questaoFebre();
+
+        }
 
         return (
             <div>
-                <TemplateEscuro mobile={mobile} id="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
+                <TemplateEscuro mobile={mobile} id={questao} font='roboto' size="1em"/>
                 <TemplateLilas mobile={mobile} />
                 <div class="grid">
                     <DndProvider backend={mobile ? TouchBackend : HTML5Backend}>

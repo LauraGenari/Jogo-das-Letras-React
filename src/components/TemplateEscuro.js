@@ -6,14 +6,14 @@ export default class TemplateEscuro extends Component{
         if (this.props.mobile) {
             return (
                 <div className="enunciado mobile">
-                    {this.props.id}
+                    <p style={{fontFamily:this.props.font, fontSize:this.props.size}}>{this.props.id}</p>
                 </div>
             )
         }
         else {
             return (
                 <div className="enunciado desktop">
-                    {this.props.id}
+                    <p style={{fontFamily:this.props.font, fontSize:this.props.size}}>{this.props.id}</p>
                 </div>
             )
         }

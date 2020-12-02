@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 body {
   background-image: url("/img/background.png");
   overflow: hidden;
@@ -37,6 +38,13 @@ body {
   line-height: 130%;
   letter-spacing: 0.005em;
   z-index: 1;
+  vertical-align: center;
+  font-size: 1em;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .enunciado.mobile {
   width: 95vw;
@@ -52,6 +60,7 @@ body {
   position: absolute;
   top: 5vh;
   left: -2.5vw;
+  font-family: "Luckiest Guy", cursive;
 }
 
 .scope {
