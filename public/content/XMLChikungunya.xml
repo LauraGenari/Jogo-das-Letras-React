@@ -1,8 +1,4 @@
-import XMLParser from 'react-xml-parser'
-
-const XMLChikungunya = `
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="ACSPIXMT.xsl" ?>
 <Unscramble>
 	<fase1>
 		<Conteudo1>
@@ -183,15 +179,4 @@ const XMLChikungunya = `
 		</Conteudo5>
 	</fase5>
 </Unscramble>
-`
-var xml = new XMLParser().parseFromString(XMLChikungunya);
-export function palavraChikungunya(i, level) {
-	const fase = 'fase' + level;
-	const conteudo = 'Conteudo'+level
-	var palavra = []
-	palavra.push(xml.getElementsByTagName('Unscramble')[0].getElementsByTagName(fase)[0].getElementsByTagName(conteudo)[i].getElementsByTagName('PalavraAssoc')[0].value)
-	palavra.push(xml.getElementsByTagName('Unscramble')[0].getElementsByTagName(fase)[0].getElementsByTagName(conteudo)[i].getElementsByTagName('Dica')[0].value)
-	
-	return palavra;
-}
 

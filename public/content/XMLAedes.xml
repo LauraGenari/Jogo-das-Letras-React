@@ -1,8 +1,4 @@
-import XMLParser from 'react-xml-parser'
-
-const XMLAedes =`
-<?xml version='1.0' encoding='utf-8'?>
-<?xml-stylesheet type="text/xsl" href="ACSPIXMT.xsl" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Unscramble>
 	<fase1>
 		<Conteudo1>
@@ -50,6 +46,7 @@ const XMLAedes =`
 			<PalavraAssoc>ÁGUA</PalavraAssoc>
 		</Conteudo1>
 	</fase1>
+
 	<fase2>
 		<Conteudo2>
 			<Dica>Continente originário do Aedes.</Dica>
@@ -96,6 +93,7 @@ const XMLAedes =`
 			<PalavraAssoc>GARRAFA</PalavraAssoc>
 		</Conteudo2>
 	</fase2>
+
 	<fase3>
 		<Conteudo3>
 			<Dica>Produto usado na pele, que modifica o cheiro dela e confunde a fêmea, existem apresentações em creme, loção ou aerossol.</Dica>
@@ -138,6 +136,7 @@ const XMLAedes =`
 			<PalavraAssoc>TROPICAIS</PalavraAssoc>
 		</Conteudo3>
 	</fase3>
+
 	<fase4>
 		<Conteudo4>
 			<Dica>Grandes _________: marco histórico responsável pela chegada do mosquito Aedes aegypti.</Dica>
@@ -176,6 +175,7 @@ const XMLAedes =`
 			<PalavraAssoc>DESSECAÇÃO</PalavraAssoc>
 		</Conteudo4>
 	</fase4>
+	
 	<fase5>
 		<Conteudo5>
 			<Dica>Nome popular dado ao mosquito Aedes aegypti.</Dica>
@@ -218,18 +218,5 @@ const XMLAedes =`
 			<PalavraAssoc>CONSCIENTIZAÇÃO</PalavraAssoc>
 		</Conteudo5>
 	</fase5>
-</Unscramble>`
-var xml = new XMLParser().parseFromString(XMLAedes);    // Assume xmlText contains the example XML
+</Unscramble>
 
-export function palavraAedes(i) {	
-	console.log("palavra",i)
-	var palavra = xml.getElementsByTagName('Unscramble')[0].getElementsByTagName('fase1')[0].getElementsByTagName('Conteudo1')[0].getElementsByTagName('PalavraAssoc')[{i}].value;
-	
-	return palavra;
-}
-
-export function questaoAedes({i}) {	
-	var palavra = xml.getElementsByTagName('Unscramble')[0].getElementsByTagName('fase1')[0].getElementsByTagName('Conteudo1')[0].getElementsByTagName('Dica')[{i}].value;
-	
-	return palavra;
-}

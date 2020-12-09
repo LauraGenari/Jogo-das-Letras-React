@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 export default class TemplateEscuro extends Component{
     
     render() {
-        console.log(location.href)
         if (this.props.mobile) {
             return (
                 <div className="enunciado mobile">

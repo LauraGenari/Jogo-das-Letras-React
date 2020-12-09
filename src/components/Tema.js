@@ -4,7 +4,6 @@ import TemplateEscuro from './TemplateEscuro';
 import TemplateLilas from './TemplateLilas';
 
 export default function Tema({mobile}) { 
-    console.log(mobile)
     var size;
     if (mobile) {
         size = {
@@ -24,7 +23,7 @@ export default function Tema({mobile}) {
     
     return (    
         <div>
-            <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA" font={"Luckiest Guy"} size ="3em"/>
+            <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA" font={"Luckiest Guy"} size="3em"/>
             <TemplateLilas mobile={mobile} />
             <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                 <Link to={{
