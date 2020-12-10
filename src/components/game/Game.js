@@ -1,7 +1,7 @@
 import Letra from './Letra'
 import Espaco from './Espaco'
 import DropArea from './DropArea'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { DndProvider} from "react-dnd";
 import { TouchBackend } from "react-dnd-touch-backend";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -10,16 +10,11 @@ import TemplateLilas from '../TemplateLilas';
 import Swal from 'sweetalert2'
 import {RandomWord} from '../RandomWord'
 
-function SwalEnviar(fase, level,{ increaseFase, increaseLevel}, first) {
+function SwalEnviar(fase, level) {
 
-    console.log("level: " + level + " fase: " + fase)
-    var word, palavra;
-     
         var cor = sessionStorage.getItem("correc")
         if (cor === "true") {
             if (fase < level) {
-                console.log("+fase")
-                increaseFase(fase+1)
                 Swal.fire({
                     title: "PARABÉNS",
                     text: "A resposta está correta",
@@ -42,13 +37,8 @@ function SwalEnviar(fase, level,{ increaseFase, increaseLevel}, first) {
                     confirmButtonColor: '#7b79f1',
                     padding: '5em',
                     background: '#2a279d'
-                })   
-                increaseFase(1)
-                increaseLevel(level + 1)
-                palavra = RandomWord(level)
+                })
             }
-            word = palavra[fase - 1]
-            console.log("palavra da rodada = " + word)
         }
         else{
             Swal.fire({
@@ -61,7 +51,7 @@ function SwalEnviar(fase, level,{ increaseFase, increaseLevel}, first) {
                 padding: '3em'
             })
         }
-    return word;
+    return ;
 } 
 
 function Word(palavra, mobile) {
@@ -96,10 +86,25 @@ function Word(palavra, mobile) {
 
 
 export default function Game({mobile, first}){
-    const [fase, increaseFase] = useState(1)
-    const [level, increaseLevel] = useState(1) 
+    var fase = 1
+    var level = 1 
+    const [, setClick] = useState(false) 
 
-    var word = RandomWord(1)[0]
+    var palavra = RandomWord(level), word = palavra[0];
+    
+    useEffect(() => {
+            if (fase<level) {
+                fase = fase+1
+            }
+            else { 
+                fase = 1
+                level = (level + 1)
+                palavra = RandomWord(level)
+                word = palavra[fase - 1]
+            }
+        setClick(false)
+            
+    })
 
     return (
         <div>
@@ -111,7 +116,7 @@ export default function Game({mobile, first}){
                 </DndProvider>
             </div>
             <div style={{ display: "flex" }}>
-                <a onClick={() => SwalEnviar(fase, level, {increaseFase, increaseLevel}, first)} className="botao-redondo escuro">
+                <a onClick={() => SwalEnviar(fase, level),setClick(true)} className="botao-redondo escuro">
                     <img src="/img/enviar.png" alt="enviar" />
                 </a>
                 <a className="botao-redondo lilas">
@@ -132,4 +137,13 @@ sem first-> apenas conteudo 1 -> nao muda o level pq n é um componente
 ** transformar em class e mudar state
 ** correction virar componente
 ** volta pro first (alias, pq ele sorteava duas vezes, como se fosse vdd, mas n mostrava o alert 2x)
+
+1
+3
+6
+10
+15
+
+//hooks deu ruim, tentar class
+
 */
