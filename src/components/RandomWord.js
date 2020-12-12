@@ -3,9 +3,6 @@ import {palavraDengue} from './content/XMLDengue';
 import {palavraZika} from './content/XMLZika'; 
 import {palavraChikungunya} from './content/XMLChikungunya'; 
 import { palavraFebre } from './content/XMLFebre'; 
-import {useLocation} from 'react-router-dom'
-
-
 function Sorteio(doenca, level) {
     var questoes =[]
     const matriz =
@@ -27,17 +24,15 @@ function Sorteio(doenca, level) {
     return questoes
 }  
     
-export function RandomWord(level) { 
+export function RandomWord(level, tema) { 
    
-    var tema =  useLocation().tema, palavra = [2], indexQ = [], vet = [];
+    var palavra = [2], indexQ = [], vet = [];
     if (tema === "Aedes") {
         palavra = palavraAedes();
         
     }
     else if (tema === "Chikungunya") {
-        let i = 0;
-        //console.log(i, level)
-        
+        let i = 0;    
         indexQ = Sorteio(1, level)
         while(i < level) {
             palavra = palavraChikungunya(indexQ[i], level);
@@ -57,5 +52,6 @@ export function RandomWord(level) {
         palavra = palavraFebre();
         
     }  
+    console.log("vet:" + vet)
     return vet
 }

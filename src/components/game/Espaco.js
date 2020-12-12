@@ -24,7 +24,7 @@ export default function Espaco({id, row, column, trues, falses, first}) {
         }
         trues++
       }
-      console.log(first, id, trues - falses)
+      //console.log(first, id, trues - falses)
        // eslint-disable-next-line
       if (first == 1 ) {
         if (trues - falses <= 0) {

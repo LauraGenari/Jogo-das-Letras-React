@@ -12,7 +12,7 @@ export default class Routes extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/tema" render={(props) => <Tema {...props} mobile={mobile}/>}  />
-                    <Route path="/game" render={(props) => <Game {...props} mobile={mobile} first={true}/>}  />
+                    <Route path="/game" render={(props) => <Game {...props} mobile={mobile}/>}  />
                     <Redirect to="/tema"/>
                 </Switch>                           
             </BrowserRouter> 
