@@ -228,14 +228,12 @@ const XMLZika = `
 
 var xml = new XMLParser().parseFromString(XMLZika);
 
-export function palavraZika() {
-	var palavra = xml.getElementsByTagName('Unscramble')[0].getElementsByTagName('fase1')[0].getElementsByTagName('Conteudo1')[0].getElementsByTagName('PalavraAssoc')[0].value;
-	
-	return palavra;
-}
-
-export function questaoZika() {
-	var palavra = xml.getElementsByTagName('Unscramble')[0].getElementsByTagName('fase1')[0].getElementsByTagName('Conteudo1')[0].getElementsByTagName('Dica')[0].value;
+export function palavraZika(i, level) {
+	const fase = 'fase' + level;
+	const conteudo = 'Conteudo'+level
+	var palavra = []
+	palavra.push(xml.getElementsByTagName('Unscramble')[0].getElementsByTagName(fase)[0].getElementsByTagName(conteudo)[i].getElementsByTagName('PalavraAssoc')[0].value)
+	palavra.push(xml.getElementsByTagName('Unscramble')[0].getElementsByTagName(fase)[0].getElementsByTagName(conteudo)[i].getElementsByTagName('Dica')[0].value)
 	
 	return palavra;
 }

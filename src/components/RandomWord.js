@@ -7,12 +7,12 @@ function Sorteio(doenca, level) {
     var questoes =[]
     const matriz =
         [[11, 11, 10, 9, 10],
-        [9, 9, 9, 7, 10],
+        [9, 9, 9, 7, 8],
         [11, 11, 11, 9, 11],
         [8, 10, 10 ,9, 11],
         [10, 10, 11, 10, 11]]
-    const max = matriz[doenca][level]
-        
+    const max = matriz[doenca][level-1]
+    console.log("MAX: " + max)    
     for (let i = 0; i < level; i++) {
         let sorteio = Math.floor(Math.random() * (max - i));
         if (questoes.includes(sorteio) === false)
@@ -28,7 +28,13 @@ export function RandomWord(level, tema) {
    
     var palavra = [2], indexQ = [], vet = [];
     if (tema === "Aedes") {
-        palavra = palavraAedes();
+        let i = 0;    
+        indexQ = Sorteio(0, level)
+        while(i < level) {
+            palavra = palavraAedes(indexQ[i], level);
+            vet.push(palavra)
+            i++;
+        }
         
     }
     else if (tema === "Chikungunya") {
@@ -41,17 +47,35 @@ export function RandomWord(level, tema) {
         }
     }
     else if (tema === "Dengue"){
-        palavra = palavraDengue();
+        let i = 0;    
+        indexQ = Sorteio(2, level)
+        while(i < level) {
+            palavra = palavraDengue(indexQ[i], level);
+            vet.push(palavra)
+            i++;
+        }
         
     }
     else if (tema === "Zika"){
-        palavra = palavraZika();
+       let i = 0;    
+        indexQ = Sorteio(3, level)
+        while(i < level) {
+            palavra = palavraZika(indexQ[i], level);
+            vet.push(palavra)
+            i++;
+        }
         
     }
     else if (tema === "FebreAmarela"){
-        palavra = palavraFebre();
+        let i = 0;    
+        indexQ = Sorteio(4, level)
+        while(i < level) {
+            palavra = palavraFebre(indexQ[i], level);
+            vet.push(palavra)
+            i++;
+        }
         
     }  
-    //console.log("vet: " + vet )
+    console.log("vet: " + vet )
     return vet
 }

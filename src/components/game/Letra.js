@@ -12,11 +12,11 @@ export default function Letra({id, row, column}) {
           isDragging: monitor.isDragging(),
         }),
         end(item) {
-            if (item.row !== row || item.column !== column) {
-                setColumn(item.column)
-                setRow(item.row)
-            }
-        }       
+                if (item.row !== row || item.column !== column) {
+                    setColumn(item.column)
+                    setRow(item.row)
+                }
+        }
     })
 
     

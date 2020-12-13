@@ -24,14 +24,14 @@ function Word(palavra, mobile) {
         for (let i = 0; i < max; i++){
             drop.push(<DropArea column={1} row={i+1}  key={i}/>)
             letra.push(<Letra column={1} row={i + 1} id={embaralha[i]} key={i}/>)
-            espaco.push(<Espaco column={2} row={i + 1} id={palavra[i]} key={i} falses={0} trues={0} first={0}/>)
+            espaco.push(<Espaco column={2} row={i + 1} id={palavra[i]} key={i} falses={0} trues={0} first={0} undropped={0}/>)
         }  
     }
     else {
         for (let i = 0; i < max; i++){
             drop.push(<DropArea row={2} column={i+1}  key={i}/>)
             letra.push(<Letra row={2} column={i + 1} id={embaralha[i]} key={i}/>)
-            espaco.push(<Espaco row={1} column={i + 1} id={palavra[i]} key={i} falses={0} trues={0} first={0}/>)
+            espaco.push(<Espaco row={1} column={i + 1} id={palavra[i]} key={i} falses={0} trues={0} first={0} undropped={0}/>)
         }            
     }
     retorno.push(drop)
@@ -54,37 +54,39 @@ export default class Game extends Component{
         this.levelUp = this.levelUp.bind(this)
     }
 
-      levelUp() {
-        if (this.state.fase < this.state.level) {
-            this.setState(prevState => ({
-                fase: prevState.fase + 1,
-                word: this.state.palavra[this.state.fase]
-            }))
-        }
-        else { 
-            const pw = RandomWord(this.state.level + 1, this.props.location.tema)
-            this.setState(prevState => ({
-                fase: 1,
-                level : prevState.level + 1,
-                palavra: pw,
-                word: pw[0]
-            }))
-        }
-
+    levelUp() {
+          
         var cor = sessionStorage.getItem("correc")
         if (cor === "true") {
             if (this.state.fase < this.state.level) {
+                this.setState(prevState => ({
+                    fase: prevState.fase + 1,
+                    word: this.state.palavra[this.state.fase]
+                }))
                 Swal.fire({
-                    title: "PARABÉNS",
-                    text: "A resposta está correta",
-                    imageUrl: "/img/feliz.png",
-                    showCloseButton: true,
-                    showCancelButton: false,
-                    showConfirmButton: false,
-                    padding: '3em'
-                })
+                        title: "PARABÉNS",
+                        text: "A resposta está correta",
+                        imageUrl: "/img/feliz.png",
+                        showCloseButton: true,
+                        showCancelButton: false,
+                        showConfirmButton: false,
+                        padding: '3em'
+                    })
             }
-            else {     
+            else { 
+                if (this.state.level + 1 === 6) {
+                    console.log("PAROU")
+                }
+                else {
+                    const pw = RandomWord(this.state.level + 1, this.props.location.tema)
+                    this.setState(prevState => ({
+                        fase: 1,
+                        level : prevState.level + 1,
+                        palavra: pw,
+                        word: pw[0]
+                    }))
+                    
+                }  
                 Swal.fire({
                     title: "<span style='color:#fff'>PARABÉNS!</span>",
                     html: "<span style='color:#fff'>Você passou para a fase ! \n Encontre as próximas  palavras para finalizar o jogo!</span>",
@@ -141,13 +143,20 @@ export default class Game extends Component{
 
 }
 /**
- * -- tem algum bug sinistro que não vai para o level 5
- * 
- * -reordenar letras e reset 
- * -fazer bolinhas de fase
- * -fazer bloco azul de level
- * -cronometro
- * 
+ * TODO
+ * lógica:
+ * -reordenar letras e reset  --- reload espaço, se o elemento pai é re-renderizado, reload. Usar level e fase 
+ * -cronometro 
  * -fase no swal
  * -confetes
+ * -timer no swal
+ * 
+ * css:
+ * -fazer bolinhas de fase
+ * -fazer bloco azul de level
+ * 
+ * logica:
+ *  -colorir bolinhas de fase
+ *  -colorir blocos de level
+ * 
  */

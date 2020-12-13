@@ -1,11 +1,12 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-export default function Espaco({id, row, column, trues, falses, first}) {
+export default function Espaco({id, row, column, trues, falses, first, undropped}) {
   
   const [, drop] = useDrop({
     accept: 'letra',
     drop: (item) => {
+      undropped = 1;
       item.row = row;
       item.column = column;
        // eslint-disable-next-line
@@ -43,6 +44,10 @@ export default function Espaco({id, row, column, trues, falses, first}) {
       }
     }
   })
+
+  if (undropped === 0) {
+    sessionStorage.setItem("correc", "false");   
+  }
  
   return (<span ref={drop} className="espaco" style={{ gridColumn:column, gridRow:row}}></span>)
     
