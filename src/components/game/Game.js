@@ -140,11 +140,9 @@ export default class Game extends Component{
     }
 
 }
-
-//tem algum bug sinistro que não vai para o level 5
-
-
 /**
+ * -- tem algum bug sinistro que não vai para o level 5
+ * 
  * -reordenar letras e reset 
  * -fazer bolinhas de fase
  * -fazer bloco azul de level
