@@ -44,38 +44,32 @@ export default class Game extends Component{
     
     constructor(props) {
         super(props);
+        const pw = RandomWord(1, this.props.location.tema)
         this.state = {
             fase: 1, 
             level: 1,
-            palavra: RandomWord(1, this.props.location.tema),
-            word: ""
+            palavra: pw,
+            word: pw[0] 
         }
         this.levelUp = this.levelUp.bind(this)
     }
 
-    componentWillMount() {
-        this.setState({
-           word: this.state.palavra[0]
-        })
-    }
-
-    levelUp() {
+      levelUp() {
         if (this.state.fase < this.state.level) {
             this.setState(prevState => ({
                 fase: prevState.fase + 1,
-                word: prevState.palavra[prevState.fase - 1]
-            }), this.forceUpdate)
+                word: this.state.palavra[this.state.fase]
+            }))
         }
         else { 
+            const pw = RandomWord(this.state.level + 1, this.props.location.tema)
             this.setState(prevState => ({
                 fase: 1,
                 level : prevState.level + 1,
-                palavra: RandomWord(prevState.level, this.props.location.tema),
-                word: prevState.palavra[prevState.fase - 1]
-            }), this.forceUpdate)
+                palavra: pw,
+                word: pw[0]
+            }))
         }
-
-        console.log(this.state.fase, this.state.level, this.state.palavra, this.state.word)
 
         var cor = sessionStorage.getItem("correc")
         if (cor === "true") {
@@ -91,7 +85,6 @@ export default class Game extends Component{
                 })
             }
             else {     
-                console.log("+level")
                 Swal.fire({
                     title: "<span style='color:#fff'>PARABÉNS!</span>",
                     html: "<span style='color:#fff'>Você passou para a fase ! \n Encontre as próximas  palavras para finalizar o jogo!</span>",
@@ -118,8 +111,8 @@ export default class Game extends Component{
         }
     }
     
-    render() {        
-        console.log(this.state.word)
+    render() {  
+        console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
         return (
             <div>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" />
@@ -133,12 +126,14 @@ export default class Game extends Component{
                     <a onClick={() => this.levelUp()} className="botao-redondo escuro">
                         <img src="/img/enviar.png" alt="enviar" />
                     </a>
-                    <a className="botao-redondo lilas">
-                        <img src="/img/resetar.png" alt="resetar" />
-                    </a>
-                    <a className="botao-redondo rosa">
-                        <img src="/img/teclado.png" alt="resetar" />
-                    </a>
+                    <div style={{display:"none"}}>
+                        <a className="botao-redondo lilas">
+                            <img src="/img/resetar.png" alt="resetar" />
+                        </a>
+                        <a className="botao-redondo rosa">
+                            <img src="/img/teclado.png" alt="resetar" />
+                        </a>
+                    </div>
                 </div>
             </div>
         )    
@@ -146,19 +141,15 @@ export default class Game extends Component{
 
 }
 
-/*first -> sorteava 2x pq nunca ficava falso
-sem first-> apenas conteudo 1 -> nao muda o level pq n é um componente
+//tem algum bug sinistro que não vai para o level 5
 
-** transformar em class e mudar state
-** correction virar componente
-** volta pro first (alias, pq ele sorteava duas vezes, como se fosse vdd, mas n mostrava o alert 2x)
 
-1 -2
-3 -3
-6 -4
-10 -5
-15
-
-//hooks deu ruim, tentar class
-
-*/
+/**
+ * -reordenar letras e reset 
+ * -fazer bolinhas de fase
+ * -fazer bloco azul de level
+ * -cronometro
+ * 
+ * -fase no swal
+ * -confetes
+ */

@@ -52,6 +52,6 @@ export function RandomWord(level, tema) {
         palavra = palavraFebre();
         
     }  
-    console.log("vet:" + vet)
+    //console.log("vet: " + vet )
     return vet
 }
