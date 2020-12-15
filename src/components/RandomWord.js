@@ -12,7 +12,7 @@ function Sorteio(doenca, level) {
         [8, 10, 10 ,9, 11],
         [10, 10, 11, 10, 11]]
     const max = matriz[doenca][level-1]
-    console.log("MAX: " + max)    
+    
     for (let i = 0; i < level; i++) {
         let sorteio = Math.floor(Math.random() * (max - i));
         if (questoes.includes(sorteio) === false)
@@ -76,6 +76,6 @@ export function RandomWord(level, tema) {
         }
         
     }  
-    console.log("vet: " + vet )
+    //console.log("vet: " + vet )
     return vet
 }

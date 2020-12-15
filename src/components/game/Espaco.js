@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
+
 export default function Espaco({id, row, column, trues, falses, first, undropped}) {
-  
   const [, drop] = useDrop({
     accept: 'letra',
     drop: (item) => {

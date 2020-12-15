@@ -10,36 +10,6 @@ import TemplateLilas from '../TemplateLilas';
 import Swal from 'sweetalert2'
 import {RandomWord} from '../RandomWord'
 
-function Word(palavra, mobile) {
-    var embaralha = [];
-
-    var sorteio, max = palavra.length;
-    const palavraArr = palavra.toString().split("")        
-    for (let i = 0; i < max; i++) {
-        sorteio = Math.floor(Math.random() * (max - i));
-        embaralha[i] = (palavraArr.splice(sorteio, 1))            
-    }
-    var drop = [], letra=[], espaco=[], retorno=[];
-    if (mobile) {
-        for (let i = 0; i < max; i++){
-            drop.push(<DropArea column={1} row={i+1}  key={i}/>)
-            letra.push(<Letra column={1} row={i + 1} id={embaralha[i]} key={i}/>)
-            espaco.push(<Espaco column={2} row={i + 1} id={palavra[i]} key={i} falses={0} trues={0} first={0} undropped={0}/>)
-        }  
-    }
-    else {
-        for (let i = 0; i < max; i++){
-            drop.push(<DropArea row={2} column={i+1}  key={i}/>)
-            letra.push(<Letra row={2} column={i + 1} id={embaralha[i]} key={i}/>)
-            espaco.push(<Espaco row={1} column={i + 1} id={palavra[i]} key={i} falses={0} trues={0} first={0} undropped={0}/>)
-        }            
-    }
-    retorno.push(drop)
-    retorno.push(letra)
-    retorno.push(espaco)
-    return retorno
-}
-
 export default class Game extends Component{
     
     constructor(props) {
@@ -49,9 +19,43 @@ export default class Game extends Component{
             fase: 1, 
             level: 1,
             palavra: pw,
-            word: pw[0] 
+            word: pw[0],
+            active: false
         }
         this.levelUp = this.levelUp.bind(this)
+        this.Word = this.Word.bind(this)
+    }
+    
+    Word(palavra, mobile) {
+    
+        var embaralha = [];
+
+        var sorteio, max = palavra.length;
+        const palavraArr = palavra.toString().split("")        
+        for (let i = 0; i < max; i++) {
+            sorteio = Math.floor(Math.random() * (max - i));
+            embaralha[i] = (palavraArr.splice(sorteio, 1))            
+        }
+        var drop = [], letra=[], espaco=[], retorno=[];
+        if (mobile) {
+            for (let i = 0; i < max; i++){
+                drop.push(<DropArea column={1} row={i+1}  key={palavra[i]+embaralha[i]+i}/>)
+                letra.push(<Letra column={1} row={i + 1} id={embaralha[i]} key={palavra[i]+embaralha[i]+i} />)
+                espaco.push(<Espaco column={2} row={i + 1} id={palavra[i]} key={palavra[i]+embaralha[i]+i} falses={0} trues={0} first={0} undropped={0}/>)
+            }  
+        }
+        else {
+            for (let i = 0; i < max; i++){
+                drop.push(<DropArea row={2} column={i+1}  key={palavra[i]+embaralha[i]+i} />)
+                letra.push(<Letra row={2} column={i + 1} id={embaralha[i]} key={palavra[i]+embaralha[i]+i}/>)
+                espaco.push(<Espaco row={1} column={i + 1} id={palavra[i]} key={palavra[i]+embaralha[i]+i} falses={0} trues={0} first={0} undropped={0}/>)
+            }            
+        }
+        retorno.push(drop)
+        retorno.push(letra)
+        retorno.push(espaco)
+
+        return retorno
     }
 
     levelUp() {
@@ -61,7 +65,8 @@ export default class Game extends Component{
             if (this.state.fase < this.state.level) {
                 this.setState(prevState => ({
                     fase: prevState.fase + 1,
-                    word: this.state.palavra[this.state.fase]
+                    word: this.state.palavra[this.state.fase],
+                    active: false
                 }))
                 Swal.fire({
                         title: "PARABÉNS",
@@ -70,10 +75,23 @@ export default class Game extends Component{
                         showCloseButton: true,
                         showCancelButton: false,
                         showConfirmButton: false,
-                        padding: '3em'
+                          padding: '3em',
+                        timer: 2000
                     })
             }
-            else { 
+            else {   
+                Swal.fire({
+                    title: "<span style='color:#fff'>PARABÉNS!</span>",
+                    html: "<span style='color:#fff'>Você passou para a próxima fase ! \n Encontre as próximas palavras para finalizar o jogo!</span>",
+                    imageUrl: "/img/feliz-estrela.png",
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "Continuar&nbsp;<img src='/img/play.png' style='display:flex-inline; vertical-align:middle'/>",
+                    confirmButtonColor: '#7b79f1',
+                    padding: '5em',
+                    background: "#2a279d url('https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif",
+                    
+                })
                 if (this.state.level + 1 === 6) {
                     console.log("PAROU")
                 }
@@ -83,21 +101,11 @@ export default class Game extends Component{
                         fase: 1,
                         level : prevState.level + 1,
                         palavra: pw,
-                        word: pw[0]
+                        word: pw[0],
+                        active: true
                     }))
                     
-                }  
-                Swal.fire({
-                    title: "<span style='color:#fff'>PARABÉNS!</span>",
-                    html: "<span style='color:#fff'>Você passou para a fase ! \n Encontre as próximas  palavras para finalizar o jogo!</span>",
-                    imageUrl: "/img/feliz-estrela.png",
-                    showCloseButton: false,
-                    showCancelButton: false,
-                    confirmButtonText: "Continuar&nbsp;<img src='/img/enviar.png'/>",
-                    confirmButtonColor: '#7b79f1',
-                    padding: '5em',
-                    background: '#2a279d'
-                })
+                }
             }
         }
         else{
@@ -108,20 +116,21 @@ export default class Game extends Component{
                 showCloseButton: true,
                 showCancelButton: false,
                 showConfirmButton: false,
-                padding: '3em'
+                padding: '3em',
+                timer: 2000
             })
         }
     }
-    
     render() {  
-        console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
+        //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
+        //console.log(this.state.active)
         return (
             <div>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" />
                 <TemplateLilas mobile={this.props.mobile} />
                 <div className="grid">
                     <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
-                        {Word(this.state.word[0], this.props.mobile)}
+                        {this.Word(this.state.word[0], this.props.mobile)}
                     </DndProvider>
                 </div>
                 <div style={{ display: "flex" }}>
@@ -145,11 +154,9 @@ export default class Game extends Component{
 /**
  * TODO
  * lógica:
- * -reordenar letras e reset  --- reload espaço, se o elemento pai é re-renderizado, reload. Usar level e fase 
+ * -reset 
  * -cronometro 
- * -fase no swal
- * -confetes
- * -timer no swal
+ * -fase no swal ?
  * 
  * css:
  * -fazer bolinhas de fase
@@ -158,5 +165,13 @@ export default class Game extends Component{
  * logica:
  *  -colorir bolinhas de fase
  *  -colorir blocos de level
+ * 
+ * 
+ * https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif
+ * https://i.giphy.com/media/5QStNXJ9luL8FYjI42/giphy.webp
+ * https://media0.giphy.com/media/feg7YjzwtwuitMcmLR/giphy.gif
+ * https://i.giphy.com/media/jQE07RpzMDmwCras0S/giphy.webp
+ * https://i.giphy.com/media/fvMy0610Z0uJ87KYb9/giphy.webp
+ * https://media2.giphy.com/media/f9dk42HSu0AM39kSMF/giphy.gif
  * 
  */
