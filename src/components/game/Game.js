@@ -8,7 +8,8 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import TemplateEscuro from '../TemplateEscuro';
 import TemplateLilas from '../TemplateLilas';
 import Swal from 'sweetalert2'
-import {RandomWord} from '../RandomWord'
+import { RandomWord } from '../RandomWord'
+import Fase from './TemplateFases'
 
 export default class Game extends Component{
     
@@ -126,25 +127,24 @@ export default class Game extends Component{
         //console.log(this.state.active)
         return (
             <div>
-                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" />
+                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
                 <TemplateLilas mobile={this.props.mobile} />
                 <div className="grid">
                     <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
                         {this.Word(this.state.word[0], this.props.mobile)}
                     </DndProvider>
                 </div>
-                <div style={{ display: "flex" }}>
+                <div style={{display:"flex" , position:"absolute", }}>
                     <a onClick={() => this.levelUp()} className="botao-redondo escuro">
                         <img src="/img/enviar.png" alt="enviar" />
                     </a>
-                    <div style={{display:"none"}}>
-                        <a className="botao-redondo lilas">
-                            <img src="/img/resetar.png" alt="resetar" />
-                        </a>
-                        <a className="botao-redondo rosa">
-                            <img src="/img/teclado.png" alt="resetar" />
-                        </a>
-                    </div>
+                    <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
+                        <img src="/img/resetar.png" alt="resetar" />
+                    </a>
+                    <Fase level={this.state.level}  mobile={this.props.mobile}/>
+                    <a className="botao-redondo rosa">
+                        <img src="/img/teclado.png" alt="resetar" />
+                    </a>         
                 </div>
             </div>
         )    
@@ -154,18 +154,13 @@ export default class Game extends Component{
 /**
  * TODO
  * lógica:
- * -reset 
  * -cronometro 
  * -fase no swal ?
+ * -arraste mobile com img
  * 
  * css:
- * -fazer bolinhas de fase
- * -fazer bloco azul de level
- * 
- * logica:
- *  -colorir bolinhas de fase
- *  -colorir blocos de level
- * 
+ * -posicionar bloco azul de level
+ * -mudar botoes doenças
  * 
  * https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif
  * https://i.giphy.com/media/5QStNXJ9luL8FYjI42/giphy.webp
