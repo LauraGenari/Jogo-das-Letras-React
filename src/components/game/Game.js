@@ -123,9 +123,11 @@ export default class Game extends Component{
             })
         }
     }
+
     render() {  
         //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
         //console.log(this.state.active)
+        const cel = window.innerWidth < 400
         const desktop = {
             display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
         }
@@ -135,34 +137,37 @@ export default class Game extends Component{
         return (
             <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"center"}}>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
-                <TemplateLilas mobile={this.props.mobile} game={true}/>
-                <div className="grid" style={{marginRight:"10px"}}>
-                    <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
-                        {this.Word(this.state.word[0], this.props.mobile)}
-                    </DndProvider>
-                </div>
-                <div style={this.props.mobile ? mobile : desktop}>
-                    <div style={{display:"flex", flexWrap:"wrap", width:"150px", alignItems:"center", justifyContent:"center"}}>
-                        <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
-                            <img src="/img/resetar.png" alt="resetar" />
-                        </a>
-                        <small style={{ display: this.props.mobile ? "block" : "none"}} >Embaralhar</small>
-                        <a onClick={() => this.levelUp()} className="botao-redondo escuro">
-                            <img src="/img/enviar.png" alt="enviar" />
-                        </a>
-                        <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
-
+                <TemplateLilas mobile={this.props.mobile} game={true} />
+                <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0"}}>
+                    <div className="grid" >
+                        <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
+                            {this.Word(this.state.word[0], this.props.mobile)}
+                        </DndProvider>
                     </div>
-                    <Fase level={this.state.level}  mobile={this.props.mobile}/>
-                    <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
-                        <img src="/img/teclado.png" alt="resetar" />
-                    </a>         
+                    <div style={this.props.mobile ? mobile : desktop}>
+                        <div style={{display:"flex", flexWrap:"wrap", width:"150px", alignItems:"center", justifyContent:"center"}}>
+                            <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
+                                <img src="/img/resetar.png" alt="resetar" />
+                            </a>
+                            <small style={{ display: this.props.mobile ? "block" : "none"}} >Embaralhar</small>
+                            <a onClick={() => this.levelUp()} className="botao-redondo escuro">
+                                <img src="/img/enviar.png" alt="enviar" />
+                            </a>
+                            <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
+
+                        </div>
+                        <Fase level={this.state.level} mobile={this.props.mobile} />
+                        <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
+                            <img src="/img/teclado.png" alt="resetar" />
+                        </a>         
+                    </div>
                 </div>
             </div>
         )    
     }
 
 }
+
 /**
  * TODO
  * lógica:
