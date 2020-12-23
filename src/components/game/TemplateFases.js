@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Stopwatch from './Cornometro'
 
 export default class Fases extends Component{
     render() {
@@ -52,7 +53,7 @@ export default class Fases extends Component{
                 <div style={{backgroundColor: tres}} className="texto">{fase}3</div>
                 <div style={{backgroundColor: quatro}} className="texto">{fase}4</div>
                 <div style={{backgroundColor: cinco}} className="texto">{fase}5</div>
-                <div style={{backgroundColor:"#fff", width:"80px", height:"40px", borderRadius:"4px", margin:"4px"}}></div>
+                <div style={{backgroundColor:"#fff", width:"80px", height:"40px", borderRadius:"4px", margin:"4px"}}><Stopwatch/></div>
             </div>
         )
     }

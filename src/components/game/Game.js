@@ -11,7 +11,6 @@ import Swal from 'sweetalert2'
 import { RandomWord } from '../RandomWord'
 import Fase from './TemplateFases'
 
-
 export default class Game extends Component{
     
     constructor(props) {
