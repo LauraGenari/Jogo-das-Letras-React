@@ -2,7 +2,7 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 
 
-export default function Espaco({id, row, column, trues, falses, first, undropped}) {
+export default function Espaco({id, row, column, trues, falses, first, undropped,mobile}) {
   const [, drop] = useDrop({
     accept: 'letra',
     drop: (item) => {
@@ -48,7 +48,9 @@ export default function Espaco({id, row, column, trues, falses, first, undropped
   if (undropped === 0) {
     sessionStorage.setItem("correc", "false");   
   }
- 
-  return (<span ref={drop} className="espaco" style={{ gridColumn:column, gridRow:row}}></span>)
-    
+  if(mobile)  
+    return (<span ref={drop} className="espaco mobile" style={{gridColumn:column, gridRow:row}}></span>)
+  else  
+  return (<span ref={drop} className="espaco desktop" style={{gridColumn:column, gridRow:row}}></span>)
+
 }

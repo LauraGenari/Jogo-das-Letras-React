@@ -42,16 +42,17 @@ export default class Fases extends Component{
         if (this.props.mobile) 
             fase = "F"
         else {
-            fase = "Fase"
+            fase = "Fase "
         }
 
         return (
-            <div className="fases" level={this.props.level}>
-                <div style={{backgroundColor: um, padding:"4px", margin:"2px", borderRadius:"4px"}}>{fase} 1</div>
-                <div style={{backgroundColor: dois, padding:"4px", margin:"2px", borderRadius:"4px"}}>{fase} 2</div>
-                <div style={{backgroundColor: tres, padding:"4px", margin:"2px", borderRadius:"4px"}}>{fase} 3</div>
-                <div style={{backgroundColor: quatro, padding:"4px", margin:"2px", borderRadius:"4px"}}>{fase} 4</div>
-                <div style={{backgroundColor: cinco, padding:"4px", margin:"2px", borderRadius:"4px"}}>{fase} 5</div>
+            <div className="fases" level={this.props.level} style={{width: this.props.mobile ? "180px" : "max-content"}}>
+                <div style={{backgroundColor: um}} className="texto">{fase}1</div>
+                <div style={{backgroundColor: dois}} className="texto">{fase}2</div>
+                <div style={{backgroundColor: tres}} className="texto">{fase}3</div>
+                <div style={{backgroundColor: quatro}} className="texto">{fase}4</div>
+                <div style={{backgroundColor: cinco}} className="texto">{fase}5</div>
+                <div style={{backgroundColor:"#fff", width:"80px", height:"40px", borderRadius:"4px", margin:"4px"}}></div>
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-export default function DropArea({row, column}) {
+export default function DropArea({row, column, mobile}) {
   
   const [, drop] = useDrop({
     accept: 'letra',
@@ -11,7 +11,9 @@ export default function DropArea({row, column}) {
       
     }
   })
-
-  return (<span ref={drop} className="droparea" style={{gridColumn:column, gridRow:row}}></span>)
-    
+  if(mobile)
+    return (<span ref={drop} className="droparea mobile" style={{ padding:"10px",gridColumn:column, gridRow:row}}></span>)
+  else
+    return (<span ref={drop} className="droparea desktop" style={{ padding:"10px",gridColumn:column, gridRow:row}}></span>)
+  
 }

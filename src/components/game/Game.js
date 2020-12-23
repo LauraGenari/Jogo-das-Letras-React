@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 import { RandomWord } from '../RandomWord'
 import Fase from './TemplateFases'
 
+
 export default class Game extends Component{
     
     constructor(props) {
@@ -40,16 +41,16 @@ export default class Game extends Component{
         var drop = [], letra=[], espaco=[], retorno=[];
         if (mobile) {
             for (let i = 0; i < max; i++){
-                drop.push(<DropArea column={1} row={i+1}  key={palavra[i]+embaralha[i]+i}/>)
-                letra.push(<Letra column={1} row={i + 1} id={embaralha[i]} key={palavra[i]+embaralha[i]+i} />)
-                espaco.push(<Espaco column={2} row={i + 1} id={palavra[i]} key={palavra[i]+embaralha[i]+i} falses={0} trues={0} first={0} undropped={0}/>)
+                drop.push(<DropArea column={1} row={i+1}  key={palavra[i]+embaralha[i]+i}  mobile={mobile}/>)
+                letra.push(<Letra column={1} row={i + 1} id={embaralha[i]} key={palavra[i] + embaralha[i] + i} mobile={mobile}/>)
+                espaco.push(<Espaco column={2} row={i + 1} id={palavra[i]} key={palavra[i]+embaralha[i]+i} falses={0} trues={0} first={0} undropped={0}  mobile={mobile}/>)
             }  
         }
         else {
             for (let i = 0; i < max; i++){
-                drop.push(<DropArea row={2} column={i+1}  key={palavra[i]+embaralha[i]+i} />)
-                letra.push(<Letra row={2} column={i + 1} id={embaralha[i]} key={palavra[i]+embaralha[i]+i}/>)
-                espaco.push(<Espaco row={1} column={i + 1} id={palavra[i]} key={palavra[i]+embaralha[i]+i} falses={0} trues={0} first={0} undropped={0}/>)
+                drop.push(<DropArea row={2} column={i+1}  key={palavra[i]+embaralha[i]+i}  mobile={false}/>)
+                letra.push(<Letra row={2} column={i + 1} id={embaralha[i]} key={palavra[i]+embaralha[i]+i} mobile={false}/>)
+                espaco.push(<Espaco row={1} column={i + 1} id={palavra[i]} key={palavra[i]+embaralha[i]+i} falses={0} trues={0} first={0} undropped={0}  mobile={false}/>)
             }            
         }
         retorno.push(drop)
@@ -125,24 +126,35 @@ export default class Game extends Component{
     render() {  
         //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
         //console.log(this.state.active)
+        const desktop = {
+            display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
+        }
+        const mobile = {
+            display:"flex", alignItems:"center", flexWrap:"wrap-reverse", width:"250px", justifyContent:"center"
+        }
         return (
-            <div>
+            <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"center"}}>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
-                <TemplateLilas mobile={this.props.mobile} />
-                <div className="grid">
+                <TemplateLilas mobile={this.props.mobile} game={true}/>
+                <div className="grid" style={{marginRight:"10px"}}>
                     <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
                         {this.Word(this.state.word[0], this.props.mobile)}
                     </DndProvider>
                 </div>
-                <div style={{display:"flex" , position:"absolute", }}>
-                    <a onClick={() => this.levelUp()} className="botao-redondo escuro">
-                        <img src="/img/enviar.png" alt="enviar" />
-                    </a>
-                    <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
-                        <img src="/img/resetar.png" alt="resetar" />
-                    </a>
+                <div style={this.props.mobile ? mobile : desktop}>
+                    <div style={{display:"flex", flexWrap:"wrap", width:"150px", alignItems:"center", justifyContent:"center"}}>
+                        <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
+                            <img src="/img/resetar.png" alt="resetar" />
+                        </a>
+                        <small style={{ display: this.props.mobile ? "block" : "none"}} >Embaralhar</small>
+                        <a onClick={() => this.levelUp()} className="botao-redondo escuro">
+                            <img src="/img/enviar.png" alt="enviar" />
+                        </a>
+                        <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
+
+                    </div>
                     <Fase level={this.state.level}  mobile={this.props.mobile}/>
-                    <a className="botao-redondo rosa">
+                    <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
                         <img src="/img/teclado.png" alt="resetar" />
                     </a>         
                 </div>
@@ -155,12 +167,10 @@ export default class Game extends Component{
  * TODO
  * lógica:
  * -cronometro 
- * -fase no swal ?
- * -arraste mobile com img
+ * -não deixar passar de nivel com espaço vazio incial
  * 
  * css:
  * -posicionar bloco azul de level
- * -mudar botoes doenças
  * 
  * https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif
  * https://i.giphy.com/media/5QStNXJ9luL8FYjI42/giphy.webp
