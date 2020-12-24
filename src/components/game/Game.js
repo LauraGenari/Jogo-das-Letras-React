@@ -146,18 +146,18 @@ export default class Game extends Component{
                     <div style={this.props.mobile ? mobile : desktop}>
                         <div style={{display:"flex", flexWrap:"wrap", width:"150px", alignItems:"center", justifyContent:"center"}}>
                             <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
-                                <img src="/img/resetar.png" alt="resetar" />
+                                <img src={  window.location.origin + "/img/resetar.png"} alt="resetar" />
                             </a>
                             <small style={{ display: this.props.mobile ? "block" : "none"}} >Embaralhar</small>
                             <a onClick={() => this.levelUp()} className="botao-redondo escuro">
-                                <img src="/img/enviar.png" alt="enviar" />
+                                <img src={  window.location.origin + "/img/enviar.png"} alt="enviar" />
                             </a>
                             <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
 
                         </div>
                         <Fase level={this.state.level} mobile={this.props.mobile} />
                         <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
-                            <img src="/img/teclado.png" alt="resetar" />
+                            <img src={  window.location.origin + "/img/teclado.png"} alt="resetar" />
                         </a>         
                     </div>
                 </div>

@@ -6,8 +6,8 @@ export default class TemplateLilas extends Component {
             if(!this.props.game )
                 return (
                     <div className="bloco-lilas mobile">
-                        <img alt="som" src="/img/com-som-branco.png"style={{padding:"1em"}}/>
-                        <img alt="sair" src="/img/sair.png"style={{padding:"1em"}} />
+                        <img alt="som" src={ window.location.origin + "/img/com-som-branco.png"} style={{padding:"1em"}}/>
+                        <img alt="sair" src={ window.location.origin + "/img/sair.png"} style={{padding:"1em"}} />
                     </div>
                 )
             else {
@@ -17,8 +17,8 @@ export default class TemplateLilas extends Component {
         else {
             return (
                 <div className="bloco-lilas desktop">
-                    <img alt="som" src="/img/com-som-branco.png"style={{padding:"1em"}}/>
-                    <img alt="sair" src="/img/sair.png"style={{padding:"1em"}} />
+                    <img alt="som" src={ window.location.origin + "/img/com-som-branco.png"} style={{padding:"1em"}}/>
+                    <img alt="sair" src={ window.location.origin + "/img/sair.png"} style={{padding:"1em"}} />
                 </div>
             )
         }

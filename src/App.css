@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
 body {
-  background-image: url("/img/background.png");
+  background-image: url("../public/img/background.png");
   overflow: hidden;
   font-family: Roboto;
 }
