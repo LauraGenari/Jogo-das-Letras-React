@@ -1,8 +1,8 @@
-import {palavraAedes} from './content/XMLAedes'; 
-import {palavraDengue} from './content/XMLDengue'; 
-import {palavraZika} from './content/XMLZika'; 
-import {palavraChikungunya} from './content/XMLChikungunya'; 
-import { palavraFebre } from './content/XMLFebre'; 
+import {palavraAedes} from '../content/XMLAedes'; 
+import {palavraDengue} from '../content/XMLDengue'; 
+import {palavraZika} from '../content/XMLZika'; 
+import {palavraChikungunya} from '../content/XMLChikungunya'; 
+import { palavraFebre } from '../content/XMLFebre'; 
 function Sorteio(doenca, level) {
     var questoes =[]
     const matriz =

@@ -10,9 +10,11 @@ const Stopwatch = () => (
       // do something
     }}
     onCallback={() => console.log('Finish')}
-    render={({formatted}) => {
+    render={({ formatted }) => {
       return (
-        <div>{formatted}</div>
+        <div>
+          {formatted}
+        </div>
       );
     }}
    />

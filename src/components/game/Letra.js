@@ -46,7 +46,7 @@ export default function Letra({id, row, column, mobile}) {
     )
   else
     return (
-      <span ref={drag} className="letra desktop" style={{opacity: isDragging ? 0.1 : 1, cursor: 'move', gridRow: linha, gridColumn: coluna }}>
+      <span ref={drag} className="letra desktop" style={{opacity: isDragging ? 0.1 : 1, cursor: 'move', gridRow: linha, gridColumn: coluna}}>
         {id}
         <MyPreviewDesk/>
       </span>   

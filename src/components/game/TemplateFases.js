@@ -47,13 +47,13 @@ export default class Fases extends Component{
         }
 
         return (
-            <div className="fases" level={this.props.level} style={{width: this.props.mobile ? "150px" : "max-content"}}>
+            <div className="fases" level={this.props.level} style={{width: this.props.mobile ? "7em" : "max-content"}}>
                 <div style={{backgroundColor: um}} className="texto">{fase}1</div>
                 <div style={{backgroundColor: dois}} className="texto">{fase}2</div>
                 <div style={{backgroundColor: tres}} className="texto">{fase}3</div>
                 <div style={{backgroundColor: quatro}} className="texto">{fase}4</div>
                 <div style={{backgroundColor: cinco}} className="texto">{fase}5</div>
-                <div style={{backgroundColor:"#fff", width:"80px", height:"40px", borderRadius:"4px", margin:"4px"}}><Stopwatch/></div>
+                <div style={{backgroundColor:"#fff", width:"80px", height:"40px", borderRadius:"4px", margin:"4px", display: "flex", justifyContent: "center", alignItems: "center" }}><Stopwatch/></div>
             </div>
         )
     }

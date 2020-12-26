@@ -17,33 +17,33 @@ export default class TemplateEscuro extends Component{
             }
         }
         else if (this.props.level === 3) {
-            if (this.props.fase == 1) {
+            if (this.props.fase === 1) {
                 um = "#FCCF44"              
             }
-            else if (this.props.fase == 2) {
+            else if (this.props.fase === 2) {
                 um = "#6DD0BC"
                 dois = "#FCCF44"              
             }
-            else if (this.props.fase == 3) {
+            else if (this.props.fase === 3) {
                 um = "#6DD0BC"
                 dois = "#6DD0BC"
                 tres = "#FCCF44";                
             }
         }
         else if (this.props.level === 4) {
-            if (this.props.fase == 1) {
+            if (this.props.fase === 1) {
                 um = "#FCCF44"
             }
-            else if (this.props.fase == 2) {
+            else if (this.props.fase === 2) {
                 um = "#6DD0BC"
                 dois = "#FCCF44"
             }
-            else if (this.props.fase == 3) {
+            else if (this.props.fase === 3) {
                 um = "#6DD0BC"
                 dois = "#6DD0BC"
                 tres = "#FCCF44";  
             }
-            else if(this.props.fase == 4){
+            else if(this.props.fase === 4){
                 um = "#6DD0BC"
                 dois = "#6DD0BC"
                 tres = "#6DD0BC"
@@ -51,25 +51,25 @@ export default class TemplateEscuro extends Component{
             }
         }
         else if (this.props.level === 5) {
-            if (this.props.fase == 1) {
+            if (this.props.fase === 1) {
                 um = "#FCCF44"
             }
-            else if (this.props.fase == 2) {
+            else if (this.props.fase === 2) {
                 um = "#6DD0BC"
                 dois = "#FCCF44"
             }
-            else if (this.props.fase == 3) {
+            else if (this.props.fase === 3) {
                 um = "#6DD0BC"
                 dois = "#6DD0BC"
                 tres = "#FCCF44";
             }
-            else if(this.props.fase == 4){
+            else if(this.props.fase === 4){
                 um = "#6DD0BC"
                 dois = "#6DD0BC"
                 tres = "#6DD0BC"
                 quatro = "#FCCF44";
             }
-            else if(this.props.fase == 5){
+            else if(this.props.fase === 5){
                 um = "#6DD0BC"
                 dois = "#6DD0BC"
                 tres = "#6DD0BC"

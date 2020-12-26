@@ -8,7 +8,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import TemplateEscuro from '../TemplateEscuro';
 import TemplateLilas from '../TemplateLilas';
 import Swal from 'sweetalert2'
-import { RandomWord } from '../RandomWord'
+import { RandomWord } from './RandomWord'
 import Fase from './TemplateFases'
 
 export default class Game extends Component{
@@ -48,7 +48,7 @@ export default class Game extends Component{
         else {
             for (let i = 0; i < max; i++){
                 drop.push(<DropArea row={2} column={i+1}  key={palavra[i]+embaralha[i]+i}  mobile={false}/>)
-                letra.push(<Letra row={2} column={i + 1} id={embaralha[i]} key={palavra[i]+embaralha[i]+i} mobile={false}/>)
+                letra.push(<Letra row={2} column={i + 1} id={embaralha[i]} key={palavra[i] + embaralha[i] + i} mobile={false}/>)
                 espaco.push(<Espaco row={1} column={i + 1} id={palavra[i]} key={palavra[i]+embaralha[i]+i} falses={0} trues={0} first={0} undropped={0}  mobile={false}/>)
             }            
         }
@@ -59,7 +59,7 @@ export default class Game extends Component{
         return retorno
     }
 
-    levelUp() {
+    levelUp(cel) {
           
         var cor = sessionStorage.getItem("correc")
         if (cor === "true") {
@@ -76,8 +76,9 @@ export default class Game extends Component{
                         showCloseButton: true,
                         showCancelButton: false,
                         showConfirmButton: false,
-                          padding: '3em',
-                        timer: 2000
+                        padding:'3em',
+                        timer: 2000,
+                        width: cel ? 300 : 600
                     })
             }
             else {   
@@ -89,8 +90,10 @@ export default class Game extends Component{
                     showCancelButton: false,
                     confirmButtonText: "Continuar&nbsp;<img src='/img/play.png' style='display:flex-inline; vertical-align:middle'/>",
                     confirmButtonColor: '#7b79f1',
-                    padding: '5em',
+                    padding:cel ? '2em 1em':'5em',
                     background: "#2a279d url('https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif",
+                    timer: 4000,
+                    width: cel ? 300 : 600
                     
                 })
                 if (this.state.level + 1 === 6) {
@@ -117,8 +120,9 @@ export default class Game extends Component{
                 showCloseButton: true,
                 showCancelButton: false,
                 showConfirmButton: false,
-                padding: '3em',
-                timer: 2000
+                padding:'3em',
+                timer: 2000,
+                width: cel ? 300 : 600
             })
         }
     }
@@ -138,7 +142,7 @@ export default class Game extends Component{
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
                 <TemplateLilas mobile={this.props.mobile} game={true} />
                 <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0"}}>
-                    <div className="grid" >
+                    <div className="grid" style={{ gridRowGap: this.props.mobile ? '0' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
                             {this.Word(this.state.word[0], this.props.mobile)}
                         </DndProvider>
@@ -148,8 +152,8 @@ export default class Game extends Component{
                             <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
                                 <img src={  window.location.origin + "/img/resetar.png"} alt="resetar" />
                             </a>
-                            <small style={{ display: this.props.mobile ? "block" : "none"}} >Embaralhar</small>
-                            <a onClick={() => this.levelUp()} className="botao-redondo escuro">
+                            <small style={{ display: this.props.mobile ? "block" : "none", paddingLeft:"1em", paddingRight:"1em"}} >Embaralhar</small>
+                            <a onClick={() => this.levelUp(cel)} className="botao-redondo escuro">
                                 <img src={  window.location.origin + "/img/enviar.png"} alt="enviar" />
                             </a>
                             <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
@@ -170,11 +174,10 @@ export default class Game extends Component{
 /**
  * TODO
  * lógica:
- * -cronometro 
  * -não deixar passar de nivel com espaço vazio incial
  * 
  * css:
- * -posicionar bloco azul de level
+ * -ajustar template mobile
  * 
  * https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif
  * https://i.giphy.com/media/5QStNXJ9luL8FYjI42/giphy.webp
