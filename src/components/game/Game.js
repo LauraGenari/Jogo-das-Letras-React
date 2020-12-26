@@ -135,7 +135,7 @@ export default class Game extends Component{
             display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
         }
         const mobile = {
-            display:"flex", alignItems:"center", flexWrap:"wrap-reverse", width:"250px", justifyContent:"center"
+            display: "flex", alignItems: "center", flexWrap: "wrap-reverse", width: "12em", justifyContent: "center"
         }
         return (
             <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"center"}}>

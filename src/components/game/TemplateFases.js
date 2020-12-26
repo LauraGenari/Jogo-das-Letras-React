@@ -47,7 +47,7 @@ export default class Fases extends Component{
         }
 
         return (
-            <div className="fases" level={this.props.level} style={{width: this.props.mobile ? "7em" : "max-content"}}>
+            <div className="fases" level={this.props.level} style={{width: this.props.mobile ? "7em" : "max-content", overflowX: 'hidden'}}>
                 <div style={{backgroundColor: um}} className="texto">{fase}1</div>
                 <div style={{backgroundColor: dois}} className="texto">{fase}2</div>
                 <div style={{backgroundColor: tres}} className="texto">{fase}3</div>
