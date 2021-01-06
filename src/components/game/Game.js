@@ -130,7 +130,7 @@ export default class Game extends Component{
     render() {  
         //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
         //console.log(this.state.active)
-        const cel = window.innerWidth < 400
+        const cel = window.innerWidth < 500
         const desktop = {
             display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
         }

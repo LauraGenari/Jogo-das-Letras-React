@@ -13,10 +13,31 @@ export default class Inicial extends Component {
             borderStyle: 'none',
             textTransform: 'uppercase',
             fontWeight: '500',
-            margin: '0.75em'
+            margin: '0.75em',
+            boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'
         }
+
+        const sizeTab = {
+            width:"10em",
+            height: "10em",
+            color: 'white',
+            borderRadius: '16px',
+            borderStyle: 'none',
+            textTransform: 'uppercase',
+            fontWeight: '500',
+            margin: '0.75em',
+            boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'
+        }
+
+        const sizeMob = {
+            borderStyle: 'none', width:"5.5em", height:"5.75em", margin:"1em", borderRadius:"8px",
+            boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'
+        }
+
+        const cel = window.innerWidth < 500
+
         const contentDesk =
-            <div style={{display:'flex', alignItems:"center"}}>
+            <div style={{display:'flex', alignItems:"center", position:'relative', top:'8vh'}}>
                 <Link to={{
                         pathname:'tema',
                     }}>
@@ -41,7 +62,7 @@ export default class Inicial extends Component {
                         <p>Créditos</p>
                     </button>
                 </Link>
-                <div style={{marginLeft:"0.5em"}}>
+                <div style={{marginLeft:"1.5em"}}>
                     <img alt="logo" src="/img/logo-eic.png" />
                     <br />
                     <div  style={{display:'flex', alignItems:"center", justifyContent:"space-between"}}>
@@ -59,7 +80,8 @@ export default class Inicial extends Component {
                     <Link to={{
                             pathname:'tema',
                         }}>
-                        <button className="dark" style={{width:"13em", height:"6em", margin:"1em", borderRadius:"8px", color:"white", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <button className="dark" style={{borderStyle: 'none', width:"13em", height:"6em", margin:"1em", borderRadius:"8px", color:"white", display:"flex", justifyContent:"center", alignItems:"center",
+            boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
                             <img alt="play" src={window.location.origin + "/img/jogar.png"} style={{width:"30px", height:"24px", marginRight:"1em"}}/>
                             <p style={{fontSize:"1.5em"}}>JOGAR</p>
                         </button>
@@ -69,14 +91,14 @@ export default class Inicial extends Component {
                     <Link to={{
                             pathname:'tema',
                         }}>
-                        <button className="lilas" style={{width:"5.5em", height:"5.75em", margin:"0.5em", borderRadius:"8px"}}>
+                        <button className="lilas" style={sizeMob}>
                             <img alt="play" src={window.location.origin +"/img/interrogacao.png"} width="18px" height="24px" />
                         </button>
                     </Link>
                     <Link to={{
                             pathname:'tema',
                         }}>
-                        <button className="lilas" style={{width:"5.5em", height:"5.75em", margin:"1.5em", borderRadius:"8px"}}>
+                        <button className="lilas" style={sizeMob}>
                             <img alt="play" src={window.location.origin +"/img/pessoas.png"} width="30px" height="24px" />
                         </button>
                     </Link>
@@ -85,12 +107,51 @@ export default class Inicial extends Component {
 
                 </div>
         
+        const contentTab = 
+            <div>
+                <div style={{display:'flex', alignItems:"center", marginBottom:"6em"}}>
+                        <Link to={{
+                                pathname:'tema',
+                            }}>
+                            <button className="dark" style={sizeTab}>
+                                <img alt="play" src={window.location.origin + "/img/jogar.png"}/>
+                                <p>Jogar</p>
+                            </button>
+                        </Link>
+                        <Link to={{
+                                pathname:'tema',
+                            }}>
+                            <button className="lilas" style={sizeTab}>
+                                <img alt="play" src={window.location.origin +"/img/interrogacao.png"} />
+                                <p>Instruções</p>
+                            </button>
+                        </Link>
+                        <Link to={{
+                                pathname:'tema',
+                            }}>
+                            <button className="lilas" style={sizeTab}>
+                                <img alt="play" src={window.location.origin +"/img/pessoas.png"} />
+                                <p>Créditos</p>
+                            </button>
+                    </Link>
+                </div>
+                <div style={{ display: 'flex', alignItems: "center", justifyContent: "center", margin:"1em"}}>
+                    <img alt="logo" src="/img/logo-eic.png" width="267px"/>
+                </div>
+                <div  style={{display:'flex', alignItems:"center", justifyContent:"center", margin:"1em"}}>
+                    <img alt="facebook" src="/img/facebook.png" style={{margin:"0.5em"}}/>
+                    <img alt="instagram" src="/img/instagram.png" style={{margin:"0.5em"}}/>
+                    <img alt="youtube" src="/img/youtube.png" style={{margin:"0.5em"}}/>
+                </div>
+
+            </div>
         return (
             <div>
-                <TemplateEscuro mobile={this.props.mobile} id="JOGO DAS LETRAS" font={"Luckiest Guy"} size="2.3em" bolinhas={false }/>
+                <TemplateEscuro mobile={this.props.mobile} id="JOGO DAS LETRAS" font={"Luckiest Guy"} size="2em" bolinhas={false }/>
                 <TemplateLilas mobile={this.props.mobile} />
-                {this.props.mobile && contentMob}
+                {this.props.mobile && cel && contentMob}
                 {!this.props.mobile && contentDesk}
+                {this.props.mobile && !cel && contentTab}
             </div>
         )
     }

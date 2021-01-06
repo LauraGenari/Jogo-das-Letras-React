@@ -53,10 +53,6 @@ body {
   vertical-align: center;
   font-size: 1em;
   text-align: center;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .enunciado.mobile {
   width: 95vw;
@@ -65,6 +61,9 @@ body {
   left: -5vw;
   top: 2.5vh;
   margin-bottom: 15vh;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
 }
 .enunciado.desktop {
   width: 65vw;
@@ -72,7 +71,18 @@ body {
   position: absolute;
   top: 5vh;
   left: -2.5vw;
-  font-family: "Luckiest Guy", cursive;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.enunciado.mobile.inicial {
+  height: 20vh !important;
+  display: block !important;
+}
+.enunciado.desktop.inicial {
+  height: 30vh !important;
+  display: block !important;
 }
 
 .scope {
