@@ -138,26 +138,52 @@ export default class Game extends Component{
             display: "flex", alignItems: "center", flexWrap: "wrap-reverse", width: "12em", justifyContent: "center"
         }
         return (
-            <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"center"}}>
+            <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height:"80%"}}>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
-                <TemplateLilas mobile={this.props.mobile} game={true} />
+                <TemplateLilas mobile={this.props.mobile} game={cel ? true : false} />
                 <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0"}}>
                     <div className="grid" style={{ gridRowGap: this.props.mobile ? '0' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
                             {this.Word(this.state.word[0], this.props.mobile)}
                         </DndProvider>
+
                     </div>
                     <div style={this.props.mobile ? mobile : desktop}>
-                        <div style={{display:"flex", flexWrap:"wrap", width:"150px", alignItems:"center", justifyContent:"center"}}>
-                            <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
-                                <img src={  window.location.origin + "/img/resetar.png"} alt="resetar" />
-                            </a>
-                            <small style={{ display: this.props.mobile ? "block" : "none", paddingLeft:"1em", paddingRight:"1em"}} >Embaralhar</small>
-                            <a onClick={() => this.levelUp(cel)} className="botao-redondo escuro">
-                                <img src={  window.location.origin + "/img/enviar.png"} alt="enviar" />
-                            </a>
-                            <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
+                        <div style={{ display: "flex", flexWrap: "wrap", width: "150px", alignItems: "strech", justifyContent: "center", height:"50%" }}>
+                            <span>
+                                <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
+                                    <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
+                                        <img src={  window.location.origin + "/img/resetar.png"} alt="resetar" />
+                                    </a>
 
+                                </span>
+                                <small style={{ display: this.props.mobile ? "block" : "none", paddingLeft:"1em", paddingRight:"1em"}} >Embaralhar</small>
+                            </span>
+                            <span>
+                                <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
+                                    <a onClick={() => this.levelUp(cel)} className="botao-redondo escuro">
+                                        <img src={  window.location.origin + "/img/enviar.png"} alt="enviar" />
+                                    </a>
+
+                                </span>
+                                <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
+                            </span>
+                            <span style={{display: cel ? "block" : "none" }}>
+                                <a onClick={() => Swal.fire({
+                                    title: "SAIR DO JOGO",
+                                    text: "Tem certeza que deseja sair do jogo?",
+                                    imageUrl: "/img/exclamacao.png",
+                                    showCloseButton: true,
+                                    showCancelButton: false,
+                                    showConfirmButton: false,
+                                    padding:'3em',
+                                    width: cel ? 300 : 600}) 
+                                }>
+                                    <img alt="sair" src={window.location.origin + "/img/sair-preto.png"}  style={{ padding: "1em"}} />
+                                </a>
+                                <img alt="som" src={ window.location.origin + "/img/sem-som-preto.png"}  style={{ padding: "1em"}} />
+
+                            </span>
                         </div>
                         <Fase level={this.state.level} mobile={this.props.mobile} />
                         <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>

@@ -62,7 +62,7 @@ body {
   top: 2.5vh;
   margin-bottom: 15vh;
   display: flex;
-  vertical-align: middle;
+  align-items: center;
   justify-content: center;
 }
 .enunciado.desktop {
@@ -72,7 +72,7 @@ body {
   top: 5vh;
   left: -2.5vw;
   display: flex;
-  vertical-align: middle;
+  align-items: center;
   justify-content: center;
 }
 
