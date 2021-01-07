@@ -42,33 +42,33 @@ export default class Inicial extends Component {
                         pathname:'tema',
                     }}>
                     <button className="dark" style={sizeDesk}>
-                        <img alt="play" src={window.location.origin + "/img/jogar.png"}/>
+                        <img alt="play" src={window.location.origin + "/jogar.png"}/>
                         <p>Jogar</p>
                     </button>
                 </Link>
                 <Link to={{
-                        pathname:'tema',
+                        pathname:'instrucoes',
                     }}>
                     <button className="lilas" style={sizeDesk}>
-                        <img alt="play" src={window.location.origin +"/img/interrogacao.png"} />
+                        <img alt="play" src={window.location.origin +"/interrogacao.png"}/>
                         <p>Instruções</p>
                     </button>
                 </Link>
                 <Link to={{
-                        pathname:'tema',
+                        pathname:'creditos',
                     }}>
                     <button className="lilas" style={sizeDesk}>
-                        <img alt="play" src={window.location.origin +"/img/pessoas.png"} />
+                        <img alt="play" src={window.location.origin +"/pessoas.png"}/>
                         <p>Créditos</p>
                     </button>
                 </Link>
                 <div style={{marginLeft:"1.5em"}}>
-                    <img alt="logo" src="/img/logo-eic.png" />
-                    <br />
+                    <img alt="logo" src="/logo-eic.png"/>
+                    <br/>
                     <div  style={{display:'flex', alignItems:"center", justifyContent:"space-between"}}>
-                        <img alt="facebook" src="/img/facebook.png" />
-                        <img alt="instagram" src="/img/instagram.png" />
-                        <img alt="youtube" src="/img/youtube.png" />
+                        <img alt="facebook" src="/facebook.png"/>
+                        <img alt="instagram" src="/instagram.png"/>
+                        <img alt="youtube" src="/youtube.png"/>
 
                     </div>
                 </div>
@@ -82,28 +82,28 @@ export default class Inicial extends Component {
                         }}>
                         <button className="dark" style={{borderStyle: 'none', width:"13em", height:"6em", margin:"1em", borderRadius:"8px", color:"white", display:"flex", justifyContent:"center", alignItems:"center",
             boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
-                            <img alt="play" src={window.location.origin + "/img/jogar.png"} style={{width:"30px", height:"24px", marginRight:"1em"}}/>
+                            <img alt="play" src={window.location.origin + "/jogar.png"} style={{width:"30px", height:"24px", marginRight:"1em"}}/>
                             <p style={{fontSize:"1.5em"}}>JOGAR</p>
                         </button>
                     </Link>
                 </div>
                 <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
                     <Link to={{
-                            pathname:'tema',
+                            pathname:'instrucoes',
                         }}>
                         <button className="lilas" style={sizeMob}>
-                            <img alt="play" src={window.location.origin +"/img/interrogacao.png"} width="18px" height="24px" />
+                            <img alt="play" src={window.location.origin +"/interrogacao.png"} width="18px" height="24px"/>
                         </button>
                     </Link>
                     <Link to={{
-                            pathname:'tema',
+                            pathname:'creditos',
                         }}>
                         <button className="lilas" style={sizeMob}>
-                            <img alt="play" src={window.location.origin +"/img/pessoas.png"} width="30px" height="24px" />
+                            <img alt="play" src={window.location.origin +"/pessoas.png"} width="30px" height="24px"/>
                         </button>
                     </Link>
                 </div>
-                <img alt="logo" src="/img/logo-eic.png" style={{display:"flex", alignItems:"center", justifyContent:"center", marginTop:"1em"}}/>
+                <img alt="logo" src="/logo-eic.png" style={{display:"flex", alignItems:"center", justifyContent:"center", marginTop:"1em"}}/>
 
                 </div>
         
@@ -114,7 +114,7 @@ export default class Inicial extends Component {
                                 pathname:'tema',
                             }}>
                             <button className="dark" style={sizeTab}>
-                                <img alt="play" src={window.location.origin + "/img/jogar.png"}/>
+                                <img alt="play" src={window.location.origin + "/jogar.png"}/>
                                 <p>Jogar</p>
                             </button>
                         </Link>
@@ -122,7 +122,7 @@ export default class Inicial extends Component {
                                 pathname:'instrucoes',
                             }}>
                             <button className="lilas" style={sizeTab}>
-                                <img alt="play" src={window.location.origin +"/img/interrogacao.png"} />
+                                <img alt="play" src={window.location.origin +"/interrogacao.png"}/>
                                 <p>Instruções</p>
                             </button>
                         </Link>
@@ -130,18 +130,18 @@ export default class Inicial extends Component {
                                 pathname:'creditos',
                             }}>
                             <button className="lilas" style={sizeTab}>
-                                <img alt="play" src={window.location.origin +"/img/pessoas.png"} />
+                                <img alt="play" src={window.location.origin +"/pessoas.png"}/>
                                 <p>Créditos</p>
                             </button>
                     </Link>
                 </div>
                 <div style={{ display: 'flex', alignItems: "center", justifyContent: "center", margin:"1em"}}>
-                    <img alt="logo" src="/img/logo-eic.png" width="267px"/>
+                    <img alt="logo" src="/logo-eic.png" width="267px"/>
                 </div>
                 <div  style={{display:'flex', alignItems:"center", justifyContent:"center", margin:"1em"}}>
-                    <img alt="facebook" src="/img/facebook.png" style={{margin:"0.5em"}}/>
-                    <img alt="instagram" src="/img/instagram.png" style={{margin:"0.5em"}}/>
-                    <img alt="youtube" src="/img/youtube.png" style={{margin:"0.5em"}}/>
+                    <img alt="facebook" src="/facebook.png" style={{margin:"0.5em"}}/>
+                    <img alt="instagram" src="/instagram.png" style={{margin:"0.5em"}}/>
+                    <img alt="youtube" src="/youtube.png" style={{margin:"0.5em"}}/>
                 </div>
 
             </div>

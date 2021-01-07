@@ -72,7 +72,7 @@ export default class Game extends Component{
                 Swal.fire({
                         title: "PARABÉNS",
                         text: "A resposta está correta",
-                        imageUrl: "/img/feliz.png",
+                        imageUrl: "/feliz.png",
                         showCloseButton: true,
                         showCancelButton: false,
                         showConfirmButton: false,
@@ -85,10 +85,10 @@ export default class Game extends Component{
                 Swal.fire({
                     title: "<span style='color:#fff'>PARABÉNS!</span>",
                     html: "<span style='color:#fff'>Você passou para a próxima fase ! \n Encontre as próximas palavras para finalizar o jogo!</span>",
-                    imageUrl: "/img/feliz-estrela.png",
+                    imageUrl: "/feliz-estrela.png",
                     showCloseButton: false,
                     showCancelButton: false,
-                    confirmButtonText: "Continuar&nbsp;<img src='/img/play.png' style='display:flex-inline; vertical-align:middle'/>",
+                    confirmButtonText: "Continuar&nbsp;<img src='/play.png' style='display:flex-inline; vertical-align:middle'/>",
                     confirmButtonColor: '#7b79f1',
                     padding:cel ? '2em 1em':'5em',
                     background: "#2a279d url('https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif",
@@ -116,7 +116,7 @@ export default class Game extends Component{
             Swal.fire({
                 title: "TENTE NOVAMENTE",
                 text: "Não desista!",
-                imageUrl: "/img/X.png",
+                imageUrl: "/X.png",
                 showCloseButton: true,
                 showCancelButton: false,
                 showConfirmButton: false,
@@ -128,8 +128,8 @@ export default class Game extends Component{
     }
 
     render() {  
-        //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
-        //console.log(this.state.active)
+       //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
+       //console.log(this.state.active)
         const cel = window.innerWidth < 500
         const desktop = {
             display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
@@ -138,9 +138,9 @@ export default class Game extends Component{
             display: "flex", alignItems: "center", flexWrap: "wrap-reverse", width: "12em", justifyContent: "center"
         }
         return (
-            <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height:"80%"}}>
+            <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
-                <TemplateLilas mobile={this.props.mobile} game={cel ? true : false} />
+                <TemplateLilas mobile={this.props.mobile} game={cel ? true : false}/>
                 <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0"}}>
                     <div className="grid" style={{ gridRowGap: this.props.mobile ? '0' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
@@ -149,11 +149,11 @@ export default class Game extends Component{
 
                     </div>
                     <div style={this.props.mobile ? mobile : desktop}>
-                        <div style={{ display: "flex", flexWrap: "wrap", width: "150px", alignItems: "strech", justifyContent: "center", height:"50%" }}>
+                        <div style={{ display: "flex", flexWrap: "wrap", width: "150px", alignItems: "strech", justifyContent: "center", height:"50%"}}>
                             <span>
                                 <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
                                     <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
-                                        <img src={  window.location.origin + "/img/resetar.png"} alt="resetar" />
+                                        <img src={  window.location.origin + "/resetar.png"} alt="resetar"/>
                                     </a>
 
                                 </span>
@@ -162,7 +162,7 @@ export default class Game extends Component{
                             <span>
                                 <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
                                     <a onClick={() => this.levelUp(cel)} className="botao-redondo escuro">
-                                        <img src={  window.location.origin + "/img/enviar.png"} alt="enviar" />
+                                        <img src={  window.location.origin + "/enviar.png"} alt="enviar"/>
                                     </a>
 
                                 </span>
@@ -172,7 +172,7 @@ export default class Game extends Component{
                                 <a onClick={() => Swal.fire({
                                     title: "SAIR DO JOGO",
                                     text: "Tem certeza que deseja sair do jogo?",
-                                    imageUrl: "/img/exclamacao.png",
+                                    imageUrl: "/exclamacao.png",
                                     showCloseButton: true,
                                     showCancelButton: true,
                                     showConfirmButton: true,
@@ -184,15 +184,15 @@ export default class Game extends Component{
                                     cancelButtonColor: '#fff',
                                 }) 
                                 }>
-                                    <img alt="sair" src={window.location.origin + "/img/sair-preto.png"}  style={{ padding: "1em"}} />
+                                    <img alt="sair" src={window.location.origin + "/sair-preto.png"}  style={{ padding: "1em"}}/>
                                 </a>
-                                <a><img alt="som" src={ window.location.origin + "/img/sem-som-preto.png"}  style={{ padding: "1em"}} /></a>
+                                <a><img alt="som" src={ window.location.origin + "/sem-som-preto.png"}  style={{ padding: "1em"}}/></a>
 
                             </span>
                         </div>
-                        <Fase level={this.state.level} mobile={this.props.mobile} />
+                        <Fase level={this.state.level} mobile={this.props.mobile}/>
                         <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
-                            <img src={  window.location.origin + "/img/teclado.png"} alt="resetar" />
+                            <img src={  window.location.origin + "/teclado.png"} alt="resetar"/>
                         </a>         
                     </div>
                 </div>

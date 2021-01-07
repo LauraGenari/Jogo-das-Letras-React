@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
 
 export default class TemplateLilas extends Component {
     render() {
@@ -7,25 +8,19 @@ export default class TemplateLilas extends Component {
             if(!this.props.game )
                 return (
                     <div className="bloco-lilas mobile">
-                        <a><img alt="som" src={window.location.origin + "/img/com-som-branco.png"} style={{ padding: "1em" }} /></a> 
+                        <a>
+                            <img alt="som" src={window.location.origin + "/com-som-branco.png"} style={{ padding: "1em" }}/>
+                        </a> 
                         {!this.props.inicial && 
                         
-                        <a onClick={() => Swal.fire({
-                            title: "SAIR DO JOGO",
-                            text: "Tem certeza que deseja sair do jogo?",
-                            imageUrl: "/img/exclamacao.png",
-                            showCloseButton: true,
-                            showCancelButton: true,
-                            showConfirmButton: true,
-                            padding:'3em',
-                            width: window.innerWidth < 400 ? 400 : 600,
-                            confirmButtonText:'SIM',
-                            cancelButtonText: 'NÃO',
-                            confirmButtonColor: '#fff',
-                            cancelButtonColor: '#fff',
-                        })}>
-                            <img alt="home" src={window.location.origin + "/img/home.png"} style={{ padding: "1em" }} />
-                        </a>}
+                            <Link to={{
+                                    pathname:'inicial',
+                                }}>
+                               
+                                    <img alt="home" src={window.location.origin + "/home.png"} style={{ padding: "1em" }}/>
+                                
+                            </Link>
+                        }
                     </div>
                 )
             else {
@@ -35,23 +30,36 @@ export default class TemplateLilas extends Component {
         else {
             return (
                 <div className="bloco-lilas desktop">
-                   <a><img alt="som" src={window.location.origin + "/img/com-som-branco.png"} style={{ padding: "1em" }} /></a> 
-                    {!this.props.inicial && <a onClick={() => Swal.fire({
-                        title: "SAIR DO JOGO",
-                        text: "Tem certeza que deseja sair do jogo?",
-                        imageUrl: "/img/exclamacao.png",
-                        showCloseButton: true,
-                        showCancelButton: true,
-                        showConfirmButton: true,
-                        padding: '3em',
-                        confirmButtonText: 'SIM',
-                        cancelButtonText: 'NÃO',
-                        confirmButtonColor: '#fff',
-                        cancelButtonColor: '#fff',
-                    })}>
-                        {this.props.game && <img alt="sair" src={window.location.origin + "/img/sair.png"} style={{ padding: "1em" }} />}
-                        {!this.props.game && <img alt="home" src={window.location.origin + "/img/home.png"} style={{ padding: "1em" }} />}
-                    </a>}
+                    <a>
+                        <img alt="som" src={window.location.origin + "/com-som-branco.png"} style={{ padding: "1em" }}/>
+                    </a> 
+                    {!this.props.inicial &&
+                    this.props.game
+                        && <a onClick={() => Swal.fire({
+                            title: "SAIR DO JOGO",
+                            text: "Tem certeza que deseja sair do jogo?",
+                            imageUrl: "/exclamacao.png",
+                            showCloseButton: true,
+                            showCancelButton: true,
+                            showConfirmButton: true,
+                            padding: '3em',
+                            confirmButtonText: 'SIM',
+                            cancelButtonText: 'NÃO',
+                            confirmButtonColor: '#fff',
+                            cancelButtonColor: '#fff',
+                        })}>
+                            <img alt="sair" src={window.location.origin + "/sair.png"} style={{ padding: "1em" }}/>   
+                        </a>
+                    }
+
+                    
+                    {!this.props.inicial && !this.props.game && 
+                        <Link to={{
+                                    pathname:'inicial',
+                                }}>
+                                    <img alt="home" src={window.location.origin + "/home.png"} style={{ padding: "1em" }}/>
+                        </Link>
+                    }
                 </div>
             )
         }

@@ -64,7 +64,7 @@ export default function Instrucoes({ mobile }) {
                     <span style={{margin: "0.5em"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
                             <a className="botao-redondo verde" onClick={() => { setCor("rgba(26, 188, 156, 0.2)"); setTexto(niveis)}}>
-                                <img src={window.location.origin + "/img/trofeu.png"} alt="niveis" />
+                                <img src={window.location.origin + "/trofeu.png"} alt="niveis"/>
                             </a>                    
                         </span>
                         <small>Níveis e Fases</small>
@@ -72,7 +72,7 @@ export default function Instrucoes({ mobile }) {
                     <span style={{margin: "0.5em", display: mobile ? "none" : "block"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
                             <a className="botao-redondo rosa" onClick={() => { setCor("rgba(251, 132, 148, 0.2)"); setTexto(comandos)}}>
-                                <img src={window.location.origin + "/img/teclado.png"} alt="niveis" />
+                                <img src={window.location.origin + "/teclado.png"} alt="niveis"/>
                             </a>                    
                         </span>
                         <small>Comandos</small>
@@ -80,7 +80,7 @@ export default function Instrucoes({ mobile }) {
                     <span style={{margin: "0.5em"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
                             <a className="botao-redondo lilas" onClick={() => { setCor("rgba(123, 121, 241, 0.2)"); setTexto(pontuacao)}}>
-                                <img src={window.location.origin + "/img/estrela.png"} alt="pontuação" />
+                                <img src={window.location.origin + "/estrela.png"} alt="pontuação"/>
                             </a>
                         </span>
                         <small>Pontuação</small>
@@ -96,7 +96,7 @@ export default function Instrucoes({ mobile }) {
     return (    
         <div>
             <TemplateEscuro mobile={mobile} id="INSTRUÇÕES" font={"Luckiest Guy"} size="2.3em" bolinhas={false }/>
-            <TemplateLilas mobile={mobile} />
+            <TemplateLilas mobile={mobile}/>
             {content}
         </div>
     )    

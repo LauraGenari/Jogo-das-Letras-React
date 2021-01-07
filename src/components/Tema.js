@@ -18,7 +18,7 @@ export default function Tema({mobile}) {
                     tema: 'FebreAmarela'
                 }}>
                     <button className="tema roxo" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>
+                        <img alt="play" src={window.location.origin +"/play.png"}/>
                         <p style={{padding:"10px"}}>Febre Amarela</p>
                     </button>
                 </Link>
@@ -27,7 +27,7 @@ export default function Tema({mobile}) {
                     tema: 'Chikungunya'
                 }}>
                     <button className="tema azul" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>
+                        <img alt="play" src={window.location.origin +"/play.png"}/>
                         <p style={{padding:"10px"}}>Chikungunya</p>
                     </button>
                 </Link>
@@ -36,7 +36,7 @@ export default function Tema({mobile}) {
                     tema: 'Aedes'
                     }}>
                     <button className="tema dark" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>
+                        <img alt="play" src={window.location.origin +"/play.png"}/>
                         <p style={{padding:"10px"}}>Aedes Aegypti</p>
                     </button>
                 </Link>
@@ -45,7 +45,7 @@ export default function Tema({mobile}) {
                     tema: 'Zika'
                 }}>
                     <button className="tema azul" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>
+                        <img alt="play" src={window.location.origin +"/play.png"}/>
                         
                         <p style={{padding:"10px"}}>Zica</p>
                     </button>
@@ -55,7 +55,7 @@ export default function Tema({mobile}) {
                     tema: 'Dengue'
                 }}>
                     <button className="tema roxo" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>
+                        <img alt="play" src={window.location.origin +"/play.png"}/>
                     
                         <p style={{padding:"10px"}}>Dengue</p>
                     </button>
@@ -75,7 +75,7 @@ export default function Tema({mobile}) {
                     tema: 'FebreAmarela'
                 }}>
                 <button className="tema roxo" style={size}>
-                    <img alt="play" src={window.location.origin +"/img/play.png"}/>
+                    <img alt="play" src={window.location.origin +"/play.png"}/>
                     <p style={{padding:"10px"}}>Febre Amarela</p>
                 </button>
                 </Link>
@@ -84,7 +84,7 @@ export default function Tema({mobile}) {
                     tema: 'Zika'
                 }}>
                     <button className="tema azul" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>
+                        <img alt="play" src={window.location.origin +"/play.png"}/>
                         <p style={{padding:"10px"}}>Zica</p>
                     </button>
                 </Link> 
@@ -93,7 +93,7 @@ export default function Tema({mobile}) {
                     tema: 'Chikungunya'
                 }}>
                     <button className="tema azul" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>    
+                        <img alt="play" src={window.location.origin +"/play.png"}/>    
                         <p style={{padding:"10px"}}>Chikungunya</p>
                     </button>
                 </Link>
@@ -103,7 +103,7 @@ export default function Tema({mobile}) {
                     tema: 'Dengue'
                 }}>
                     <button className="tema roxo" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>   
+                        <img alt="play" src={window.location.origin +"/play.png"}/>   
                         <p style={{padding:"10px"}}>Dengue</p>
                     </button>
                 </Link>
@@ -112,7 +112,7 @@ export default function Tema({mobile}) {
                     tema: 'Aedes'
                     }}>
                     <button className="tema dark" style={size}>
-                        <img alt="play" src={window.location.origin +"/img/play.png"}/>    
+                        <img alt="play" src={window.location.origin +"/play.png"}/>    
                         <p style={{padding:"10px"}}>Aedes Aegypti</p>
                     </button>
                 </Link> 
@@ -123,7 +123,7 @@ export default function Tema({mobile}) {
     return (    
         <div>
             <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA" font={"Luckiest Guy"} size="2.3em" bolinhas={false }/>
-            <TemplateLilas mobile={mobile} />
+            <TemplateLilas mobile={mobile}/>
             {content}
         </div>
     )    
