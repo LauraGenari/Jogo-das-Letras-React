@@ -174,14 +174,19 @@ export default class Game extends Component{
                                     text: "Tem certeza que deseja sair do jogo?",
                                     imageUrl: "/img/exclamacao.png",
                                     showCloseButton: true,
-                                    showCancelButton: false,
-                                    showConfirmButton: false,
+                                    showCancelButton: true,
+                                    showConfirmButton: true,
                                     padding:'3em',
-                                    width: cel ? 300 : 600}) 
+                                    width: cel ? 400 : 600,
+                                    confirmButtonText:'SIM',
+                                    cancelButtonText: 'NÃO',
+                                    confirmButtonColor: '#fff',
+                                    cancelButtonColor: '#fff',
+                                }) 
                                 }>
                                     <img alt="sair" src={window.location.origin + "/img/sair-preto.png"}  style={{ padding: "1em"}} />
                                 </a>
-                                <img alt="som" src={ window.location.origin + "/img/sem-som-preto.png"}  style={{ padding: "1em"}} />
+                                <a><img alt="som" src={ window.location.origin + "/img/sem-som-preto.png"}  style={{ padding: "1em"}} /></a>
 
                             </span>
                         </div>
@@ -201,9 +206,6 @@ export default class Game extends Component{
  * TODO
  * lógica:
  * -não deixar passar de nivel com espaço vazio incial
- * 
- * css:
- * -ajustar template mobile
  * 
  * https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif
  * https://i.giphy.com/media/5QStNXJ9luL8FYjI42/giphy.webp

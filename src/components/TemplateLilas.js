@@ -7,18 +7,25 @@ export default class TemplateLilas extends Component {
             if(!this.props.game )
                 return (
                     <div className="bloco-lilas mobile">
-                        <img alt="som" src={window.location.origin + "/img/com-som-branco.png"} style={{ padding: "1em" }} />
+                        <a><img alt="som" src={window.location.origin + "/img/com-som-branco.png"} style={{ padding: "1em" }} /></a> 
+                        {!this.props.inicial && 
+                        
                         <a onClick={() => Swal.fire({
                             title: "SAIR DO JOGO",
                             text: "Tem certeza que deseja sair do jogo?",
                             imageUrl: "/img/exclamacao.png",
                             showCloseButton: true,
-                            showCancelButton: false,
-                            showConfirmButton: false,
+                            showCancelButton: true,
+                            showConfirmButton: true,
                             padding:'3em',
-                            width: window.innerWidth < 400 ? 300 : 600}) }>
-                            <img alt="sair" src={window.location.origin + "/img/sair.png"} style={{ padding: "1em" }} />
-                        </a>
+                            width: window.innerWidth < 400 ? 400 : 600,
+                            confirmButtonText:'SIM',
+                            cancelButtonText: 'NÃO',
+                            confirmButtonColor: '#fff',
+                            cancelButtonColor: '#fff',
+                        })}>
+                            <img alt="home" src={window.location.origin + "/img/home.png"} style={{ padding: "1em" }} />
+                        </a>}
                     </div>
                 )
             else {
@@ -28,18 +35,23 @@ export default class TemplateLilas extends Component {
         else {
             return (
                 <div className="bloco-lilas desktop">
-                    <img alt="som" src={window.location.origin + "/img/com-som-branco.png"} style={{ padding: "1em" }} />
-                    <a onClick={() => Swal.fire({
+                   <a><img alt="som" src={window.location.origin + "/img/com-som-branco.png"} style={{ padding: "1em" }} /></a> 
+                    {!this.props.inicial && <a onClick={() => Swal.fire({
                         title: "SAIR DO JOGO",
                         text: "Tem certeza que deseja sair do jogo?",
                         imageUrl: "/img/exclamacao.png",
                         showCloseButton: true,
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        padding:'3em'
-                    }) }>
-                        <img alt="sair" src={ window.location.origin + "/img/sair.png"} style={{padding:"1em"}} />
-                    </a>
+                        showCancelButton: true,
+                        showConfirmButton: true,
+                        padding: '3em',
+                        confirmButtonText: 'SIM',
+                        cancelButtonText: 'NÃO',
+                        confirmButtonColor: '#fff',
+                        cancelButtonColor: '#fff',
+                    })}>
+                        {this.props.game && <img alt="sair" src={window.location.origin + "/img/sair.png"} style={{ padding: "1em" }} />}
+                        {!this.props.game && <img alt="home" src={window.location.origin + "/img/home.png"} style={{ padding: "1em" }} />}
+                    </a>}
                 </div>
             )
         }

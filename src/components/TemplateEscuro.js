@@ -97,32 +97,32 @@ export default class TemplateEscuro extends Component{
                     </div>                    
                 )
             }
-            else {
-                if (subtitle)
-                    if(window.innerWidth < 400)
-                        return (
-                            <div className="enunciado mobile inicial">
-                                <div style={{display:"flex", justifyContent:"center"}}>
-                                    <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width:"60%", lineHeight:"1",position:'relative', bottom:"0.5em"}}>{this.props.id}</p>
-                                </div>
-                                <p style={{position:'relative',bottom:"4em"}}>Aedes Aegypti</p>
-                            </div>
-                        )
-                    else
-                        return(
-                            <div className="enunciado mobile inicial">
-                                <p style={{ fontFamily: this.props.font, fontSize: this.props.size,  lineHeight:"1",position:'relative', top:"20%"}}>{this.props.id}</p>
-                                <p style={{position:'relative', top:"10%"}}>Aedes Aegypti</p>
-                            </div>
-                        )
-                else    
+            else if (subtitle) {
+                if (window.innerWidth < 400)
                     return (
-                        <div className="enunciado mobile">
-                            <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width: "97%", lineHeight: "1" }}>{this.props.id}</p>
+                        <div className="enunciado mobile inicial">
+                            <div style={{ display: "flex", justifyContent: "center" }}>
+                                <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width: "60%", lineHeight: "1", position: 'relative', bottom: "0.5em" }}>{this.props.id}</p>
+                            </div>
+                            <p style={{ position: 'relative', bottom: "4em" }}>Aedes Aegypti</p>
+                        </div>
+                    )
+                else
+                    return (
+                        <div className="enunciado mobile inicial">
+                            <p style={{ fontFamily: this.props.font, fontSize: this.props.size, lineHeight: "1", position: 'relative', top: "20%" }}>{this.props.id}</p>
+                            <p style={{ position: 'relative', top: "10%" }}>Aedes Aegypti</p>
                         </div>
                     )
             }
-        }
+                else    
+                    return (
+                        <div className="enunciado mobile">
+                            <img src="/img/seta.png" alt="seta" style={{position:"relative", right:"10%", width:"30px"}}/>
+                            <p style={{ fontFamily: this.props.font, fontSize: this.props.size, lineHeight: "1" }}>{this.props.id}</p>
+                        </div>
+                    )
+            }
         else {
             if (this.props.bolinhas) {
                 return (
@@ -138,21 +138,21 @@ export default class TemplateEscuro extends Component{
                     </div>
                 )
             }
-            else {
-                if (subtitle)
-                    return (
-                        <div className="enunciado desktop inicial">
-                            <p style={{ fontFamily: this.props.font, fontSize: '5em'}}>{this.props.id}</p>
-                            <p style={{fontSize: '2em', bottom:"1em", position:"relative"}}>Aedes Aegypti</p>
-                        </div>
-                    )
+            else if (subtitle)
+                return (
+                    <div className="enunciado desktop inicial">
+                        <p style={{ fontFamily: this.props.font, fontSize: '5em'}}>{this.props.id}</p>
+                        <p style={{fontSize: '2em', bottom:"1em", position:"relative"}}>Aedes Aegypti</p>
+                    </div>
+                )
                 else 
                     return (
                         <div className="enunciado desktop">
-                            <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width: "95%" }}>{this.props.id}</p>
+                            <img src="/img/seta.png" alt="seta" style={{position:"relative", right:"30%", width:"30px"}}/>
+                            <p style={{ fontFamily: this.props.font, fontSize: this.props.size }}>{this.props.id}</p>
                         </div>
                     )
-            }
+            
         }
 
     }

@@ -119,7 +119,7 @@ export default class Inicial extends Component {
                             </button>
                         </Link>
                         <Link to={{
-                                pathname:'tema',
+                                pathname:'instrucoes',
                             }}>
                             <button className="lilas" style={sizeTab}>
                                 <img alt="play" src={window.location.origin +"/img/interrogacao.png"} />
@@ -127,7 +127,7 @@ export default class Inicial extends Component {
                             </button>
                         </Link>
                         <Link to={{
-                                pathname:'tema',
+                                pathname:'creditos',
                             }}>
                             <button className="lilas" style={sizeTab}>
                                 <img alt="play" src={window.location.origin +"/img/pessoas.png"} />
@@ -148,7 +148,7 @@ export default class Inicial extends Component {
         return (
             <div>
                 <TemplateEscuro mobile={this.props.mobile} id="JOGO DAS LETRAS" font={"Luckiest Guy"} size="2em" bolinhas={false }/>
-                <TemplateLilas mobile={this.props.mobile} />
+                <TemplateLilas mobile={this.props.mobile} inicial={ true}/>
                 {this.props.mobile && cel && contentMob}
                 {!this.props.mobile && contentDesk}
                 {this.props.mobile && !cel && contentTab}

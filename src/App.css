@@ -97,7 +97,7 @@ body {
 
 .scope.mobile {
   width: 85vw;
-  height: 70vh;
+  height: 68vh;
   top: 10vh;
   left: 5vw;
   padding-top: 15vh;
@@ -162,6 +162,9 @@ body {
 .botao-redondo.rosa {
   background-color: #ff5b71;
 }
+.botao-redondo.verde {
+  background-color: #19af92;
+}
 .cronometro {
   background: #ffffff;
   border-radius: 8px;
@@ -224,4 +227,8 @@ body {
   width: max-content;
   padding: 2px;
   font-size: xx-small;
+}
+
+.swal2-styled {
+  color: #000 !important;
 }
