@@ -10,9 +10,17 @@ import TemplateLilas from '../TemplateLilas';
 import Swal from 'sweetalert2'
 import { RandomWord } from './RandomWord'
 import Fase from './TemplateFases'
+import {Link} from 'react-router-dom';
 
+const ConditionalLink = ({ children, level }) => {
+    console.log("aqui")
+    if((level + 1 === 3))
+        return <Link to='final'>{children}</Link> 
+    else
+        return <div>{children}</div>
+}
 export default class Game extends Component{
-    
+     
     constructor(props) {
         super(props);
         const pw = RandomWord(1, this.props.location.tema)
@@ -58,7 +66,6 @@ export default class Game extends Component{
 
         return retorno
     }
-
     levelUp(cel) {
           
         var cor = sessionStorage.getItem("correc")
@@ -96,10 +103,7 @@ export default class Game extends Component{
                     width: cel ? 300 : 600
                     
                 })
-                if (this.state.level + 1 === 6) {
-                    console.log("PAROU")
-                }
-                else {
+                if (this.state.level + 1 === 6){
                     const pw = RandomWord(this.state.level + 1, this.props.location.tema)
                     this.setState(prevState => ({
                         fase: 1,
@@ -126,10 +130,12 @@ export default class Game extends Component{
             })
         }
     }
-
+    
     render() {  
        //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
        //console.log(this.state.active)
+        
+
         const cel = window.innerWidth < 500
         const desktop = {
             display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
@@ -160,12 +166,13 @@ export default class Game extends Component{
                                 <small style={{ display: this.props.mobile ? "block" : "none", paddingLeft:"1em", paddingRight:"1em"}} >Embaralhar</small>
                             </span>
                             <span>
-                                <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
-                                    <a onClick={() => this.levelUp(cel)} className="botao-redondo escuro">
-                                        <img src={  window.location.origin + "/enviar.png"} alt="enviar"/>
-                                    </a>
-
-                                </span>
+                                <ConditionalLink level={this.state.level}>
+                                    <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
+                                        <a onClick={() => this.levelUp(cel)} className="botao-redondo escuro">
+                                            <img src={  window.location.origin + "/enviar.png"} alt="enviar"/>
+                                        </a>
+                                    </span>
+                                </ConditionalLink>
                                 <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
                             </span>
                             <span style={{display: cel ? "block" : "none" }}>
@@ -193,7 +200,7 @@ export default class Game extends Component{
                         <Fase level={this.state.level} mobile={this.props.mobile}/>
                         <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
                             <img src={  window.location.origin + "/teclado.png"} alt="resetar"/>
-                        </a>         
+                        </a> 
                     </div>
                 </div>
             </div>

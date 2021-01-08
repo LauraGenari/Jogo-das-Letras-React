@@ -5,21 +5,20 @@ import Game from './game/Game'
 import Inicial from './Inicial'
 import Instrucoes from './Instrucoes';
 import Creditos from './Creditos';
-
+import Final from './Final';
 
 export default class Routes extends Component {
     render() {
         const mobile = this.props.mobile
-       
-
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path="/tema" render={(props) => <Tema {...props} mobile={mobile} />} />
-                    <Route path="/instrucoes" render={(props) => <Instrucoes {...props} mobile={mobile} />} />
-                    <Route path="/creditos" render={(props) => <Creditos {...props} mobile={mobile}/>}  />
-                    <Route path="/game" render={(props) => <Game {...props} mobile={mobile} />} />
-                    <Route path="/inicial" render={(props) => <Inicial {...props} mobile={mobile}/>}  />
+                    <Route exact path="/tema" render={(props) => <Tema {...props} mobile={mobile} />} />
+                    <Route exact path="/instrucoes" render={(props) => <Instrucoes {...props} mobile={mobile} />} />
+                    <Route exact path="/creditos" render={(props) => <Creditos {...props} mobile={mobile}/>}  />
+                    <Route exact path="/game" render={(props) => <Game {...props} mobile={mobile} />} />
+                    <Route exact path="/inicial" render={(props) => <Inicial {...props} mobile={mobile} />} />
+                    <Route exact path="/final" render={(props) => <Final {...props} mobile={mobile}/>}  />
                     <Redirect to="/inicial"/>
                 </Switch>                           
             </BrowserRouter> 

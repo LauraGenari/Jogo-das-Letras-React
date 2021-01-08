@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Stopwatch from './Cornometro'
+import {withRouter} from 'react-router-dom';
 
 export default class Fases extends Component{
     render() {
@@ -46,6 +47,11 @@ export default class Fases extends Component{
             fase = "Fase "
         }
 
+        var auto = true
+        /*if (window.location.pathname === "/final") {
+            auto = false
+            console.log("falsah")
+        }*/
         return (
             <div className="fases" level={this.props.level} style={{width: this.props.mobile ? "7em" : "max-content", overflowX: 'hidden'}}>
                 <div style={{backgroundColor: um}} className="texto">{fase}1</div>
@@ -53,7 +59,7 @@ export default class Fases extends Component{
                 <div style={{backgroundColor: tres}} className="texto">{fase}3</div>
                 <div style={{backgroundColor: quatro}} className="texto">{fase}4</div>
                 <div style={{backgroundColor: cinco}} className="texto">{fase}5</div>
-                <div style={{backgroundColor:"#fff", width:"80px", height:"40px", borderRadius:"4px", margin:"4px", display: "flex", justifyContent: "center", alignItems: "center" }}><Stopwatch/></div>
+                <div style={{ backgroundColor: "#fff", width: "80px", height: "40px", borderRadius: "4px", margin: "4px", display: "flex", justifyContent: "center", alignItems: "center" }}><Stopwatch auto={auto}/></div>
             </div>
         )
     }
