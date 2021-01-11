@@ -13,7 +13,7 @@ import Fase from './TemplateFases'
 import {Link} from 'react-router-dom';
 
 const ConditionalLink = ({ children, level,time }) => {
-    if((level + 1 === 2))
+    if((level + 1 === 6))
         return <Link to={{pathname:'final', init:time}}>{children}</Link> 
     else
         return <div>{children}</div>

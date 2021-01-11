@@ -29,8 +29,8 @@ export default function Final({ mobile,location}) {
     const final = Date.now()
 
     const content =
-        <div style={{ display: mobile ? "block" : "flex" }}>
-            <div style={{padding:"3em"}}>
+        <div style={{ display: mobile ? "block" : "flex",justifyContent:"space-around", paddingTop:"4em", fontSize:window.innerWidth <400?"0.5em":"1em" }}>
+            <div style={{padding:"5em 5em 0em 5em", textAlign:"center"}}>
                 <span style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <img alt="trofeu" src={window.location.origin + "/trofeus.png"} style={{height:"7vh"}}/>
                 </span>
@@ -39,7 +39,7 @@ export default function Final({ mobile,location}) {
                     { Pontuador(location.init, final)} 
                 </div>
             </div>
-            <div style={{padding:"3em"}}>
+            <div style={{padding:"5em 5em 0em 5em", textAlign:"center"}}>
                 <span style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <img alt="estrelas" src={window.location.origin + "/estrelas.png"} style={{height:"7vh"}}/>
                 </span>
@@ -52,7 +52,7 @@ export default function Final({ mobile,location}) {
     
     console.log((Date.now() - location.init))
     return (
-        <div style={{background:"url('/g10.png')",backgroundSize:"cover" ,width:mobile?"100%":"unset", height:mobile?"100%":"unset"}}>
+        <div style={{background:"url('/g10.png')",backgroundSize:mobile?"100%":"50% 100%", width:"90%", height:"100%"}}>
             <TemplateEscuro mobile={mobile} id="FINAL" font={"Luckiest Guy"} size="2.3em" bolinhas={false }/>
             <TemplateLilas mobile={mobile}/>
             {content}
