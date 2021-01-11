@@ -13,12 +13,12 @@ export default class Routes extends Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/tema" render={(props) => <Tema {...props} mobile={mobile} />} />
+                    <Route exact path="/tema" render={(props) => <Tema {...props} mobile={mobile}/>} />
                     <Route exact path="/instrucoes" render={(props) => <Instrucoes {...props} mobile={mobile} />} />
                     <Route exact path="/creditos" render={(props) => <Creditos {...props} mobile={mobile}/>}  />
                     <Route exact path="/game" render={(props) => <Game {...props} mobile={mobile} />} />
                     <Route exact path="/inicial" render={(props) => <Inicial {...props} mobile={mobile} />} />
-                    <Route exact path="/final" render={(props) => <Final {...props} mobile={mobile}/>}  />
+                    <Route exact path="/final" render={(props) => <Final {...props} mobile={mobile} />}  />
                     <Redirect to="/inicial"/>
                 </Switch>                           
             </BrowserRouter> 

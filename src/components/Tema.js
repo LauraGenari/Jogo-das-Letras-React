@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import TemplateEscuro from './TemplateEscuro';
 import TemplateLilas from './TemplateLilas';
 
-export default function Tema({mobile}) { 
+export default function Tema({ mobile}) { 
     var size, content;
     if (mobile) {
         size = {

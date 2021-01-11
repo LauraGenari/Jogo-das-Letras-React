@@ -12,10 +12,9 @@ import { RandomWord } from './RandomWord'
 import Fase from './TemplateFases'
 import {Link} from 'react-router-dom';
 
-const ConditionalLink = ({ children, level }) => {
-    console.log("aqui")
-    if((level + 1 === 3))
-        return <Link to='final'>{children}</Link> 
+const ConditionalLink = ({ children, level,time }) => {
+    if((level + 1 === 2))
+        return <Link to={{pathname:'final', init:time}}>{children}</Link> 
     else
         return <div>{children}</div>
 }
@@ -29,7 +28,9 @@ export default class Game extends Component{
             level: 1,
             palavra: pw,
             word: pw[0],
-            active: false
+            active: false,
+            pontos: 0,
+            curTime: Date.now()
         }
         this.levelUp = this.levelUp.bind(this)
         this.Word = this.Word.bind(this)
@@ -98,12 +99,12 @@ export default class Game extends Component{
                     confirmButtonText: "Continuar&nbsp;<img src='/play.png' style='display:flex-inline; vertical-align:middle'/>",
                     confirmButtonColor: '#7b79f1',
                     padding:cel ? '2em 1em':'5em',
-                    background: "#2a279d url('https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif",
+                    background: "#2a279d url('/uhu.webp')",
                     timer: 4000,
                     width: cel ? 300 : 600
                     
                 })
-                if (this.state.level + 1 === 6){
+                if (!(this.state.level + 1 === 6)){
                     const pw = RandomWord(this.state.level + 1, this.props.location.tema)
                     this.setState(prevState => ({
                         fase: 1,
@@ -132,10 +133,7 @@ export default class Game extends Component{
     }
     
     render() {  
-       //console.log("Level: " + this.state.level + "Fase: " + this.state.fase)
-       //console.log(this.state.active)
-        
-
+        console.log(this.state.curTime)
         const cel = window.innerWidth < 500
         const desktop = {
             display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
@@ -166,13 +164,13 @@ export default class Game extends Component{
                                 <small style={{ display: this.props.mobile ? "block" : "none", paddingLeft:"1em", paddingRight:"1em"}} >Embaralhar</small>
                             </span>
                             <span>
-                                <ConditionalLink level={this.state.level}>
-                                    <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
-                                        <a onClick={() => this.levelUp(cel)} className="botao-redondo escuro">
+                                <ConditionalLink level={this.state.level} time={this.state.curTime}>
+                                <span style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+                                        <a onClick={() => this.levelUp(cel, stop)} className="botao-redondo escuro">
                                             <img src={  window.location.origin + "/enviar.png"} alt="enviar"/>
                                         </a>
                                     </span>
-                                </ConditionalLink>
+                                    </ConditionalLink>
                                 <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
                             </span>
                             <span style={{display: cel ? "block" : "none" }}>
@@ -197,7 +195,7 @@ export default class Game extends Component{
 
                             </span>
                         </div>
-                        <Fase level={this.state.level} mobile={this.props.mobile}/>
+                        <Fase level={this.state.level} mobile={this.props.mobile} location={this.props.location} stop={this.state.level===2 ? true :false }/>
                         <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
                             <img src={  window.location.origin + "/teclado.png"} alt="resetar"/>
                         </a> 
@@ -206,7 +204,6 @@ export default class Game extends Component{
             </div>
         )    
     }
-
 }
 
 /**
