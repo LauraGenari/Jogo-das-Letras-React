@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import seta from '../../public/seta.png'
 
 export default class TemplateEscuro extends Component{
     
@@ -126,7 +127,7 @@ export default class TemplateEscuro extends Component{
                             pathname:'inicial',
                         }}>
                             <div style={{position:"relative", right:"5vw", width:"30px"}}>
-                                <img src="/seta.png" alt="seta"/>
+                                <img src={seta} alt="seta"/>
                             </div>
                         </Link>
                         <p style={{ fontFamily: this.props.font, fontSize: this.props.size, lineHeight: "1" }}>{this.props.id}</p>
@@ -138,7 +139,7 @@ export default class TemplateEscuro extends Component{
             if (this.props.bolinhas) {
                 return (
                     <div className="enunciado desktop">
-                        <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width:"95%"  }}>{this.props.id}</p>        
+                        <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width:"90%"  }}>{this.props.id}</p>        
                         <div>
                             <div style={{ borderRadius: "50px", width: "10px", height: "10px", margin: "4px", backgroundColor: um }}></div>
                             <div style={{borderRadius:"50px", width:"10px", height:"10px", margin:"4px", backgroundColor:dois}}></div>
@@ -164,7 +165,7 @@ export default class TemplateEscuro extends Component{
                                     pathname:'inicial',
                         }}>
                             <div style={{position:"relative", right:"20vw"}}>
-                                <img src="/seta.png" alt="seta" style={{ width: "30px" }}/>
+                                <img src={seta} alt="seta" style={{ width: "30px" }}/>
                             </div>
                         </Link>
                         <p style={{ fontFamily: this.props.font, fontSize: this.props.size }}>{this.props.id}</p>

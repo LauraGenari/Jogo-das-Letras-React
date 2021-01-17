@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 import TemplateEscuro from './TemplateEscuro';
 import TemplateLilas from './TemplateLilas';
+import trofeu from '../../public/trofeu.png'
+import teclado from '../../public/teclado.png'
+import estrela from '../../public/estrela.png'
 
 export default function Instrucoes({ mobile }) {
     const [cor, setCor] = useState("#fff")
     const [texto, setTexto] = useState(<div></div>)
 
-    var fontsize = "1em"
-    if (window.innerWidth < 500)
-        fontsize = "0.001em"
 
     const niveis = <div>
         <span style={{display:"flex"}}>
@@ -53,7 +53,7 @@ export default function Instrucoes({ mobile }) {
     </div>
     
     const content =
-        <div style={{fontSize: fontsize}}>
+        <div>
             <div style={{ padding: "1em",  width: mobile ? "75vw" : "50vw"}}>
                 <p>O Jogo das Letras é composto por cinco fases, cujo objetivo é: a partir de uma dica, desvendar qual palavra se encontra embaralhada. </p>
                 <p>Uma vez escolhido o nível de dificuldade, o usuário inicia o jogo na fase 1 podendo chegar a fase 5. A fase define o número de palavras a serem desembaralhadas.</p>
@@ -63,8 +63,8 @@ export default function Instrucoes({ mobile }) {
                 <div style={{ display: "flex", justifyContent: "space-around"}}>
                     <span style={{margin: "0.5em"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
-                            <a className="botao-redondo verde" onClick={() => { setCor("rgba(26, 188, 156, 0.2)"); setTexto(niveis)}}>
-                                <img src={window.location.origin + "/trofeu.png"} alt="niveis"/>
+                            <a className="botao-redondo verde" onClick={() => { setCor("rgba(26, 188, 156, 0.2)"); setTexto(niveis)}} onLoad={() => { setCor("rgba(26, 188, 156, 0.2)"); setTexto(niveis)}}>
+                                <img src={trofeu} alt="niveis"/>
                             </a>                    
                         </span>
                         <small>Níveis e Fases</small>
@@ -72,7 +72,7 @@ export default function Instrucoes({ mobile }) {
                     <span style={{margin: "0.5em", display: mobile ? "none" : "block"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
                             <a className="botao-redondo rosa" onClick={() => { setCor("rgba(251, 132, 148, 0.2)"); setTexto(comandos)}}>
-                                <img src={window.location.origin + "/teclado.png"} alt="niveis"/>
+                                <img src={teclado} alt="niveis"/>
                             </a>                    
                         </span>
                         <small>Comandos</small>
@@ -80,13 +80,13 @@ export default function Instrucoes({ mobile }) {
                     <span style={{margin: "0.5em"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
                             <a className="botao-redondo lilas" onClick={() => { setCor("rgba(123, 121, 241, 0.2)"); setTexto(pontuacao)}}>
-                                <img src={window.location.origin + "/estrela.png"} alt="pontuação"/>
+                                <img src={estrela} alt="pontuação"/>
                             </a>
                         </span>
                         <small>Pontuação</small>
                     </span>
                 </div>
-                <div style={{width: mobile ? "75vw" : "25vw", height: mobile ? "20vh" : "23vh", backgroundColor:cor,position:"relative",borderRadius:"16px", display:"flex", justifyContent:"center", alignItems:"center", paddingLeft:"1vh", paddingRight:"1vh"}}>
+                <div style={{width: mobile ? "75vw" : "25vw", height: mobile ? "20vh" : "25vh", backgroundColor:cor,position:"relative",borderRadius:"16px", display:"flex", justifyContent:"center", alignItems:"center", paddingLeft:"1vh", paddingRight:"1vh"}}>
                     {texto}
                 </div>
             </div>

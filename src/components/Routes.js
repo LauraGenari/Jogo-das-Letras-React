@@ -7,6 +7,8 @@ import Instrucoes from './Instrucoes';
 import Creditos from './Creditos';
 import Final from './Final';
 
+import TemplateLilas from './TemplateLilas';
+
 export default class Routes extends Component {
     render() {
         const mobile = this.props.mobile
@@ -21,6 +23,7 @@ export default class Routes extends Component {
                     <Route exact path="/final" render={(props) => <Final {...props} mobile={mobile} />}  />
                     <Redirect to="/inicial"/>
                 </Switch>                           
+                <TemplateLilas mobile={this.props.mobile} />
             </BrowserRouter> 
         )
     }

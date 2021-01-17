@@ -1,11 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
+#confeti {
+  background-image: url("../public/g10.png");
+  width: 90%;
+  height: 100%;
+}
+
 body {
   background-image: url("../public/background.png");
   overflow: hidden;
   font-family: Roboto !important;
 }
-
+a,
+a:visited,
+a:link,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: black;
+}
 .espaco {
   background-color: #b5b4f8;
   border: 2px solid #020067;
@@ -105,8 +118,8 @@ body {
 
 .scope.desktop {
   width: 60vw;
-  height: 50vh;
-  top: 15vh;
+  height: 55vh;
+  top: 10vh;
   left: 20vw;
   padding-top: 20vh;
 }
@@ -132,7 +145,7 @@ body {
 .bloco-lilas.desktop {
   width: 10vw;
   left: 90%;
-  height: 85vh;
+  height: 90vh;
   top: -7.5vh;
 }
 
@@ -185,6 +198,7 @@ body {
   border-style: none;
   text-transform: uppercase;
   font-weight: 500;
+  cursor: pointer;
 }
 .dark {
   background-color: #020067;

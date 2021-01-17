@@ -10,14 +10,23 @@ import TemplateLilas from '../TemplateLilas';
 import Swal from 'sweetalert2'
 import { RandomWord } from './RandomWord'
 import Fase from './TemplateFases'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import teclado from '../../../public/teclado.png';
+import resetar from '../../../public/resetar.png';
+import feliz from '../../../public/feliz.png';
+import X from '../../../public/X.png';
+import felizEstrela from '../../../public/feliz-estrela.png';
+import enviar from '../../../public/enviar.png';
 
 const ConditionalLink = ({ children, level,time }) => {
-    if((level + 1 === 6))
+    if((level + 1 === 2))
         return <Link to={{pathname:'final', init:time}}>{children}</Link> 
     else
         return <div>{children}</div>
 }
+
+
+
 export default class Game extends Component{
      
     constructor(props) {
@@ -35,7 +44,6 @@ export default class Game extends Component{
         this.levelUp = this.levelUp.bind(this)
         this.Word = this.Word.bind(this)
     }
-    
     Word(palavra, mobile) {
     
         var embaralha = [];
@@ -80,7 +88,7 @@ export default class Game extends Component{
                 Swal.fire({
                         title: "PARABÉNS",
                         text: "A resposta está correta",
-                        imageUrl: "/feliz.png",
+                        imageUrl: feliz,
                         showCloseButton: true,
                         showCancelButton: false,
                         showConfirmButton: false,
@@ -93,13 +101,13 @@ export default class Game extends Component{
                 Swal.fire({
                     title: "<span style='color:#fff'>PARABÉNS!</span>",
                     html: "<span style='color:#fff'>Você passou para a próxima fase ! \n Encontre as próximas palavras para finalizar o jogo!</span>",
-                    imageUrl: "/feliz-estrela.png",
+                    imageUrl: felizEstrela,
                     showCloseButton: false,
                     showCancelButton: false,
-                    confirmButtonText: "Continuar&nbsp;<img src='/play.png' style='display:flex-inline; vertical-align:middle'/>",
+                    confirmButtonText: "Continuar&nbsp;<img src='play.png' style='display:flex-inline; vertical-align:middle'/>",
                     confirmButtonColor: '#7b79f1',
                     padding:cel ? '2em 1em':'5em',
-                    background: "#2a279d url('/uhu.webp')",
+                    background:" #2a279d url('https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif')",
                     timer: 4000,
                     width: cel ? 300 : 600
                     
@@ -121,7 +129,7 @@ export default class Game extends Component{
             Swal.fire({
                 title: "TENTE NOVAMENTE",
                 text: "Não desista!",
-                imageUrl: "/X.png",
+                imageUrl:X,
                 showCloseButton: true,
                 showCancelButton: false,
                 showConfirmButton: false,
@@ -136,7 +144,7 @@ export default class Game extends Component{
         console.log(this.state.curTime)
         const cel = window.innerWidth < 500
         const desktop = {
-            display:"flex" , position:"absolute", top:"92.5%", right:"10%", alignItems:"center"
+            display:"flex" , position:"absolute", top:"92.5%", right:"15%", alignItems:"center"
         }
         const mobile = {
             display: "flex", alignItems: "center", flexWrap: "wrap-reverse", width: "12em", justifyContent: "center"
@@ -144,7 +152,7 @@ export default class Game extends Component{
         return (
             <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
-                <TemplateLilas mobile={this.props.mobile} game={cel ? true : false}/>
+                <TemplateLilas mobile={this.props.mobile} game={cel ? false : true}/>
                 <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0"}}>
                     <div className="grid" style={{ gridRowGap: this.props.mobile ? '0' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
@@ -156,8 +164,8 @@ export default class Game extends Component{
                         <div style={{ display: "flex", flexWrap: "wrap", width: "150px", alignItems: "strech", justifyContent: "center", height:"50%"}}>
                             <span>
                                 <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
-                                    <a onClick={() => this.forceUpdate() } className="botao-redondo lilas">
-                                        <img src={  window.location.origin + "/resetar.png"} alt="resetar"/>
+                                    <a onClick={() => this.forceUpdate() } className="botao-redondo lilas" title="Embaralhar">
+                                        <img src={resetar} alt="resetar"/>
                                     </a>
 
                                 </span>
@@ -166,8 +174,8 @@ export default class Game extends Component{
                             <span>
                                 <ConditionalLink level={this.state.level} time={this.state.curTime}>
                                 <span style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                                        <a onClick={() => this.levelUp(cel, stop)} className="botao-redondo escuro">
-                                            <img src={  window.location.origin + "/enviar.png"} alt="enviar"/>
+                                        <a onClick={() => this.levelUp(cel, stop)} className="botao-redondo escuro" title="Enviar resposta">
+                                            <img src={enviar} alt="enviar"/>
                                         </a>
                                     </span>
                                     </ConditionalLink>
@@ -196,8 +204,15 @@ export default class Game extends Component{
                             </span>
                         </div>
                         <Fase level={this.state.level} mobile={this.props.mobile} location={this.props.location} stop={this.state.level===2 ? true :false }/>
-                        <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }}>
-                            <img src={  window.location.origin + "/teclado.png"} alt="resetar"/>
+                        <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }} title="Comandos" onClick={() => Swal.fire({
+                            title: "<span>Comandos</span>",
+                            html: "<div style='background-color:rgba(251, 132, 148, 0.2); border-radius:16px; text-align:left'><span style='display:flex'><strong style='padding: 1em' >ENTER</strong><strong style='padding-top: 1em'>-</strong><div style='padding:1em'>verifica a resposta</div></span><span style='display:flex'><strong style='padding-left: 1em; padding-right: 1em' >SPACE</strong><strong>-</strong><div style='padding-left: 1em; padding-right: 1em' >embaralha a palavra novamente</div></span><span style='display:flex'><strong style='padding: 1em' >BACKSPACE</strong><strong style=' padding-top: 1em'>-</strong><div style='padding: 1em' >remove o último caractere inserido</div></span></div>",
+                            showCloseButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: 'rgb(251, 132, 148)',
+                            width: cel ? 300 : 600                            
+                        })}>
+                            <img src={teclado} alt="teclado"/>
                         </a> 
                     </div>
                 </div>
@@ -210,6 +225,7 @@ export default class Game extends Component{
  * TODO
  * lógica:
  * -não deixar passar de nivel com espaço vazio incial
+ * -botoes compartilhar (inicial e final)
  * 
  * https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif
  * https://i.giphy.com/media/5QStNXJ9luL8FYjI42/giphy.webp
