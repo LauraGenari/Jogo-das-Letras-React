@@ -1,10 +1,9 @@
 import React from 'react'
 import TemplateEscuro from './TemplateEscuro';
-import TemplateLilas from './TemplateLilas';
 
 export default function Creditos({mobile}) { 
     const content =
-    <div style={{ textAlign: "center", display:mobile?"block":"flex" }}>        
+    <div style={{ textAlign: "center", display:mobile?"block":"flex", fontSize: mobile ? "0.9em" : "1em" }}>        
         <div style={{margin:mobile ? "0":"5em 2.5em 0em 5em"}}>
             <div style={{ fontFamily: "Luckiest Guy" }}>COORDENAÇÃO E SUPERVISAO GERAL</div>
             <div>Leila Maria Beltramini</div>

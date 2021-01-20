@@ -6,7 +6,6 @@ import { DndProvider} from "react-dnd";
 import { TouchBackend } from "react-dnd-touch-backend";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import TemplateEscuro from '../TemplateEscuro';
-import TemplateLilas from '../TemplateLilas';
 import Swal from 'sweetalert2'
 import { RandomWord } from './RandomWord'
 import Fase from './TemplateFases'
@@ -19,13 +18,11 @@ import felizEstrela from '../../../public/feliz-estrela.png';
 import enviar from '../../../public/enviar.png';
 
 const ConditionalLink = ({ children, level,time }) => {
-    if((level + 1 === 2))
+    if((level + 1 === 6))
         return <Link to={{pathname:'final', init:time}}>{children}</Link> 
     else
         return <div>{children}</div>
 }
-
-
 
 export default class Game extends Component{
      
@@ -150,10 +147,9 @@ export default class Game extends Component{
             display: "flex", alignItems: "center", flexWrap: "wrap-reverse", width: "12em", justifyContent: "center"
         }
         return (
-            <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
+            <div  onKeyPress={(e) => console.log("sim")} style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
-                <TemplateLilas mobile={this.props.mobile} game={cel ? false : true}/>
-                <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0"}}>
+                 <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0", alignSelf: "center", justifyContent: "center"}}>
                     <div className="grid" style={{ gridRowGap: this.props.mobile ? '0' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
                             {this.Word(this.state.word[0], this.props.mobile)}
@@ -164,7 +160,7 @@ export default class Game extends Component{
                         <div style={{ display: "flex", flexWrap: "wrap", width: "150px", alignItems: "strech", justifyContent: "center", height:"50%"}}>
                             <span>
                                 <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
-                                    <a onClick={() => this.forceUpdate() } className="botao-redondo lilas" title="Embaralhar">
+                                    <a onClick={() => this.forceUpdate()} className="botao-redondo lilas" title="Embaralhar">
                                         <img src={resetar} alt="resetar"/>
                                     </a>
 
@@ -180,27 +176,6 @@ export default class Game extends Component{
                                     </span>
                                     </ConditionalLink>
                                 <small style={{ display: this.props.mobile ? "block" : "none"}} >Enviar resposta</small>
-                            </span>
-                            <span style={{display: cel ? "block" : "none" }}>
-                                <a onClick={() => Swal.fire({
-                                    title: "SAIR DO JOGO",
-                                    text: "Tem certeza que deseja sair do jogo?",
-                                    imageUrl: "/exclamacao.png",
-                                    showCloseButton: true,
-                                    showCancelButton: true,
-                                    showConfirmButton: true,
-                                    padding:'3em',
-                                    width: cel ? 400 : 600,
-                                    confirmButtonText:'SIM',
-                                    cancelButtonText: 'NÃO',
-                                    confirmButtonColor: '#fff',
-                                    cancelButtonColor: '#fff',
-                                }) 
-                                }>
-                                    <img alt="sair" src={window.location.origin + "/sair-preto.png"}  style={{ padding: "1em"}}/>
-                                </a>
-                                <a><img alt="som" src={ window.location.origin + "/sem-som-preto.png"}  style={{ padding: "1em"}}/></a>
-
                             </span>
                         </div>
                         <Fase level={this.state.level} mobile={this.props.mobile} location={this.props.location} stop={this.state.level===2 ? true :false }/>

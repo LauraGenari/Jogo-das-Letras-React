@@ -68,10 +68,10 @@ a:active {
   text-align: center;
 }
 .enunciado.mobile {
-  width: 95vw;
+  width: 92vw;
   height: 15vh;
   position: absolute;
-  left: -5vw;
+  left: -3vw;
   top: 2.5vh;
   margin-bottom: 15vh;
   display: flex;
@@ -110,10 +110,11 @@ a:active {
 
 .scope.mobile {
   width: 85vw;
-  height: 68vh;
-  top: 10vh;
+  height: 65vh;
+  bottom: -3vh;
   left: 5vw;
-  padding-top: 15vh;
+  padding-top: 13vh;
+  margin-top: 3vh;
 }
 
 .scope.desktop {
@@ -139,7 +140,7 @@ a:active {
 .bloco-lilas.mobile {
   width: 28vw;
   left: 75%;
-  height: 95vh;
+  height: 90vh;
   top: -5vh;
 }
 .bloco-lilas.desktop {
@@ -147,6 +148,16 @@ a:active {
   left: 90%;
   height: 90vh;
   top: -7.5vh;
+}
+
+.bloco-lilas-transparente {
+  width: 20%;
+  z-index: -1;
+  display: flex;
+  justify-content: space-around;
+  z-index: 3;
+  margin-left: 60%;
+  margin-top: 120%;
 }
 
 .conteudo {

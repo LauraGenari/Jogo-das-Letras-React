@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import TemplateEscuro from './TemplateEscuro';
-import TemplateLilas from './TemplateLilas';
 import play from '../../public/play.png'
 
 export default function Tema({ mobile}) { 

@@ -5,6 +5,9 @@ import musica from "../../public/bensound-buddy.mp3"
 import comSomBranco from '../../public/com-som-branco.png'
 import semSomBranco from '../../public/sem-som-branco.png'
 
+import comSomPreto from '../../public/com-som-preto.png'
+import semSomPreto from '../../public/sem-som-preto.png'
+
 const useAudio = musica => {
   const [audio] = useState(new Audio(musica));
   const [playing, setPlaying] = useState(false);
@@ -27,11 +30,15 @@ const useAudio = musica => {
   return [playing, toggle];
 };
 
-const Music = () => {
-const [playing, toggle] = useAudio(musica);
-
+const Music = ({mobile, game}) => {
+  const [playing, toggle] = useAudio(musica);
+  var comSom = comSomBranco, semSom = semSomBranco
+  if (mobile && game){
+    comSom = comSomPreto
+    semSom = semSomPreto
+  }
   return (
-      <a onClick={toggle}>{playing ? <img src={comSomBranco} style={{padding:"1em"}}/> : <img src={semSomBranco} style={{padding:"1em"}}/>}</a>
+      <a onClick={toggle}>{playing ? <img src={comSom} style={{padding:"0.5em"}} alt="som"/> : <img src={semSom} style={{padding:"0.5em"}} alt="som"/>}</a>
   );
 };
 

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Swal from 'sweetalert2'
 import { Link, withRouter } from 'react-router-dom'
 import home from '../../public/home.png'
-import sair from '../../public/sair.png'
 import Music from './Music'
+import Sair from './Sair'
 
 class TemplateLilas extends Component {
 
@@ -12,49 +11,32 @@ class TemplateLilas extends Component {
         var inicial = this.props.location.pathname === "/inicial" ? true : false
         var game = this.props.location.pathname === "/game" ? true : false
         if (this.props.mobile) {
-            if(game )
                 return (
-                    <div className="bloco-lilas mobile">
+                    <div className={game?"bloco-lilas-transparente":"bloco-lilas mobile"} >
                         
-                        <Music/>
-                        {!this.props.inicial && 
-                        
+                        <Music mobile={this.props.mobile} game={game}/>
+                        {!inicial && 
+                            !game &&
                             <Link to={{
                                     pathname:'inicial',
-                                }}>
-                               
-                                    <img alt="home" src={home} style={{ padding: "1em" }}/>
-                                
+                                }}>                               
+                                    <img alt="home" src={home} style={{ padding: "0.5em" }}/>
                             </Link>
+                        }
+                        {!inicial &&
+                            game
+                                && <Sair mobile={this.props.mobile} game={game}/>
                         }
                     </div>
                 )
-            else {
-                return null
-            }
         }
         else {
             return (
                 <div className="bloco-lilas desktop">
-                    <Music/>
+                    <Music mobile={this.props.mobile} game={game}/>
                     {!inicial &&
                     game
-                        && <a onClick={() => Swal.fire({
-                            title: "SAIR DO JOGO",
-                            text: "Tem certeza que deseja sair do jogo?",
-                            imageUrl: "/exclamacao.png",
-                            showCloseButton: true,
-                            showCancelButton: true,
-                            showConfirmButton: true,
-                            padding: '3em',
-                            confirmButtonText: "<a href='inicial'>SIM</a>",
-                            cancelButtonText: 'NÃO',
-                            confirmButtonColor: '#fff',
-                            cancelButtonColor: '#fff',
-                            
-                        })}>
-                            <img alt="sair" src={sair} style={{ padding: "1em" }}/>   
-                        </a>
+                        && <Sair mobile={this.props.mobile} game={game}/>
                     }
 
                     
@@ -62,7 +44,7 @@ class TemplateLilas extends Component {
                         <Link to={{
                                     pathname:'inicial',
                                 }}>
-                                    <img alt="home" src={home} style={{ padding: "1em" }}/>
+                                    <img alt="home" src={home} style={{ padding: "0.5em" }}/>
                         </Link>
                     }
                 </div>

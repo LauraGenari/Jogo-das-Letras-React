@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import TemplateEscuro from './TemplateEscuro';
-import TemplateLilas from './TemplateLilas';
 import trofeu from '../../public/trofeu.png'
 import teclado from '../../public/teclado.png'
 import estrela from '../../public/estrela.png'
@@ -53,7 +52,7 @@ export default function Instrucoes({ mobile }) {
     </div>
     
     const content =
-        <div>
+        <div style={{fontSize: mobile ? "0.75em" : "1em"}}>
             <div style={{ padding: "1em",  width: mobile ? "75vw" : "50vw"}}>
                 <p>O Jogo das Letras é composto por cinco fases, cujo objetivo é: a partir de uma dica, desvendar qual palavra se encontra embaralhada. </p>
                 <p>Uma vez escolhido o nível de dificuldade, o usuário inicia o jogo na fase 1 podendo chegar a fase 5. A fase define o número de palavras a serem desembaralhadas.</p>
@@ -96,7 +95,6 @@ export default function Instrucoes({ mobile }) {
     return (    
         <div>
             <TemplateEscuro mobile={mobile} id="INSTRUÇÕES" font={"Luckiest Guy"} size="2.3em" bolinhas={false }/>
-            <TemplateLilas mobile={mobile}/>
             {content}
         </div>
     )    

@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import TemplateEscuro from './TemplateEscuro'
-import TemplateLilas from './TemplateLilas'
 import { Link } from 'react-router-dom'
 import jogar from '../../public/jogar.png'
 import interrogacao from '../../public/interrogacao.png'
