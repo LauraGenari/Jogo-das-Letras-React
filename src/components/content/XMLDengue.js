@@ -1,8 +1,6 @@
 import XMLParser from 'react-xml-parser'
 
-const XMLDengue = `
-<?xml-stylesheet type="text/xsl" href="ACSPIXMT.xsl" ?>
-<?xml version="1.0" encoding="UTF-8"?>
+const XMLDengue = `<?xml version="1.0" encoding="UTF-8"?>
 <Unscramble>
 	<fase1>
 		<Conteudo1>
@@ -72,7 +70,7 @@ const XMLDengue = `
 			<PalavraAssoc>URBANO</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
-			<Dica>O vírus da dengue é transmitido pela ________ do mosquito Aedes aegypti.</Dica>
+			<Dica>O vírus da dengue é transmitido pela ________ do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>FÊMEA</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
@@ -126,11 +124,11 @@ const XMLDengue = `
 			<PalavraAssoc>BIFÁSICA</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>O vírus da dengue é transmitido pela fêmea do mosquito Aedes aegypti) e pode causar tanto a manifestação __________ da doença quanto a forma considerada hemorrágica.</Dica>
+			<Dica>O vírus da dengue é transmitido pela fêmea do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪) e pode causar tanto a manifestação __________ da doença quanto a forma considerada hemorrágica.</Dica>
 			<PalavraAssoc>CLÁSSICA</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>A transmissão da dengue se faz apenas pela ________ da fêmea do Aedes aegypti infectada com o vírus.</Dica>
+			<Dica>A transmissão da dengue se faz apenas pela ________ da fêmea do 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 infectada com o vírus.</Dica>
 			<PalavraAssoc>PICADA</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
@@ -195,7 +193,7 @@ const XMLDengue = `
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Nome científico do mosquito da dengue.</Dica>
-			<PalavraAssoc>AEDES AEGYPTI</PalavraAssoc>
+			<PalavraAssoc>𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Pacientes com Dengue devem evitar medicamentos à base de ácido __________. Esses medicamentos têm efeito anticoagulante e podem causar sangramentos.</Dica>
@@ -226,8 +224,7 @@ const XMLDengue = `
 			<PalavraAssoc>SANGRAMENTO</PalavraAssoc>
 		</Conteudo5>
 	</fase5>
-</Unscramble>
-`
+</Unscramble>`
 
 var xml = new XMLParser().parseFromString(XMLDengue);
 export function palavraDengue(i, level) {

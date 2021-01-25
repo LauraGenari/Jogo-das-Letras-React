@@ -2,7 +2,6 @@ import XMLParser from 'react-xml-parser'
 
 const XMLChikungunya = `
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="ACSPIXMT.xsl" ?>
 <Unscramble>
 	<fase1>
 		<Conteudo1>
@@ -38,7 +37,7 @@ const XMLChikungunya = `
 			<PalavraAssoc>RNA</PalavraAssoc>
 		</Conteudo1>
 		<Conteudo1>
-			<Dica>O CHIKV é transmitido pela picada do mesmo vetor do ______, o Aedes aegypti.</Dica>
+			<Dica>O CHIKV é transmitido pela picada do mesmo vetor do ______, o 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>ZIKA</PalavraAssoc>
 		</Conteudo1>
 	</fase1>
@@ -72,7 +71,7 @@ const XMLChikungunya = `
 			<PalavraAssoc>MOSQUITO</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
-			<Dica>O Aedes aegypti tem presença essencialmente ________ e está associado à transmissão do CHIKV em áreas tropicais.</Dica>
+			<Dica>O 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 tem presença essencialmente ________ e está associado à transmissão do CHIKV em áreas tropicais.</Dica>
 			<PalavraAssoc>URBANA</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
@@ -114,7 +113,7 @@ const XMLChikungunya = `
 			<PalavraAssoc>NORDESTE</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>O Aedes aegypti, transmissor do vírus Chikungunya, é um mosquito que habita as regiões _________ e subtropicais, apresentando incapacidade de suportar invernos rigorosos.</Dica>
+			<Dica>O 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪, transmissor do vírus Chikungunya, é um mosquito que habita as regiões _________ e subtropicais, apresentando incapacidade de suportar invernos rigorosos.</Dica>
 			<PalavraAssoc>TROPICAIS</PalavraAssoc>
 		</Conteudo3>
 	</fase3>
@@ -162,7 +161,7 @@ const XMLChikungunya = `
 			<PalavraAssoc>ALPHAVIRUS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>A chikungunya é uma doença febril aguda, causada pelo vírus Chikungunya (CHIKV), que pode ser transmitida pelos mosquitos Aedes aegypti e pelo Aedes __________.</Dica>
+			<Dica>A chikungunya é uma doença febril aguda, causada pelo vírus Chikungunya (CHIKV), que pode ser transmitida pelos mosquitos 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 e pelo Aedes __________.</Dica>
 			<PalavraAssoc>ALBOPICTUS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
@@ -182,8 +181,7 @@ const XMLChikungunya = `
 			<PalavraAssoc>SALICÍLICO</PalavraAssoc>
 		</Conteudo5>
 	</fase5>
-</Unscramble>
-`
+</Unscramble>`
 var xml = new XMLParser().parseFromString(XMLChikungunya);
 export function palavraChikungunya(i, level) {
 	const fase = 'fase' + level;

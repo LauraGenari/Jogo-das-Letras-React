@@ -1,8 +1,6 @@
 import XMLParser from 'react-xml-parser'
 
-const XMLZika = `
-<?xml-stylesheet type="text/xsl" href="ACSPIXMT.xsl" ?>
-<?xml version="1.0" encoding="UTF-8"?>
+const XMLZika = `<?xml version="1.0" encoding="UTF-8"?>
 <Unscramble>
 	<fase1>
 		<Conteudo1>
@@ -26,7 +24,7 @@ const XMLZika = `
 			<PalavraAssoc>AEDES</PalavraAssoc>
 		</Conteudo1>
 		<Conteudo1>
-			<Dica>Segunda espécie de mosquito que, assim como o Aedes aegypti, transmite Zika vírus.</Dica>
+			<Dica>Segunda espécie de mosquito que, assim como o 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪, transmite Zika vírus.</Dica>
 			<PalavraAssoc>CULEX</PalavraAssoc>
 		</Conteudo1>
 		<Conteudo1>
@@ -48,7 +46,7 @@ const XMLZika = `
 	</fase1>
 	<fase2>
 		<Conteudo2>
-			<Dica>O Aedes aegypti é o ______ do Zika Vírus, pois o mosquito carrega o vírus sem ser afetado, transmitindo-o através de suas picadas.</Dica>
+			<Dica>O 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 é o ______ do Zika Vírus, pois o mosquito carrega o vírus sem ser afetado, transmitindo-o através de suas picadas.</Dica>
 			<PalavraAssoc>VETOR</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
@@ -68,7 +66,7 @@ const XMLZika = `
 			<PalavraAssoc>FADIGA</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
-			<Dica>O vírus Zika é transmitido pela ________ do mosquito Aedes aegypti.</Dica>
+			<Dica>O vírus Zika é transmitido pela ________ do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>FÊMEA</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
@@ -118,7 +116,7 @@ const XMLZika = `
 			<PalavraAssoc>SINTOMAS</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>A transmissão do Zika se faz apenas pela ________ da fêmea do Aedes aegypti infectada com o vírus.</Dica>
+			<Dica>A transmissão do Zika se faz apenas pela ________ da fêmea do 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 infectada com o vírus.</Dica>
 			<PalavraAssoc>PICADA</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
@@ -169,7 +167,7 @@ const XMLZika = `
 			<PalavraAssoc>PARACETAMOL</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
-			<Dica>Melhor maneira preventiva do Zika, assim como todas as outras doenças causadas pelo mosquito Aedes Aegypti.</Dica>
+			<Dica>Melhor maneira preventiva do Zika, assim como todas as outras doenças causadas pelo mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>CONSCIENTIZAÇÃO</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
@@ -192,7 +190,7 @@ const XMLZika = `
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Nome científico do mosquito transmissor do ZIKV.</Dica>
-			<PalavraAssoc>AEDES AEGYPTI</PalavraAssoc>
+			<PalavraAssoc>𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Medicamento que contém ácido _______ é contra-indicado em caso de suspeita de Zika por causar hemorragia.</Dica>

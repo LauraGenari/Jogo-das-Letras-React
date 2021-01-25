@@ -25,7 +25,7 @@ const ConditionalLink = ({ children, level,time }) => {
 }
 
 export default class Game extends Component{
-     
+
     constructor(props) {
         super(props);
         const pw = RandomWord(1, this.props.location.tema)
@@ -147,10 +147,11 @@ export default class Game extends Component{
             display: "flex", alignItems: "center", flexWrap: "wrap-reverse", width: "12em", justifyContent: "center"
         }
         return (
-            <div  onKeyPress={(e) => console.log("sim")} style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
-                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="1em" bolinhas={true} level={this.state.level} fase={this.state.fase}/>
+            <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
+                <span  onKeyDown={(event) => {if(!this.props.mobile){ if( event.key === ' '){this.forceUpdate()}else if ( event.key === 'Enter'){this.levelUp(cel, stop),event.preventDefault()}}}} tabIndex="-1" style={{outline: "none", width:"100vw", height:"100vh", position:"absolute"}}></span>
+                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="0.5em" bolinhas={true} level={this.state.level} fase={this.state.fase} />
                  <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0", alignSelf: "center", justifyContent: "center"}}>
-                    <div className="grid" style={{ gridRowGap: this.props.mobile ? '0' : '1em'}}>
+                    <div className="grid" style={{ gridRowGap: this.props.mobile ? '5px' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
                             {this.Word(this.state.word[0], this.props.mobile)}
                         </DndProvider>
@@ -200,13 +201,7 @@ export default class Game extends Component{
  * TODO
  * lógica:
  * -não deixar passar de nivel com espaço vazio incial
- * -botoes compartilhar (inicial e final)
- * 
- * https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif
- * https://i.giphy.com/media/5QStNXJ9luL8FYjI42/giphy.webp
- * https://media0.giphy.com/media/feg7YjzwtwuitMcmLR/giphy.gif
- * https://i.giphy.com/media/jQE07RpzMDmwCras0S/giphy.webp
- * https://i.giphy.com/media/fvMy0610Z0uJ87KYb9/giphy.webp
- * https://media2.giphy.com/media/f9dk42HSu0AM39kSMF/giphy.gif
+ * -enter e space
+ * - sair (url leva pro eic)
  * 
  */

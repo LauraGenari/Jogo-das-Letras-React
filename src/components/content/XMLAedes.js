@@ -1,8 +1,6 @@
 import XMLParser from 'react-xml-parser'
 
-const XMLAedes =`
-<?xml version='1.0' encoding='utf-8'?>
-<?xml-stylesheet type="text/xsl" href="ACSPIXMT.xsl" ?>
+const XMLAedes = `<?xml version="1.0" encoding="UTF-8"?>
 <Unscramble>
 	<fase1>
 		<Conteudo1>
@@ -26,7 +24,7 @@ const XMLAedes =`
 			<PalavraAssoc>AEDES</PalavraAssoc>
 		</Conteudo1>
 		<Conteudo1>
-			<Dica>Primeira fase do mosquito Aedes aegypti.</Dica>
+			<Dica>Primeira fase do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>LARVA</PalavraAssoc>
 		</Conteudo1>
 		<Conteudo1>
@@ -50,6 +48,7 @@ const XMLAedes =`
 			<PalavraAssoc>ÁGUA</PalavraAssoc>
 		</Conteudo1>
 	</fase1>
+
 	<fase2>
 		<Conteudo2>
 			<Dica>Continente originário do Aedes.</Dica>
@@ -60,11 +59,11 @@ const XMLAedes =`
 			<PalavraAssoc>SANGUE</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
-			<Dica>Encontramos em água parada, antecede a fase adulta do mosquito da dengue.</Dica>
+			<Dica>Encontrada em água parada, antecede a fase adulta do mosquito da dengue.</Dica>
 			<PalavraAssoc>LARVA</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
-			<Dica>O Aedes aegypti é um mosquito adaptado ao ambiente _______.</Dica>
+			<Dica>O 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 é um mosquito adaptado ao ambiente _______.</Dica>
 			<PalavraAssoc>URBANO</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
@@ -72,7 +71,7 @@ const XMLAedes =`
 			<PalavraAssoc>OXIGÊNIO</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
-			<Dica>O vírus da dengue é transmitido pela ________ do mosquito Aedes aegypti.</Dica>
+			<Dica>O vírus da dengue é transmitido pela ________ do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>FÊMEA</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
@@ -80,7 +79,7 @@ const XMLAedes =`
 			<PalavraAssoc>OVOS</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
-			<Dica>Período do dia de maior ocorrência de picadas e transmissão de doenças por parte Aedes aegypti.</Dica>
+			<Dica>Período do dia de maior ocorrência de picadas e transmissão de doenças por parte 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>DIURNO</PalavraAssoc>
 		</Conteudo2>
 		<Conteudo2>
@@ -96,6 +95,7 @@ const XMLAedes =`
 			<PalavraAssoc>GARRAFA</PalavraAssoc>
 		</Conteudo2>
 	</fase2>
+
 	<fase3>
 		<Conteudo3>
 			<Dica>Produto usado na pele, que modifica o cheiro dela e confunde a fêmea, existem apresentações em creme, loção ou aerossol.</Dica>
@@ -114,7 +114,7 @@ const XMLAedes =`
 			<PalavraAssoc>INSETICIDA</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>Classe do reino animal pertencente ao Aedes aegypti.</Dica>
+			<Dica>Classe do reino animal pertencente ao 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>INSECTA</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
@@ -126,21 +126,22 @@ const XMLAedes =`
 			<PalavraAssoc>PAREDE</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>Mosquito que pode ser confundido com o Aedes aegypti.</Dica>
+			<Dica>Mosquito que pode ser confundido com o 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>CULEX</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>A transmissão das doenças se faz apenas pela ________ da fêmea do Aedes aegypti infectada com o vírus.</Dica>
+			<Dica>A transmissão das doenças se faz apenas pela ________ da fêmea do 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 infectada com o vírus.</Dica>
 			<PalavraAssoc>PICADA</PalavraAssoc>
 		</Conteudo3>
 		<Conteudo3>
-			<Dica>O Aedes aegypti é um mosquito que habita as regiões _________ e subtropicais, apresentando incapacidade de suportar invernos rigorosos.</Dica>
+			<Dica>O 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 é um mosquito que habita as regiões _________ e subtropicais, apresentando incapacidade de suportar invernos rigorosos.</Dica>
 			<PalavraAssoc>TROPICAIS</PalavraAssoc>
 		</Conteudo3>
 	</fase3>
+
 	<fase4>
 		<Conteudo4>
-			<Dica>Grandes _________: marco histórico responsável pela chegada do mosquito Aedes aegypti.</Dica>
+			<Dica>Grandes _________: marco histórico responsável pela chegada do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>EMBARCAÇÕES</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
@@ -161,7 +162,7 @@ const XMLAedes =`
 		</Conteudo4>
 		<Conteudo4>
 			<Dica>Vetor comum entre a Dengue e Zika.</Dica>
-			<PalavraAssoc>AEDES AEGYPTI</PalavraAssoc>
+			<PalavraAssoc>𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
 			<Dica>O Aedes pertence ao filo dos Artrópodes, e da classe Insecta. Os artrópodes apresentam um esqueleto externo, denominado exoesqueleto. Sobre o esqueleto desse filo, pode-se dizer que ele é constituído por um carboidrato denominado _________.</Dica>
@@ -176,9 +177,10 @@ const XMLAedes =`
 			<PalavraAssoc>DESSECAÇÃO</PalavraAssoc>
 		</Conteudo4>
 	</fase4>
+	
 	<fase5>
 		<Conteudo5>
-			<Dica>Nome popular dado ao mosquito Aedes aegypti.</Dica>
+			<Dica>Nome popular dado ao mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>MOSQUITO DA DENGUE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
@@ -186,7 +188,7 @@ const XMLAedes =`
 			<PalavraAssoc>AEDES ALBOPICTUS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Principal característica física do Aedes aegypti.</Dica>
+			<Dica>Principal característica física do 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>LISTRAS BRANCAS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
@@ -194,11 +196,11 @@ const XMLAedes =`
 			<PalavraAssoc>ANTROPOFÍLICO</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>No Brasil, ao início do século XX, o mosquito Aedes aegypti já era um problema, mas não por conta da dengue, na época, a principal preocupação era a transmissão da _____________.</Dica>
+			<Dica>No Brasil, ao início do século XX, o mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 já era um problema, mas não por conta da dengue, na época, a principal preocupação era a transmissão da _____________.</Dica>
 			<PalavraAssoc>FEBRE AMARELA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Local propício para a proliferação do mosquito Aedes aegypti.</Dica>
+			<Dica>Local propício para a proliferação do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>ÁGUA PARADA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
@@ -206,11 +208,11 @@ const XMLAedes =`
 			<PalavraAssoc>FITÓFAGA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Órgão do governo responsável pelo combate ao mosquito Aedes aegypti.</Dica>
+			<Dica>Órgão do governo responsável pelo combate ao mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>MINISTÉRIO DA SAÚDE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Hábito de se alimentar de sangue praticado pelas fêmeas do mosquito Aedes aegypti.</Dica>
+			<Dica>Hábito de se alimentar de sangue praticado pelas fêmeas do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
 			<PalavraAssoc>HEMATOFAGIA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
