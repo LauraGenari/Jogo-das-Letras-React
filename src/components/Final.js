@@ -18,13 +18,22 @@ export function Tempo(inicial, final) {
     var minutos = 0
     var horas = 0
     if (segundos >= 60){
-        minutos = segundos / 60
+        minutos = Math.ceil(segundos / 60)
         segundos %= 60
     }
     if (minutos >= 60) {
-        horas = minutos / 60
+        horas =  Math.ceil(minutos / 60)
         minutos %= 60
         segundos %= 60
+    }
+    if(horas < 10){
+        horas = "0"+horas
+    }
+    if(minutos < 10){
+        minutos = "0"+minutos
+    }
+    if(segundos<10){
+        segundos = "0"+segundos
     }
     return <div style={{background: "rgba(255, 210, 134, 0.6)",borderRadius: "8px", padding:"1em", width:"fit-content"}}>
       {horas}:{minutos}:{segundos}

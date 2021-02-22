@@ -8,14 +8,7 @@ export default function Instrucoes({ mobile }) {
     const [cor, setCor] = useState("#fff")
     const [texto, setTexto] = useState(<div></div>)
 
-
     const niveis = <div>
-        <span style={{display:"flex"}}>
-            <strong style={{ padding: "1em" }} >NIVEIS</strong>
-            <strong style={{ paddingTop: "1em"}}>-</strong>
-            <div style={{padding:"1em"}}>há três níveis de dificuldade: básico, intermediário, avançado</div>
-
-        </span>
         <span style={{display:"flex"}}>
             <strong style={{ paddingLeft: "1em", paddingRight: "1em"}} >FASES</strong>
             <strong>-</strong>
@@ -44,11 +37,6 @@ export default function Instrucoes({ mobile }) {
             <strong>-</strong>
             <div style={{ paddingLeft: "1em", paddingRight: "1em" }} >embaralha a palavra novamente</div>
         </span>
-        <span style={{display:"flex"}}>
-            <strong style={{ padding: "1em"}} >BACKSPACE</strong>
-            <strong style={{ paddingTop: "1em"}}>-</strong>
-            <div style={{ padding: "1em" }} >remove o último caractere inserido</div>
-        </span>
     </div>
     
     const content =
@@ -66,7 +54,7 @@ export default function Instrucoes({ mobile }) {
                                 <img src={trofeu} alt="niveis"/>
                             </a>                    
                         </span>
-                        <small>Níveis e Fases</small>
+                        <small style={{display:"flex",justifyContent:"center"}}>Fases</small>
                     </span>
                     <span style={{margin: "0.5em", display: mobile ? "none" : "block"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
@@ -74,7 +62,7 @@ export default function Instrucoes({ mobile }) {
                                 <img src={teclado} alt="niveis"/>
                             </a>                    
                         </span>
-                        <small>Comandos</small>
+                        <small style={{display:"flex",justifyContent:"center"}}>Comandos</small>
                     </span>
                     <span style={{margin: "0.5em"}}>
                         <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
@@ -82,7 +70,7 @@ export default function Instrucoes({ mobile }) {
                                 <img src={estrela} alt="pontuação"/>
                             </a>
                         </span>
-                        <small>Pontuação</small>
+                        <small style={{display:"flex",justifyContent:"center"}}>Pontuação</small>
                     </span>
                 </div>
                 <div style={{width: mobile ? "75vw" : "25vw", height: mobile ? "20vh" : "25vh", backgroundColor:cor,position:"relative",borderRadius:"16px", display:"flex", justifyContent:"center", alignItems:"center", paddingLeft:"1vh", paddingRight:"1vh"}}>

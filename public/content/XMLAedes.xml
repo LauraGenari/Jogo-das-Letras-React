@@ -178,20 +178,20 @@
 	
 	<fase5>
 		<Conteudo5>
-			<Dica>Nome popular dado ao mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
-			<PalavraAssoc>MOSQUITO DA DENGUE</PalavraAssoc>
+			<Dica>Mosquito da _______ é o nome popular dado ao mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
+			<PalavraAssoc>DENGUE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Além do Aedes, há outro mosquito que também é considerado vetor da dengue.</Dica>
-			<PalavraAssoc>AEDES ALBOPICTUS</PalavraAssoc>
+			<Dica>Além do 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪, há outro mosquito que também é considerado vetor da dengue chamado Aedes ______________.</Dica>
+			<PalavraAssoc>ALBOPICTUS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Principal característica física do 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
-			<PalavraAssoc>LISTRAS BRANCAS</PalavraAssoc>
+			<Dica>Principal característica física do 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 são as _______ brancas.</Dica>
+			<PalavraAssoc>LISTRAS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Termo designado ao artrópode por viver ao redor do humano.</Dica>
-			<PalavraAssoc>ANTROPOFÍLICO</PalavraAssoc>
+			<Dica>Antropofílico é o  termo designado ao artrópode que  vive  próximo ao  ser __________________</Dica>
+			<PalavraAssoc>HUMANO</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>No Brasil, ao início do século XX, o mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪 já era um problema, mas não por conta da dengue, na época, a principal preocupação era a transmissão da _____________.</Dica>
@@ -206,8 +206,8 @@
 			<PalavraAssoc>FITÓFAGA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Órgão do governo responsável pelo combate ao mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
-			<PalavraAssoc>MINISTÉRIO DA SAÚDE</PalavraAssoc>
+			<Dica>Órgão do governo responsável pelo combate ao mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪  é o ministério da ________.</Dica>
+			<PalavraAssoc>SAÚDE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Hábito de se alimentar de sangue praticado pelas fêmeas do mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
@@ -215,7 +215,7 @@
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Além do trabalho dos agentes da saúde, é necessário que haja __________ da população para combater os vetores.</Dica>
-			<PalavraAssoc>CONSCIENTIZAÇÃO</PalavraAssoc>
+			<PalavraAssoc>ATUAÇÃO</PalavraAssoc>
 		</Conteudo5>
 	</fase5>
 </Unscramble>

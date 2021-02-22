@@ -11,17 +11,18 @@ import logoEic from '../../public/logo-eic.png'
 
 export default class Inicial extends Component {
     render() {
-        const encodeURL = 'https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(window.location.href)
+        
         const sizeDesk = {
-            width:"13em",
-            height: "14em",
+            width:"12em",
+            height: "13em",
             color: 'white',
             borderRadius: '16px',
             borderStyle: 'none',
             textTransform: 'uppercase',
             fontWeight: '500',
             margin: '0.75em',
-            boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'
+            boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)',
+            cursor: 'pointer'
         }
 
         const sizeTab = {
@@ -69,11 +70,11 @@ export default class Inicial extends Component {
                         <p>Créditos</p>
                     </button>
                 </Link>
-                <div style={{marginLeft:"1.5em"}}>
+                <div style={{marginLeft:"1em", marginRight:"0.75em"}}>
                     <img alt="logo" src={logoEic}/>
                     <br/>
-                    <div  style={{display:'flex', alignItems:"center", justifyContent:"space-between"}}>
-                        <a href={encodeURL} target="_blank">
+                    <div  style={{display:'flex', alignItems:"center", justifyContent:"space-between", paddingTop:"1em"}}>
+                        <a href="https://www.facebook.com/EIC.USP/" target="_blank">
                             <img alt="facebook" src={facebook}/>
                         </a>
                         <a href="https://www.instagram.com/eiciencia/?hl=pt-br" target="_blank">
@@ -154,7 +155,7 @@ export default class Inicial extends Component {
                     <img alt="logo" src={logoEic} width="267px"/>
                 </div>
                 <div  style={{display:'flex', alignItems:"center", justifyContent:"center", margin:"1em"}}>
-                    <a href={encodeURL} target="_blank">
+                    <a href="https://www.facebook.com/EIC.USP/" target="_blank">
                         <img alt="facebook" src={facebook} style={{margin:"0.5em"}}/>
                     </a>
                     <a href="https://www.instagram.com/eiciencia/?hl=pt-br" target="_blank">

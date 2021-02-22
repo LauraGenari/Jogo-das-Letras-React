@@ -167,54 +167,54 @@ const XMLZika = `<?xml version="1.0" encoding="UTF-8"?>
 			<PalavraAssoc>PARACETAMOL</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
-			<Dica>Melhor maneira preventiva do Zika, assim como todas as outras doenças causadas pelo mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
-			<PalavraAssoc>CONSCIENTIZAÇÃO</PalavraAssoc>
+			<Dica>Conscientizar a ___________. é a melhor maneira de nos prevenirmos contra a ZIKA,  assim como  das outras doenças causadas pelo mosquito 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
+			<PalavraAssoc>POPULAÇÃO</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
-			<Dica>Uma das recomendações do Ministério da Saúde para profissionais de saúde em relação ao Zika vírus é ficar alerta sobre os cuidados para evitar a _________ do mosquito Aedes.</Dica>
+			<Dica>Uma das recomendações do Ministério da Saúde para profissionais de saúde em relação ao Zika vírus é ficar alerta sobre os cuidados para evitar a _________ do mosquito 𝘈𝘦𝘥𝘦𝘴.</Dica>
 			<PalavraAssoc>PROLIFERAÇÃO</PalavraAssoc>
 		</Conteudo4>
 	</fase4>
 	<fase5>
 		<Conteudo5>
-			<Dica>O tratamento contra a doença do Zika vírus é totalmente sintomáticos, ou seja, são medicamentos utilizados apenas para o alívio dos sintomas, tais como dor de cabeça constante e dor de garganta. Esse tipo de tratamento é usado por não existir um tratamento específico para o Zika.</Dica>
-			<PalavraAssoc>ANTI-INFLAMATÓRIO</PalavraAssoc>
+			<Dica>O tratamento contra a doença do Zika vírus utilizando anti-__________ é totalmente sintomático, ou seja, o medicamento é utilizado apenas para o alívio dos sintomas, tais como dor de cabeça constante e dor de garganta. Esse tipo de tratamento é usado por não existir um tratamento específico para o Zika.</Dica>
+			<PalavraAssoc>INFLAMATÓRIO</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Doença neurológica relacionada ao Zika vírus.</Dica>
-			<PalavraAssoc>GUILLAIN BARRÉ</PalavraAssoc>
+			<Dica>Uma doença neurológica relacionada ao Zika vírus é conhecida como síndrome de __________ Barré.</Dica>
+			<PalavraAssoc>GUILLAIN</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Evento esportivo que ocorreu  em meados de 2013 que possivelmente introduziu o vírus Zika no Brasil.</Dica>
-			<PalavraAssoc>COPA DA CONFEDERAÇÕES</PalavraAssoc>
+			<Dica>Possivelmente participantes da Copa das Confederações, ocorrida em meados de 2013, introduziu o _________ vírus no Brasil.</Dica>
+			<PalavraAssoc>ZIKA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Nome científico do mosquito transmissor do ZIKV.</Dica>
 			<PalavraAssoc>𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Medicamento que contém ácido _______ é contra-indicado em caso de suspeita de Zika por causar hemorragia.</Dica>
-			<PalavraAssoc>ACETILSALICÍLICO</PalavraAssoc>
+			<Dica>Medicamento que contém _______ acetilsalicílico é contra-indicado em caso de suspeita de Zika por causar hemorragia.</Dica>
+			<PalavraAssoc>ÁCIDO</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Instituto que encontrou vestígios do vírus no sangue, a partir de exames realizados em um bebê.</Dica>
-			<PalavraAssoc>EVANDRO CHAGAS</PalavraAssoc>
+			<Dica>O Instituto _________ Chagas encontrou vestígios do vírus no sangue, a partir de exames realizados em um bebê.</Dica>
+			<PalavraAssoc>EVANDRO</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Sintoma que aparece na pele em decorrência da contaminação pelo Zika vírus</Dica>
-			<PalavraAssoc>MANCHAS AVERMELHADAS</PalavraAssoc>
+			<Dica>Manchas ____________ fazem parte dos sintomas que aparecem na pele em decorrência da contaminação pelo Zika vírus.</Dica>
+			<PalavraAssoc>AVERMELHADAS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Sintoma do Zika que se assemelha muito a um sintoma típico da febre chikungunya porém de forma mais branda.</Dica>
-			<PalavraAssoc>DOR NA ARTICULAÇÃO</PalavraAssoc>
+			<Dica>A dor nas ___________ é um sintoma do Zika que se assemelha muito a um sintoma típico da febre chikungunya porém de forma mais branda.</Dica>
+			<PalavraAssoc>ARTICULAÇÕES</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Sintomas clássicos de muitas doenças que também pode estar presente na infecção por Zika vírus à alimentação</Dica>
-			<PalavraAssoc>PERDA DE APETITE</PalavraAssoc>
+			<Dica>A perda de __________ faz parte dos sintomas clássicos de muitas doenças e também pode estar presente na infecção por Zika vírus.</Dica>
+			<PalavraAssoc>APETITE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>O ácido acetilsalicílico funciona no organismo como um ___________ e o seu uso durante a doença poderiam desencadear uma hemorragia e até levar a morte, dessa forma não se deve ingerir esse tipo de remédio.</Dica>
-			<PalavraAssoc>ANTICOAGULANTE</PalavraAssoc>
+			<Dica>O ácido acetilsalicílico funciona no organismo como um anticoagulante  e o seu uso durante a doença poderia desencadear uma __________ e até levar à morte, logo não se deve ingerir esse tipo de remédio.</Dica>
+			<PalavraAssoc>HEMORRAGIA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Hábito de se alimentar de sangue praticado pelas fêmeas do mosquito transmissor do Zika vírus.</Dica>

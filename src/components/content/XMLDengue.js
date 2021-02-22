@@ -180,44 +180,44 @@ const XMLDengue = `<?xml version="1.0" encoding="UTF-8"?>
 	</fase4>
 	<fase5>
 		<Conteudo5>
-			<Dica>Termo designado para a infecção positiva do vírus, porém o paciente não apresenta os sintomas.</Dica>
-			<PalavraAssoc>OLIGOSSINTOMÁTICA</PalavraAssoc>
+			<Dica>Assintomático é o termo usado  quando o __________ contrai o vírus,  porém  não apresenta os sintomas.</Dica>
+			<PalavraAssoc>PACIENTE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Nome popular dado a forma clássica da dengue, caracterizada por febre de início súbito, dores de cabeça, musculares, nos ossos e articulações</Dica>
-			<PalavraAssoc>FEBRE QUEBRA OSSOS</PalavraAssoc>
+			<Dica>Nome popular dado a forma clássica da dengue, caracterizada por febre de início súbito, dores de cabeça, musculares, nos ossos e Popularmente, a forma clássica da dengue, caracterizada por febre de início súbito, dores de cabeça, musculares, nos ossos e articulações, é conhecida como febre _______ ossos.</Dica>
+			<PalavraAssoc>QUEBRA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Outro vetor transmissor da dengue no Sudeste Asiático.</Dica>
-			<PalavraAssoc>AEDES ALBOPICTUS</PalavraAssoc>
+			<Dica>Outro vetor transmissor da dengue no Sudeste Asiático é o 𝘈𝘦𝘥𝘦𝘴 _______.</Dica>
+			<PalavraAssoc>ALBOPICTUS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Nome científico do mosquito da dengue.</Dica>
-			<PalavraAssoc>𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪</PalavraAssoc>
+			<Dica>Nome científico do mosquito da dengue É 𝘈𝘦𝘥𝘦𝘴 _____________.</Dica>
+			<PalavraAssoc>𝘢𝘦𝘨𝘺𝘱𝘵𝘪</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Pacientes com Dengue devem evitar medicamentos à base de ácido __________. Esses medicamentos têm efeito anticoagulante e podem causar sangramentos.</Dica>
-			<PalavraAssoc>ACETILSALICÍLICO</PalavraAssoc>
+			<Dica>Pacientes com Dengue devem evitar medicamentos à base de __________ acetilsalicílico. Esses medicamentos têm efeito anticoagulante e podem causar sangramentos.</Dica>
+			<PalavraAssoc>ÁCIDO</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>A dengue em um número considerável de casos se comporta como uma doença _____________ pois nem todos que são infectados desenvolvem os sintomas.</Dica>
-			<PalavraAssoc>ASSINTOMÁTICA</PalavraAssoc>
+			<Dica>A dengue em um número considerável de casos se comporta como uma doença assintomática pois nem todos que são ____________  desenvolvem os sintomas.</Dica>
+			<PalavraAssoc>INFECTADOS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Produto de limpeza colocado nos recipientes que acumulam água parada.</Dica>
-			<PalavraAssoc>ÁGUA SANITÁRIA</PalavraAssoc>
+			<Dica>A água _________ é um produto de limpeza que pode ser colocado nos recipientes que acumulam água parada.</Dica>
+			<PalavraAssoc>SANITÁRIA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Primeira manifestação da dengue que tem início abrupto.</Dica>
 			<PalavraAssoc>FEBRE ALTA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>O tratamento contra a Dengue é totalmente sintomáticos, são medicamentos utilizados apenas para o alívio dos sintomas. Esse tipo de tratamento é usado por não existir um tratamento específico para a Dengue.</Dica>
-			<PalavraAssoc>ANTI-INFLAMATÓRIO</PalavraAssoc>
+			<Dica>O tratamento contra a Dengue é totalmente sintomático, no qual um medicamento anti-__________ é utilizado apenas para o alívio dos sintomas. Esse tipo de tratamento é usado por não existir um tratamento específico para a Dengue.</Dica>
+			<PalavraAssoc>INFLAMATÓRIO</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>A dengue se comporta como uma doença _____________ pois nem todos que são infectados desenvolvem os sintomas.</Dica>
-			<PalavraAssoc>ASSINTOMÁTICA</PalavraAssoc>
+			<Dica>A dengue se comporta como uma doença  assintomática  pois nem todos que são infectados desenvolvem ____________  da doença</Dica>
+			<PalavraAssoc>SINTOMAS</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>O ___________ é um agravamento da dengue.</Dica>

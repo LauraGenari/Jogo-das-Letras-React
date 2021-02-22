@@ -136,7 +136,7 @@ export default class TemplateEscuro extends Component{
             if (this.props.bolinhas) {
                 return (
                     <div className="enunciado mobile">
-                        <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width:"97%" }}>{this.props.id}</p>
+                        <p style={{ fontFamily: this.props.font, fontSize: this.props.size, width:"90%" }}>{this.props.id}</p>
                         <div>
                             {bolinhas}
                         </div>

@@ -144,8 +144,8 @@
 			<PalavraAssoc>SINTOMÁTICO</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
-			<Dica>Assim como a dengue a febre amarela também se comporta como uma doença _____________ pois nem todos que são infectados desenvolvem os sintomas.</Dica>
-			<PalavraAssoc>ASSINTOMÁTICA</PalavraAssoc>
+			<Dica>Assim como a dengue a febre amarela também se comporta como uma doença sem _____________ pois nem todos que são infectados desenvolvem os sintomas.</Dica>
+			<PalavraAssoc>SINTOMAS</PalavraAssoc>
 		</Conteudo4>
 		<Conteudo4>
 			<Dica>Região onde o vírus da febre amarela está presente no Brasil.</Dica>
@@ -170,16 +170,16 @@
 			<PalavraAssoc>FEBRE AMARELA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>O médico Dr._______________ quase perdeu a vida no ano de 2004, porque esqueceu de se prevenir contra a febre amarela ao viajar para o norte do Brasil.</Dica>
-			<PalavraAssoc>DRAUZIO VARELLA</PalavraAssoc>
+			<Dica>O médico Dr. Drauzio _______________ quase perdeu a vida no ano de 2004, porque esqueceu de se prevenir contra a febre amarela ao viajar para o norte do Brasil.</Dica>
+			<PalavraAssoc>VARELLA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Família a qual o vírus causador da doença pertence.</Dica>
 			<PalavraAssoc>FLAVIVIRIDAE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>A existência do ciclo silvestre da febre amarela foi descoberta em 1932, derrubando o mito de “________________”.</Dica>
-			<PalavraAssoc>DOENÇA DA CIDADE</PalavraAssoc>
+			<Dica>A existência do ciclo silvestre da febre amarela foi descoberta em 1932, derrubando o mito de ser uma “doença da _______”.</Dica>
+			<PalavraAssoc>CIDADE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>A Febre amarela silvestre (FAS) é transmitida através da picada de mosquitos, um deles é o _________ que vive em matas e vegetações à beira dos rios.</Dica>
@@ -190,8 +190,8 @@
 			<PalavraAssoc>FITÓFAGA</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
-			<Dica>Órgão do governo responsável pelo combate do vetor da Febre Amarela.</Dica>
-			<PalavraAssoc>MINISTÉRIO DA SAÚDE</PalavraAssoc>
+			<Dica>Órgão do governo responsável pelo combate do vetor da Febre Amarela é o ministério da __________ .</Dica>
+			<PalavraAssoc>SAÚDE</PalavraAssoc>
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>Hábito de se alimentar de sangue praticado pelas fêmeas do vetor 𝘈𝘦𝘥𝘦𝘴 𝘢𝘦𝘨𝘺𝘱𝘵𝘪.</Dica>
@@ -199,7 +199,7 @@
 		</Conteudo5>
 		<Conteudo5>
 			<Dica>A forma mais grave da doença é rara e costuma aparecer após um breve período de bem-estar, quando podem ocorrer _________ hepática e renal.</Dica>
-			<PalavraAssoc>INSUFICIÊNCIAS</PalavraAssoc>
+			<PalavraAssoc>ALTERAÇÕES</PalavraAssoc>
 		</Conteudo5>
 	</fase5>
 </Unscramble>

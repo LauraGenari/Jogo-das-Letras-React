@@ -13,9 +13,11 @@ import { Link } from 'react-router-dom';
 import teclado from '../../../public/teclado.png';
 import resetar from '../../../public/resetar.png';
 import feliz from '../../../public/feliz.png';
-import X from '../../../public/X.png';
 import felizEstrela from '../../../public/feliz-estrela.png';
+import X from '../../../public/X.png';
 import enviar from '../../../public/enviar.png';
+import play from '../../../public/play.png'
+
 
 const ConditionalLink = ({ children, level,time }) => {
     if((level + 1 === 6))
@@ -36,10 +38,12 @@ export default class Game extends Component{
             word: pw[0],
             active: false,
             pontos: 0,
-            curTime: Date.now()
+            curTime: Date.now(),
+            embaralha: 0
         }
         this.levelUp = this.levelUp.bind(this)
         this.Word = this.Word.bind(this)
+        this.handleKeyDown = this.handleKeyDown.bind(this)
     }
     Word(palavra, mobile) {
     
@@ -101,8 +105,9 @@ export default class Game extends Component{
                     imageUrl: felizEstrela,
                     showCloseButton: false,
                     showCancelButton: false,
-                    confirmButtonText: "Continuar&nbsp;<img src='play.png' style='display:flex-inline; vertical-align:middle'/>",
+                    confirmButtonText: `<span style='color:#fff; padding-right:0.5em'>Continuar</span><img src=${play} style='display:flex-inline; vertical-align:middle'/>`,
                     confirmButtonColor: '#7b79f1',
+                    color:"#fff",
                     padding:cel ? '2em 1em':'5em',
                     background:" #2a279d url('https://media3.giphy.com/media/QBehwGHH9M6fXxPaPh/giphy.gif')",
                     timer: 4000,
@@ -136,6 +141,20 @@ export default class Game extends Component{
             })
         }
     }
+
+    handleKeyDown = (event, cel) => {
+        if(!this.props.mobile){
+             if( event.key === ' '){
+                this.forceUpdate()
+            } else if ( event.key === 'Enter'){
+                this.levelUp(cel, stop)
+            }
+        }
+        event.preventDefault()
+    }
+    componentDidMount(){
+        document.addEventListener("keydown", this.handleKeyDown);
+    }
     
     render() {  
         console.log(this.state.curTime)
@@ -148,8 +167,8 @@ export default class Game extends Component{
         }
         return (
             <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
-                <span  onKeyDown={(event) => {if(!this.props.mobile){ if( event.key === ' '){this.forceUpdate()}else if ( event.key === 'Enter'){this.levelUp(cel, stop),event.preventDefault()}}}} tabIndex="-1" style={{outline: "none", width:"100vw", height:"100vh", position:"absolute"}}></span>
-                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size="0.5em" bolinhas={true} level={this.state.level} fase={this.state.fase} />
+                <span  onKeyDown={(e) => this.handleKeyDown(e,cel)} tabIndex="-1" style={{outline: "none", width:"100vw", height:"100vh", position:"absolute"}}></span>
+                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size={this.props.mobile?"0.75em":"1em"} bolinhas={true} level={this.state.level} fase={this.state.fase} />
                  <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0", alignSelf: "center", justifyContent: "center"}}>
                     <div className="grid" style={{ gridRowGap: this.props.mobile ? '5px' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
@@ -161,7 +180,7 @@ export default class Game extends Component{
                         <div style={{ display: "flex", flexWrap: "wrap", width: "150px", alignItems: "strech", justifyContent: "center", height:"50%"}}>
                             <span>
                                 <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
-                                    <a onClick={() => this.forceUpdate()} className="botao-redondo lilas" title="Embaralhar">
+                                    <a onClick={() =>  this.forceUpdate()} className="botao-redondo lilas" title="Embaralhar">
                                         <img src={resetar} alt="resetar"/>
                                     </a>
 
@@ -182,7 +201,7 @@ export default class Game extends Component{
                         <Fase level={this.state.level} mobile={this.props.mobile} location={this.props.location} stop={this.state.level===2 ? true :false }/>
                         <a className="botao-redondo rosa" style={{ display: this.props.mobile ? "none" : "flex" }} title="Comandos" onClick={() => Swal.fire({
                             title: "<span>Comandos</span>",
-                            html: "<div style='background-color:rgba(251, 132, 148, 0.2); border-radius:16px; text-align:left'><span style='display:flex'><strong style='padding: 1em' >ENTER</strong><strong style='padding-top: 1em'>-</strong><div style='padding:1em'>verifica a resposta</div></span><span style='display:flex'><strong style='padding-left: 1em; padding-right: 1em' >SPACE</strong><strong>-</strong><div style='padding-left: 1em; padding-right: 1em' >embaralha a palavra novamente</div></span><span style='display:flex'><strong style='padding: 1em' >BACKSPACE</strong><strong style=' padding-top: 1em'>-</strong><div style='padding: 1em' >remove o último caractere inserido</div></span></div>",
+                            html: "<div style='background-color:rgba(251, 132, 148, 0.2); border-radius:16px; text-align:left'><span style='display:flex'><strong style='padding: 1em' >ENTER</strong><strong style='padding-top: 1em'>-</strong><div style='padding:1em'>verifica a resposta</div></span><span style='display:flex'><strong style='padding-left: 1em; padding-right: 1em; padding-bottom: 1em' >SPACE</strong><strong>-</strong><div style='padding-left: 1em; padding-right: 1em; padding-bottom: 1em' >embaralha a palavra novamente</div></span></div>",
                             showCloseButton: true,
                             showCancelButton: false,
                             confirmButtonColor: 'rgb(251, 132, 148)',

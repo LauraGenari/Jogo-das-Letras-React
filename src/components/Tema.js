@@ -122,7 +122,7 @@ export default function Tema({ mobile}) {
     
     return (    
         <div>
-            <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA" font={"Luckiest Guy"} size="2.3em" bolinhas={false }/>
+            <TemplateEscuro mobile={mobile} id="ESCOLHA UM TEMA" font={"Luckiest Guy"} size={mobile ? "2em" : "2.4em"} bolinhas={false }/>
             
             {content}
         </div>

@@ -3,8 +3,8 @@ import TemplateEscuro from './TemplateEscuro';
 
 export default function Creditos({mobile}) { 
     const content =
-    <div style={{ textAlign: "center", display:mobile?"block":"flex", fontSize: mobile ? "0.9em" : "1em" }}>        
-        <div style={{margin:mobile ? "0":"5em 2.5em 0em 5em"}}>
+    <div style={{ textAlign: "center", display:mobile?"block":"flex", fontSize: mobile ? "0.9em" : "1em", marginTop: mobile ? "2em" : "-2em" }}>        
+        <div style={{margin:mobile ? "0":"5em 2em 0em 5em"}}>
             <div style={{ fontFamily: "Luckiest Guy" }}>COORDENAÇÃO E SUPERVISAO GERAL</div>
             <div>Leila Maria Beltramini</div>
             <div>Nelma R. S. Bossolan</div>
@@ -17,7 +17,7 @@ export default function Creditos({mobile}) {
             <div>Simone Ferreira Souza (versão 2.0)</div>
             <br></br>
         </div>
-        <div style={{margin:mobile ? "0":"5em 5em 0em 2.5em"}}>
+        <div style={{margin:mobile ? "0":"5em 5em 0em 2em"}}>
             <div style={{fontFamily:"Luckiest Guy"}}>DESENVOLVIMENTO DE SOFTWARE</div>
             <div>Diego Prosperi Turibio (versão 1.0)</div>
             <div>Luísa Anastácio (versão 1.0)</div>
@@ -25,6 +25,9 @@ export default function Creditos({mobile}) {
             <br></br>
             <div style={{fontFamily:"Luckiest Guy"}}>CONTEÚDO E ARTE</div>
             <div>Marília Faustino da Silva</div>
+            <br></br>
+            <div style={{fontFamily:"Luckiest Guy"}}>MÚSICA</div>
+            <div> Benjamin Tissot - Buddy</div>
         </div>
     </div>
     return (    
