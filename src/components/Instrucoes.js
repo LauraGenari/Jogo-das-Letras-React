@@ -12,7 +12,7 @@ export default function Instrucoes({ mobile }) {
         <span style={{display:"flex"}}>
             <strong style={{ paddingLeft: "1em", paddingRight: "1em"}} >FASES</strong>
             <strong>-</strong>
-            <div style={{ paddingLeft: "1em", paddingRight: "1em" }} >a cada fase, uma nova palavra é adicionada, tal que, na fase 5, o jogador deverá descobrir 5 palavras</div>
+            <div style={{ paddingLeft: "1em", paddingRight: "1em" }} >O usuário inicia o jogo na fase 1 podendo chegar à fase 5. A fase define o número de palavras a serem desembaralhadas.</div>
         </span>
     </div>
 
@@ -40,7 +40,7 @@ export default function Instrucoes({ mobile }) {
     </div>
     
     const content =
-        <div style={{fontSize: mobile ? "0.75em" : "1em"}}>
+        <div>
             <div style={{ padding: "1em",  width: mobile ? "75vw" : "50vw"}}>
                 <p>O Jogo das Letras é composto por cinco fases, cujo objetivo é: a partir de uma dica, desvendar qual palavra se encontra embaralhada. </p>
                 <p>Uma vez escolhido o nível de dificuldade, o usuário inicia o jogo na fase 1 podendo chegar a fase 5. A fase define o número de palavras a serem desembaralhadas.</p>

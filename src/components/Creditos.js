@@ -10,7 +10,7 @@ export default function Creditos({mobile}) {
             <div>Nelma R. S. Bossolan</div>
             <br></br>
             <div style={{fontFamily:"Luckiest Guy"}}>EDUCADORA</div>
-            <div>Gislaine Gomes da Costa</div>
+            <div>Gislaine Costa dos Santos</div>
             <br></br>
             <div style={{fontFamily:"Luckiest Guy"}}>CONSULTORIA E ORIENTAÇÃO DE TI</div>
             <div>Claudinei Caetano de Souza (versão 1.0)</div>

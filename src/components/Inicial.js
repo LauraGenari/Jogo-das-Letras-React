@@ -11,16 +11,18 @@ import logoEic from '../../public/logo-eic.png'
 
 export default class Inicial extends Component {
     render() {
+
+        const telaMUITOpequna = window.innerHeight < 600
         
         const sizeDesk = {
-            width:"12em",
+            width:"11.5em",
             height: "13em",
             color: 'white',
             borderRadius: '16px',
             borderStyle: 'none',
             textTransform: 'uppercase',
             fontWeight: '500',
-            margin: '0.75em',
+            margin: '0.5em',
             boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)',
             cursor: 'pointer'
         }
@@ -38,7 +40,7 @@ export default class Inicial extends Component {
         }
 
         const sizeMob = {
-            borderStyle: 'none', width:"5.5em", height:"5.75em", margin:"1em", borderRadius:"8px",
+            borderStyle: 'none', width:telaMUITOpequna?"5em":"5.5em", height:telaMUITOpequna?"4.75em":"5em", margin:telaMUITOpequna?"1.5em":"1em", borderRadius:"8px",
             boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'
         }
 
@@ -70,7 +72,7 @@ export default class Inicial extends Component {
                         <p>Créditos</p>
                     </button>
                 </Link>
-                <div style={{marginLeft:"1em", marginRight:"0.75em"}}>
+                <div style={{marginLeft:"0.75em", marginRight:"0.75em"}}>
                     <img alt="logo" src={logoEic}/>
                     <br/>
                     <div  style={{display:'flex', alignItems:"center", justifyContent:"space-between", paddingTop:"1em"}}>
@@ -96,7 +98,7 @@ export default class Inicial extends Component {
                     <Link to={{
                             pathname:'tema',
                         }}>
-                        <button className="dark" style={{borderStyle: 'none', width:"13em", height:"6em", margin:"1em", borderRadius:"8px", color:"white", display:"flex", justifyContent:"center", alignItems:"center",
+                        <button className="dark" style={{borderStyle: 'none', width:"13em", height:telaMUITOpequna?"5.5em":"6em", margin:"2em 0 0 0", borderRadius:"8px", color:"white", display:"flex", justifyContent:"center", alignItems:"center",
             boxShadow:' 0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
                             <img alt="play" src={jogar} style={{width:"30px", height:"24px", marginRight:"1em"}}/>
                             <p style={{fontSize:"1.5em"}}>JOGAR</p>
@@ -119,7 +121,7 @@ export default class Inicial extends Component {
                         </button>
                     </Link>
                 </div>
-                <img alt="logo" src={logoEic }style={{display:"flex", alignItems:"center", justifyContent:"center", marginTop:"1em"}}/>
+                <img alt="logo" src={logoEic }style={{display:"flex", alignItems:"center", justifyContent:"center", marginTop:telaMUITOpequna?"0":"1em"}}/>
 
                 </div>
         

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Stopwatch from './Cornometro'; 
 export default class Fases extends Component{
     shouldComponentUpdate(nextProps) {
-        return this.props == nextProps;
+        return this.props === nextProps;
     }
     render() {
         var um, dois, tres, quatro, cinco

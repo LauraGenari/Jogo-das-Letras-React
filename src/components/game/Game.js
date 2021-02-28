@@ -168,7 +168,7 @@ export default class Game extends Component{
         return (
             <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
                 <span  onKeyDown={(e) => this.handleKeyDown(e,cel)} tabIndex="-1" style={{outline: "none", width:"100vw", height:"100vh", position:"absolute"}}></span>
-                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size={this.props.mobile?"0.75em":"1em"} bolinhas={true} level={this.state.level} fase={this.state.fase} />
+                <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size={"1em"} bolinhas={true} level={this.state.level} fase={this.state.fase} />
                  <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0", alignSelf: "center", justifyContent: "center"}}>
                     <div className="grid" style={{ gridRowGap: this.props.mobile ? '5px' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>

@@ -5,14 +5,14 @@ import play from '../../public/play.png'
 
 export default function Tema({ mobile}) { 
     var size, content;
+    console.log("AAA")
     if (mobile) {
         size = {
             width: "50vw",
             height: "10vh",
             margin: "1vw",
-
         }
-        content =             <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
+        content =  <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                 <Link to={{
                     pathname:'game',
                     tema: 'FebreAmarela'
@@ -67,17 +67,16 @@ export default function Tema({ mobile}) {
             width: "15vw",
             height: "5vw",
             margin: "0.5vw 3vw 0.5vw 3vw",
-
         } 
         content = <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-                <Link to={{
+               <Link to={{
                     pathname:'game',
-                    tema: 'FebreAmarela'
+                    tema: 'Dengue'
                 }}>
-                <button className="tema roxo" style={size}>
-                    <img alt="play" src={play}/>
-                    <p style={{padding:"10px"}}>Febre Amarela</p>
-                </button>
+                    <button className="tema roxo" style={size}>
+                        <img alt="play" src={play}/>   
+                        <p style={{padding:"10px"}}>Dengue</p>
+                    </button>
                 </Link>
                 <Link to={{
                     pathname:'game',
@@ -97,16 +96,16 @@ export default function Tema({ mobile}) {
                         <p style={{padding:"10px"}}>Chikungunya</p>
                     </button>
                 </Link>
-                                     
                 <Link to={{
                     pathname:'game',
-                    tema: 'Dengue'
+                    tema: 'FebreAmarela'
                 }}>
-                    <button className="tema roxo" style={size}>
-                        <img alt="play" src={play}/>   
-                        <p style={{padding:"10px"}}>Dengue</p>
-                    </button>
-                </Link>
+                <button className="tema roxo" style={size}>
+                    <img alt="play" src={play}/>
+                    <p style={{padding:"10px"}}>Febre Amarela</p>
+                </button>
+                </Link>          
+                
                 <Link to={{
                     pathname:'game',
                     tema: 'Aedes'

@@ -1,6 +1,6 @@
 import XMLParser from 'react-xml-parser'
 
-const XMLFebreAmarela = `<?xml version="1.0" encoding="UTF-8"?>
+const XMLFebre = `<?xml version="1.0" encoding="UTF-8"?>
 <Unscramble>
 	<fase1>
 		<Conteudo1>
@@ -206,7 +206,7 @@ const XMLFebreAmarela = `<?xml version="1.0" encoding="UTF-8"?>
 	</fase5>
 </Unscramble>`
 
-var xml = new XMLParser().parseFromString(XMLFebreAmarela);
+var xml = new XMLParser().parseFromString(XMLFebre);
 export function palavraFebre(i, level) {
 	const fase = 'fase' + level;
 	const conteudo = 'Conteudo'+level
