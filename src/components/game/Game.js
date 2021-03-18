@@ -169,14 +169,15 @@ export default class Game extends Component{
             <div style={{display:"flex", flexWrap:"wrap-reverse", justifyContent:"center", alignItems:"strech", height: this.props.mobile?"80%":"40%"}}>
                 <span  onKeyDown={(e) => this.handleKeyDown(e,cel)} tabIndex="-1" style={{outline: "none", width:"100vw", height:"100vh", position:"absolute"}}></span>
                 <TemplateEscuro mobile={this.props.mobile} id={this.state.word[1]} font='roboto' size={"1em"} bolinhas={true} level={this.state.level} fase={this.state.fase} />
-                 <div style={{display:"flex", position:cel?"absolute":"static",left:cel?"10vw":"0", alignSelf: "center", justifyContent: "center"}}>
-                    <div className="grid" style={{ gridRowGap: this.props.mobile ? '5px' : '1em'}}>
+                 <div style={{display:"flex", position:this.props.mobile?"absolute":"static",left:this.props.mobile?cel?"10vw":"30%":"0", alignSelf: "center", justifyContent: "center"}}>
+
+                    <span className="grid" style={{ gridRowGap: this.props.mobile ? '5px' : '1em'}}>
                         <DndProvider backend={this.props.mobile ? TouchBackend : HTML5Backend}>
                             {this.Word(this.state.word[0], this.props.mobile)}
                         </DndProvider>
 
-                    </div>
-                    <div style={this.props.mobile ? mobile : desktop}>
+                    </span>
+                    <span style={this.props.mobile ? mobile : desktop}>
                         <div style={{ display: "flex", flexWrap: "wrap", width: "150px", alignItems: "strech", justifyContent: "center", height:"50%"}}>
                             <span>
                                 <span style={{width:"100%", display:"flex", justifyContent:"center"}}>
@@ -209,7 +210,7 @@ export default class Game extends Component{
                         })}>
                             <img src={teclado} alt="teclado"/>
                         </a> 
-                    </div>
+                    </span>
                 </div>
             </div>
         )    

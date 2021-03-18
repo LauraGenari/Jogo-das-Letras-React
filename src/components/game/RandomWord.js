@@ -68,7 +68,7 @@ export function RandomWord(level, tema) {
     }
     else if (tema === "FebreAmarela"){
         let i = 0;    
-        indexQ = Sorteio(1, level)
+        indexQ = Sorteio(0, level)
         while(i < level) {
             palavra = palavraFebre(indexQ[i], level);
             vet.push(palavra)

@@ -158,9 +158,13 @@ export default class TemplateEscuro extends Component{
                 }
                 else{
                     return (
-                        <div className="enunciado mobile inicial">
-                            <p style={{ fontFamily: this.props.font, fontSize: this.props.size, lineHeight: "1", position: 'relative', top: "20%" }}>{this.props.id}</p>
-                            <p style={{ position: 'relative', top: "10%" , fontStyle:"italic"}}>Aedes aegypti</p>
+                        <div  style={{display:" flex", alignItems: "center"}} className="enunciado mobile inicial">
+                            <div style={{ top: "20%", position: "relative"}}>
+                                <div style={{ display: "flex", justifyContent: "center", alignItems:"center" }}>
+                                    <p style={{ fontFamily: this.props.font, fontSize: this.props.size, lineHeight: "1", position: 'relative', bottom: "0.5em"}}>{this.props.id}</p>
+                                </div>
+                                <p style={{ position: 'relative',  bottom: "4em"  , fontStyle:"italic"}}>Aedes aegypti</p>
+                            </div>
                         
                         </div>
                     )

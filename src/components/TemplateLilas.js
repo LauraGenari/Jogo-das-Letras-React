@@ -12,7 +12,7 @@ class TemplateLilas extends Component {
         var game = this.props.location.pathname === "/game" ? true : false
         if (this.props.mobile) {
                 return (
-                    <div className={game?"bloco-lilas-transparente":"bloco-lilas mobile"} >
+                    <div className={game?"bloco-lilas-transparente":"bloco-lilas mobile"} style={{marginTop:game?window.innerWidth<500?"120%":"90%":"0"}}>
                         
                         <Music mobile={this.props.mobile} game={game}/>
                         {!inicial && 

@@ -12,32 +12,14 @@ export default function Tema({ mobile}) {
             height: "10vh",
             margin: "1vw",
         }
-        content =  <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
-                <Link to={{
+        content = <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+               <Link to={{
                     pathname:'game',
-                    tema: 'FebreAmarela'
+                    tema: 'Dengue'
                 }}>
                     <button className="tema roxo" style={size}>
-                        <img alt="play" src={play}/>
-                        <p style={{padding:"10px"}}>Febre Amarela</p>
-                    </button>
-                </Link>
-                 <Link to={{
-                    pathname:'game',
-                    tema: 'Chikungunya'
-                }}>
-                    <button className="tema azul" style={size}>
-                        <img alt="play" src={play}/>
-                        <p style={{padding:"10px"}}>Chikungunya</p>
-                    </button>
-                </Link>
-                <Link to={{
-                    pathname:'game',
-                    tema: 'Aedes'
-                    }}>
-                    <button className="tema dark" style={size}>
-                        <img alt="play" src={play}/>
-                        <p style={{padding:"10px"}}>Aedes Aegypti</p>
+                        <img alt="play" src={play}/>   
+                        <p style={{padding:"10px"}}>Dengue</p>
                     </button>
                 </Link>
                 <Link to={{
@@ -46,20 +28,37 @@ export default function Tema({ mobile}) {
                 }}>
                     <button className="tema azul" style={size}>
                         <img alt="play" src={play}/>
-                        
                         <p style={{padding:"10px"}}>Zica</p>
                     </button>
-                </Link>                           
-                <Link to={{
+                </Link> 
+                 <Link to={{
                     pathname:'game',
-                    tema: 'Dengue'
+                    tema: 'Chikungunya'
                 }}>
-                    <button className="tema roxo" style={size}>
-                        <img alt="play" src={play}/>
-                    
-                        <p style={{padding:"10px"}}>Dengue</p>
+                    <button className="tema dark" style={size}>
+                        <img alt="play" src={play}/>    
+                        <p style={{padding:"10px"}}>Chikungunya</p>
                     </button>
                 </Link>
+                <Link to={{
+                    pathname:'game',
+                    tema: 'FebreAmarela'
+                }}>
+                <button className="tema azul" style={size}>
+                    <img alt="play" src={play}/>
+                    <p style={{padding:"10px"}}>Febre Amarela</p>
+                </button>
+                </Link>          
+                
+                <Link to={{
+                    pathname:'game',
+                    tema: 'Aedes'
+                    }}>
+                    <button className="tema roxo" style={size}>
+                        <img alt="play" src={play}/>    
+                        <p style={{padding:"10px"}}>Aedes Aegypti</p>
+                    </button>
+                </Link> 
             </div>
     }
     else {

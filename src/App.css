@@ -150,12 +150,10 @@ a:active {
 
 .bloco-lilas-transparente {
   width: 20%;
-  z-index: -1;
   display: flex;
   justify-content: space-around;
   z-index: 3;
   margin-left: 60%;
-  margin-top: 120%;
 }
 
 .conteudo {
