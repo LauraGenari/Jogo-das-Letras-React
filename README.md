@@ -1,4 +1,4 @@
-#Jogo das Letras Aedes
+Jogo das Letras Aedes
 
 Para instalar o jogo rode:
 npm install 
